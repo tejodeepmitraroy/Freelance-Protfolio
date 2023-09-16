@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const Projects = () => {
   return (
-    <div className="relative w-full h-auto">
+    <div className="relative w-full h-auto" id="projects">
       <div className="w-full my-28 ">
         <div className="w-full max-w-7xl px-10 mx-auto  flex flex-col gap-5">
           <span className="font-medium text-lg">- PROJECTS</span>

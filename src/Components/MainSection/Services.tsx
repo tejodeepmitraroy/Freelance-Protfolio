@@ -2,7 +2,7 @@ import React from "react";
 
 const Services = () => {
   return (
-    <div className="relative w-full h-auto">
+    <div className="relative w-full h-auto" id="services">
       <div className="w-full my-28 ">
         <div className="w-full max-w-7xl px-10 mx-auto  flex flex-col gap-5">
           <span className="font-medium text-lg">- SERVICES</span>
@@ -27,7 +27,7 @@ const Services = () => {
                   01
                 </span>
                 <h3 className="w-full mb-3 text-xl font-bold font-Inter leading-5">
-                  Web Design
+                  FrontEnd Development
                 </h3>
                 <span className="w-full mb-6 opacity-[0.7] text-[#55527c]">
                   Web development is the process of bilduing programming...
@@ -55,10 +55,10 @@ const Services = () => {
             <li className="w-1/3 mb-10 pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
               <div className="w-full h-full p-10  flex flex-col border border-black rounded text-lg">
                 <span className="w-full mb-4 font-Inter font-medium text-[rgba(19,15,73,.5)]">
-                  01
+                  02
                 </span>
                 <h3 className="w-full mb-3 text-xl font-bold font-Inter leading-5">
-                  Web Design
+                  Backend Development
                 </h3>
                 <span className="w-full mb-6 opacity-[0.7] text-[#55527c]">
                   Web development is the process of bilduing programming...

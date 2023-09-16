@@ -1,9 +1,10 @@
+
 import React from "react";
 
 const About = () => {
   return (
-    <div className="relative w-full h-auto">
-      <div className="w-full mt-32">
+    <div className="w-full h-auto border bg-white" id="about">
+      <div className="w-full h-full mt-32">
         {/* About */}
         <div className="w-full max-w-7xl px-10 h-auto mx-auto flex flex-col gap-16">
           {/* biography */}
@@ -12,27 +13,34 @@ const About = () => {
               <span className=" font-medium text-lg">-NICE TO MEET YOU!</span>
               <div className="flex flex-col gap-2">
                 <span className=" font-extrabold text-4xl font-Inter">
-                  Tejodeep Mitra Roy
+                  <h3>Tejodeep Mitra Roy</h3>
                 </span>
                 <span className="text-lg font-bold">
-                  Web App Developer & Designer
+                  <p>Website & WebApp Developer </p>
                 </span>
               </div>
               <span className="w-fit px-10 py-3 mt-6 rounded-lg bg-[#0C134F] hover:bg-transparent text-white text-lg hover:text-[#0C134F] border border-[#0C134F] transition duration-300 ease-in-out">
-                Got a project?
+                <p>Got a project?</p>
               </span>
             </div>
             <div className="w-[60%] flex flex-col gap-10 font-medium text-lg">
               <span>
-                Hello there! My name is Robert Elisc. I am a web designer &
-                developer, and I'm very passionate and dedicated to my work.
+                <p>
+                  I&apos;m Tejodeep Mitra Roy, a passionate web developer based
+                  in India, specializing in the MERN(Mongo + Express + React +
+                  Node) stack. With a focus on crafting remarkable digital
+                  experiences, I transform ideas into visually stunning and
+                  high-performance websites and web applications.
+                </p>
               </span>
-              <span>
-                With 20 years experience as a professional a graphic designer, I
-                have acquired the skills and knowledge necessary to make your
-                project a success. I enjoy every step of the design process,
-                from discussion and collaboration.
-              </span>
+              {/* <span>
+                <p>
+                  Clear communication is key, and I&apos;m dedicated to understanding
+                  your goals and delivering tailored solutions. Whether you&apos;re a
+                  startup, business, or individual, Im here to bring your
+                  online vision to life.
+                </p>
+              </span> */}
               <div className="w-full flex justify-between">
                 <div className="flex flex-col">
                   <span className="underline">AGE</span>

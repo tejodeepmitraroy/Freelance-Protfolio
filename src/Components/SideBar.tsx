@@ -1,3 +1,4 @@
+
 import {
   faFacebookF,
   faXTwitter,
@@ -5,7 +6,9 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+
 
 interface Props {}
 
@@ -30,13 +33,60 @@ const SideBar = (props: Props) => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-4 text-[#534f80] text-lg ">
-        <button>Home</button>
-        <button>About</button>
-        <button>Services</button>
-        <button>Portfolio</button>
-        <button>Blog</button>
-        <button>Contact</button>
+      <div className="">
+        <ul className="flex flex-col items-center gap-4 text-[#534f80] text-lg cursor-pointer">
+          <li>
+            <a
+              href="#home"
+              // spy={true}
+              // smooth={true}
+              className="hover:text-[#a5a6ff] cursor-pointer"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="#about"
+              // spy={true}
+              // smooth={true}
+              className="hover:text-[#a5a6ff] cursor-pointer"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="#services"
+              // spy={true}
+              // smooth={true}
+              className="hover:text-[#a5a6ff] cursor-pointer"
+            >
+              Services
+            </a>
+          </li>
+          <li>
+            <a
+              href="#projects"
+              // spy={true}
+              // smooth={true}
+              className="hover:text-[#a5a6ff] cursor-pointer"
+            >
+              Portfolio
+            </a>
+          </li>
+          <li>
+            <a
+              // activeClass="active"
+              href="#contact"
+              // spy={true}
+              // smooth={true}
+              className="hover:text-[#a5a6ff] cursor-pointer"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
       </div>
 
       <div className="flex flex-col gap-6 items-center text-[#534f80]  font-medium ">
@@ -48,10 +98,10 @@ const SideBar = (props: Props) => {
             {" "}
             <FontAwesomeIcon icon={faXTwitter} className="w-4" />
           </span>
-          <span className="w-9 h-9 bg-gray-100 flex justify-center items-center  rounded-full">
+          <Link href={"https://www.linkedin.com/in/tejodeep-mitra-roy/"} target="./" className="w-9 h-9 bg-gray-100 flex justify-center items-center  rounded-full">
             {" "}
             <FontAwesomeIcon icon={faLinkedinIn} className="w-4" />
-          </span>
+          </Link>
         </span>
 
         <span>

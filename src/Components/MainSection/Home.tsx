@@ -1,30 +1,33 @@
+"use client"
 import Image from "next/image";
 import React from "react";
 
 const Home = () => {
   return (
-    <div className="w-full min-h-screen bg-[#D1FFF3] flex justify-center items-center text-[#0C134F] subpixel-antialiased">
+    <div className="w-full min-h-screen bg-[#D1FFF3] flex justify-center items-center text-[#0C134F] subpixel-antialiased border" id="home">
       <div className=" w-full max-w-7xl px-10 h-auto mx-auto">
         <div className="w-full min-h-screen flex items-center">
           <div className="w-[50%] flex flex-col gap-40">
             <div className="flex flex-col gap-10 ">
-              <div className="flex flex-col font-Inter font-bold text-6xl">
-                <span>
-                  Hi, I'm <span className="text-[#C1AEFC]">Tejodeep!</span>
-                </span>
-                <span>Creative Coder</span>
-                <span>Based in India</span>
+              <div className="flex flex-col  text-6xl">
+                <h3>
+                  Hi, I&apos;m <span className="text-[#C1AEFC]">Tejodeep!</span>
+                </h3>
+                <h3>Creative Coder</h3>
+                <h3>Based in India</h3>
               </div>
-              <span className=" max-w-[80%] w-full text-lg">
-                I'm a Florida based web designer & front‑end developer with 10+
-                years of experience
+              <span className=" max-w-[80%] w-full text-2xl">
+                <p>
+                  👋I&apos;m a India based Frontend & Backend Web App developer
+                  with 1+ years of experience
+                </p>
               </span>
               <div className="flex gap-4">
                 <span className="px-10 py-3 rounded-lg bg-[#0C134F] hover:bg-transparent text-white text-lg hover:text-[#0C134F] border border-[#0C134F] transition duration-300 ease-in-out">
-                  Got a project?
+                  <p>Got a project?</p>
                 </span>
                 <span className="px-10 py-3 rounded-lg hover:bg-[#0C134F] bg-transparent  hover:text-white text-lg text-[#0C134F] border border-[#0C134F] transition-all duration-300 ease-in-out">
-                  Lets talk
+                  <p>Lets talk</p>
                 </span>
               </div>
             </div>
