@@ -9,16 +9,18 @@ const ContactUs = () => {
           <div className="w-full flex">
             <div className="w-1/2 pr-12 flex flex-col gap-5 ">
               <div className=" flex flex-col gap-5">
-                <span className="font-medium text-lg">LET&lsquo;S CONNECT </span>
+                <span className="font-medium text-lg">
+                  LET&lsquo;S CONNECT{" "}
+                </span>
                 <span className=" font-extrabold text-4xl font-Inter">
                   Get in Touch
                 </span>
               </div>
               <span className=" mt-5 text-lg leading-8">
                 <p>
-                  I&apos;m currently available to take on new projects, so fell free
-                  to snd me a message about anthing that you want to run past
-                  me. you can contact at 24/7
+                  I&apos;m currently available to take on new projects, so fell
+                  free to snd me a message about anthing that you want to run
+                  past me. you can contact at 24/7
                 </p>
               </span>
               <div className="w-full">
@@ -82,9 +84,7 @@ const ContactUs = () => {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29455.92847020909!2d88.40960262601587!3d22.654121982998415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89e6c605d82ff%3A0x1f6779d05c4879ee!2sDum%20Dum%2C%20Kolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1694771815112!5m2!1sen!2sin"
               width="100%"
               height="100%"
-              
               loading="lazy"
-            
             ></iframe>
           </div>
         </div>
