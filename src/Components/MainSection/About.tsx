@@ -27,8 +27,7 @@ const About = () => {
               <span>
                 <p>
                   I&apos;m Tejodeep Mitra Roy, a passionate web developer based
-                  in India, specializing in the MERN(Mongo + Express + React +
-                  Node) stack. With a focus on crafting remarkable digital
+                  in India, specializing in the Full stack Application. With a focus on crafting remarkable digital
                   experiences, I transform ideas into visually stunning and
                   high-performance websites and web applications.
                 </p>
@@ -78,7 +77,7 @@ const About = () => {
           </div>
           {/* counter */}
           <div className="w-full flex gap-10 mb-28 ">
-            <div className=" w-[30%] h-48 bg-[#F6F7C1] rounded-md flex flex-col gap-4 items-center justify-center">
+            <div className=" w-[30%] h-48 bg-[#F6F7C1] rounded-md flex flex-col gap-4 items-center justify-center ">
               <span className="font-extrabold text-4xl font-Inter">1+</span>
               <span className="font-semibold text-lg">YEARS OF EXPERIENCE</span>
             </div>

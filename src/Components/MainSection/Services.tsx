@@ -31,6 +31,7 @@ const Services = () => {
                 </h3>
                 <span className="w-full mb-6 opacity-[0.7] text-[#55527c]">
                   Web development is the process of bilduing programming...
+                  
                 </span>
                 <div className="flex items-center gap-6">
                   <a>Read More</a>
