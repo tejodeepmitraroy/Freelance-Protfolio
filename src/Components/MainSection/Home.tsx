@@ -5,7 +5,7 @@ import React from "react";
 const Home = () => {
   return (
     <div
-      className="w-full min-h-screen py-24 bg-[#D1FFF3] text-[#0C134F] subpixel-antialiased "
+      className="w-full min-h-screen py-24 lg:py-0 bg-[#D1FFF3] text-[#0C134F] subpixel-antialiased "
       id="home"
     >
       <div className=" w-full max-w-7xl lg:mx-auto px-5 h-auto ">
@@ -37,7 +37,7 @@ const Home = () => {
             </div>
 
             <div className="w-full h-auto ">
-              <ul className=" relative px-3 py-2 font-semibold before:absolute before:w-1 before:bg-amber-500 before:top-0 before:bottom-0 text-lg ">
+              <ul className=" relative px-3 py-2 font-semibold before:absolute before:w-1 before:bg-amber-500 before:top-0 before:bottom-0 text-sm sm:text-lg ">
                 <li className="px-3 ">
                   <a
                     href="tel:+91-9674128921"

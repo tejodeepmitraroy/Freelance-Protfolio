@@ -17,15 +17,6 @@ module.exports = {
         Karla: "Karla, sans-serif",
         Pacifico:"Pacifico, cursive"
       },
-      animation:{
-        'hover':"hover 4s linear infinite"
-      },
-      keyframes: {
-        hover: {
-          "0%":{ opacity:0},
-          "100%":{opacity:1}
-        }
-      }
     },
   },
   plugins: [],
