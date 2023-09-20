@@ -16,7 +16,7 @@ const SideBar = (props: Props) => {
       <div className="lg:w-[19%] hidden h-screen border-r lg:flex flex-col p-14 items-center justify-between font-Karla antialiased">
         <div className="flex flex-col gap-7 items-center">
           <Image
-            src={"/img.jpg"}
+            src={"/img.png"}
             width={110}
             height={110}
             alt=""
