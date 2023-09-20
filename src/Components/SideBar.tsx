@@ -108,7 +108,7 @@ const SideBar = (props: Props) => {
           </span>
 
           <span>
-            All Copyrights 2023 Tejodeep Mitra Roy. All rights reserved.
+            <p>All Copyrights 2023 Tejodeep Mitra Roy. All rights reserved.</p>
           </span>
         </div>
       </div>
@@ -134,9 +134,9 @@ const SideBar = (props: Props) => {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M1 1h15M1 7h15M1 13h15"
               />
             </svg>

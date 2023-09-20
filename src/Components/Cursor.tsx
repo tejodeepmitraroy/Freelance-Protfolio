@@ -24,7 +24,7 @@ const Cursor: FC<CursorProps> = ({ children }) => {
   // }
 
   return (
-    <div className="h-screen" 
+    <div className="w-full h-screen" 
     // onMouseMove={toggleCoursorVisibleity}
     >
       <div
