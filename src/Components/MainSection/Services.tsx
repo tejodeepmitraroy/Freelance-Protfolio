@@ -4,24 +4,24 @@ const Services = () => {
   return (
     <div className="relative w-full h-auto" id="services">
       <div className="w-full my-28 ">
-        <div className="w-full max-w-7xl px-10 mx-auto  flex flex-col gap-5">
+        <div className="w-full max-w-7xl px-5 lg:px-10  mx-auto  flex flex-col gap-5">
           <span className="font-medium text-lg">- SERVICES</span>
-          <div className=" flex justify-between">
+          <div className=" flex flex-col gap-10 md:flex-row justify-between">
             <span className="font-extrabold text-4xl font-Inter">
               My Services
             </span>
-            <span className="text-xl font-medium">
+            <span className=" text-base md:text-xl font-medium">
               <a
                 href=""
-                className="w-full relative font-Inter font-semibold hover:no-underline before:absolute before:h-[2px] before:bottom-1 before:bg-black before:w-full  hover:before:w-0 before:transition before:duration-700 before:ease-in"
+                className="w-full relative font-Inter font-semibold hover:no-underline before:absolute before:h-[2px] before:bottom-0 before:bg-black before:w-full  hover:before:w-0 before:transition before:duration-700 before:ease-in"
               >
                 {" "}
                 tejodeepmitraroy2002@gmail.com
               </a>
             </span>
           </div>
-          <ul className="flex flex-wrap -ml-8 mt-7">
-            <li className="w-1/3 mb-10 pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
+          <ul className="w-full flex flex-col md:flex-row flex-wrap md:-ml-2 lg:-ml-8 mt-7">
+            <li className="w-full md:w-1/3 mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
               <div className="w-full h-full p-10  flex flex-col border border-black rounded text-lg">
                 <span className="w-full mb-4 font-Inter font-medium text-[rgba(19,15,73,.5)]">
                   01
@@ -53,16 +53,17 @@ const Services = () => {
                 </div>
               </div>
             </li>
-            <li className="w-1/3 mb-10 pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
+            <li className="w-full md:w-1/3 mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
               <div className="w-full h-full p-10  flex flex-col border border-black rounded text-lg">
                 <span className="w-full mb-4 font-Inter font-medium text-[rgba(19,15,73,.5)]">
                   02
                 </span>
                 <h3 className="w-full mb-3 text-xl font-bold font-Inter leading-5">
-                  Backend Development
+                  FrontEnd Development
                 </h3>
                 <span className="w-full mb-6 opacity-[0.7] text-[#55527c]">
                   Web development is the process of bilduing programming...
+                  
                 </span>
                 <div className="flex items-center gap-6">
                   <a>Read More</a>
@@ -84,16 +85,17 @@ const Services = () => {
                 </div>
               </div>
             </li>
-            <li className="w-1/3 mb-10 pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
+            <li className="w-full md:w-1/3 mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
               <div className="w-full h-full p-10  flex flex-col border border-black rounded text-lg">
                 <span className="w-full mb-4 font-Inter font-medium text-[rgba(19,15,73,.5)]">
                   01
                 </span>
                 <h3 className="w-full mb-3 text-xl font-bold font-Inter leading-5">
-                  Web Design
+                  FrontEnd Development
                 </h3>
                 <span className="w-full mb-6 opacity-[0.7] text-[#55527c]">
                   Web development is the process of bilduing programming...
+                  
                 </span>
                 <div className="flex items-center gap-6">
                   <a>Read More</a>
@@ -115,6 +117,7 @@ const Services = () => {
                 </div>
               </div>
             </li>
+
           </ul>
         </div>
       </div>

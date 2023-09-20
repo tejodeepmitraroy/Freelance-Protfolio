@@ -26,19 +26,26 @@ const Projects = () => {
               className="mySwiper"
             >
               <SwiperSlide>
-                <div className=" w-[380]  mr-8 ">
+                <div className=" w-[360] h-full mr-8 ">
                   <a
                     href="http://"
                     className="w-full h-full flex flex-col gap-4 cursor-pointer "
                   >
-                    <div className="w-full h-full flex items-center justify-center  ">
+                    <div className="relative w-[360] h-[380] mb-6 flex items-center justify-center border border-black rounded overflow-hidden ">
                       <Image
-                        src={"/img.png"}
+                        src={"/default.jpg"}
                         width={380}
                         height={360}
                         alt=""
-                        className=" rounded  mb-6 hover:scale-110 transition duration-300 ease-in-out"
                       />
+                      <div data-img-url="/img2.jpg" className={`absolute top-0 left-0 w-full h-full bg-[url("/img2.jpg")]`}></div>
+                      {/* <Image
+                        src={"/img2.jpg"}
+                        width={380}
+                        height={360}
+                        alt=""
+                        className=" rounded mb-6 hover:scale-125 transition duration-300 ease-in-out"
+                      /> */}
                     </div>
 
                     <span className=" font-Inter font-medium">YOUTUBE</span>
