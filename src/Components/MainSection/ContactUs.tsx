@@ -1,6 +1,6 @@
-import React from "react";
+import React, { FC } from "react";
 
-const ContactUs = () => {
+const ContactUs:FC = () => {
   return (
     <div className="relative w-full min-h-screen" id="contact">
       <div className="w-full min-h-screen py-28 bg-[#e9f9ff] ">

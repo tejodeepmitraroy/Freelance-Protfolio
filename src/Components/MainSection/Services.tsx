@@ -1,6 +1,6 @@
-import React from "react";
+import React, { FC } from "react";
 
-const Services = () => {
+const Services:FC = () => {
   return (
     <div className="relative w-full h-auto" id="services">
       <div className="w-full my-28 ">

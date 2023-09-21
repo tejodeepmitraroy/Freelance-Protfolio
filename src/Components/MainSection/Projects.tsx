@@ -1,12 +1,12 @@
 "use client";
-import React from "react";
+import React, { FC } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import Image from "next/image";
 
-const Projects = () => {
+const Projects:FC = () => {
   return (
     <div className="relative w-full h-auto" id="projects">
       <div className="w-full my-28 ">

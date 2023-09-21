@@ -1,8 +1,7 @@
-"use client";
 import Image from "next/image";
-import React from "react";
+import React, { FC } from "react";
 
-const Home = () => {
+const Home:FC = () => {
   return (
     <div
       className="w-full min-h-screen py-24 lg:py-0 bg-[#D1FFF3] text-[#0C134F] subpixel-antialiased "

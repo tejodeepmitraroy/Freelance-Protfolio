@@ -1,6 +1,6 @@
-import React from "react";
+import React, { FC } from "react";
 
-const About = () => {
+const About:FC = () => {
   return (
     <div className="w-full h-auto border bg-white" id="about">
       <div className="w-full h-full mt-28">

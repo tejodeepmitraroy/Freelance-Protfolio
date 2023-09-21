@@ -6,11 +6,11 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { FC } from "react";
 
 interface Props {}
 
-const SideBar = (props: Props) => {
+const SideBar:FC = (props: Props) => {
   return (
     <>
       <div className="lg:w-[19%] hidden h-screen border-r lg:flex flex-col p-14 items-center justify-between font-Karla antialiased">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import Home from "./MainSection/Home";
 import About from "./MainSection/About";
 import Services from "./MainSection/Services";
@@ -8,7 +8,7 @@ import ContactUs from "./MainSection/ContactUs";
 
 interface Props {}
 
-const MainSection = (props: Props) => {
+const MainSection:FC = (props: Props) => {
   return (
     <div className="w-full lg:w-[81%] h-screen text-[#1D267D] overflow-auto font-Karla subpixel-antialiased">
       <Home />
