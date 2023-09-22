@@ -5,7 +5,6 @@ import SideBar from "@/Components/SideBar";
 export default function Home() {
   return (
     // <Cursor>
-
     <div className="lg:flex">
       <SideBar />
       <MainSection />

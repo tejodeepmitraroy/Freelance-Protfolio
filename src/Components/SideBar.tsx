@@ -10,7 +10,7 @@ import React, { FC } from "react";
 
 interface Props {}
 
-const SideBar:FC = (props: Props) => {
+const SideBar: FC = (props: Props) => {
   return (
     <>
       <div className="lg:w-[19%] hidden h-screen border-r lg:flex flex-col p-14 items-center justify-between font-Karla antialiased">
@@ -35,30 +35,18 @@ const SideBar:FC = (props: Props) => {
         <div className="">
           <ul className="flex flex-col items-center gap-4 text-[#534f80] text-lg cursor-pointer">
             <li>
-              <a
-                href="#home"
-                // spy={true}
-                // smooth={true}
-                className="hover:text-[#a5a6ff] cursor-pointer"
-              >
+              <a href="#home" className="hover:text-[#a5a6ff] cursor-pointer">
                 Home
               </a>
             </li>
             <li>
-              <a
-                href="#about"
-                // spy={true}
-                // smooth={true}
-                className="hover:text-[#a5a6ff] cursor-pointer"
-              >
+              <a href="#about" className="hover:text-[#a5a6ff] cursor-pointer">
                 About
               </a>
             </li>
             <li>
               <a
                 href="#services"
-                // spy={true}
-                // smooth={true}
                 className="hover:text-[#a5a6ff] cursor-pointer"
               >
                 Services
@@ -67,8 +55,6 @@ const SideBar:FC = (props: Props) => {
             <li>
               <a
                 href="#projects"
-                // spy={true}
-                // smooth={true}
                 className="hover:text-[#a5a6ff] cursor-pointer"
               >
                 Portfolio
@@ -76,10 +62,7 @@ const SideBar:FC = (props: Props) => {
             </li>
             <li>
               <a
-                // activeClass="active"
                 href="#contact"
-                // spy={true}
-                // smooth={true}
                 className="hover:text-[#a5a6ff] cursor-pointer"
               >
                 Contact
