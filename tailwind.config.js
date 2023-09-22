@@ -1,21 +1,29 @@
 /** @type {import('tailwindcss').Config} */
-export const content = [
-  "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-  "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-  "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  './public/**/*.html',
-];
-export const theme = {
-  extend: {
-    backgroundImage: {
-      "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-      "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-    },
-    fontFamily: {
-      Inter: "Inter, sans-serif",
-      Karla: "Karla, sans-serif",
-      Pacifico: "Pacifico, cursive"
+
+module.exports = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./public/**/*.html",
+  ],
+  theme: {
+    extend: {
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      fontFamily: {
+        Inter: "Inter, sans-serif",
+        Karla: "Karla, sans-serif",
+        Pacifico: "Pacifico, cursive",
+      },
     },
   },
+  plugins: [],
+  purge: {
+    content: ['./src/**/*.js', './src/**/*.jsx', './src/**/*.ts', './src/**/*.tsx'],
+    // Other configuration options...
+  },
 };
-export const plugins = [];
