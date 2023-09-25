@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-const Services:FC = () => {
+const Services: FC = () => {
   return (
     <div className="relative w-full h-auto" id="services">
       <div className="w-full my-28 ">
@@ -8,7 +8,7 @@ const Services:FC = () => {
           <span className="font-medium text-lg">- SERVICES</span>
           <div className=" flex flex-col gap-10 md:flex-row justify-between">
             <span className="font-extrabold text-4xl font-Inter">
-              My Services
+              My Extra Services
             </span>
             <span className=" text-base md:text-xl font-medium">
               <a
@@ -31,7 +31,6 @@ const Services:FC = () => {
                 </h3>
                 <span className="w-full mb-6 opacity-[0.7] text-[#55527c]">
                   Web development is the process of bilduing programming...
-                  
                 </span>
                 <div className="flex items-center gap-6">
                   <a>Read More</a>
@@ -63,7 +62,6 @@ const Services:FC = () => {
                 </h3>
                 <span className="w-full mb-6 opacity-[0.7] text-[#55527c]">
                   Web development is the process of bilduing programming...
-                  
                 </span>
                 <div className="flex items-center gap-6">
                   <a>Read More</a>
@@ -95,7 +93,6 @@ const Services:FC = () => {
                 </h3>
                 <span className="w-full mb-6 opacity-[0.7] text-[#55527c]">
                   Web development is the process of bilduing programming...
-                  
                 </span>
                 <div className="flex items-center gap-6">
                   <a>Read More</a>
@@ -117,7 +114,6 @@ const Services:FC = () => {
                 </div>
               </div>
             </li>
-
           </ul>
         </div>
       </div>

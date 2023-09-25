@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-const About:FC = () => {
+const About: FC = () => {
   return (
     <div className="w-full h-auto border bg-white" id="about">
       <div className="w-full h-full mt-28">
@@ -76,7 +76,6 @@ const About:FC = () => {
                       tejodeepmitraroy2002@gmail.com
                     </a>
                   </li>
-                 
                 </ul>
               </div>
             </div>
@@ -108,17 +107,17 @@ const About:FC = () => {
               <li className="w-full md:w-1/2 mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
                 <div className="w-full relative p-9 lg:px-20 lg:py-11 flex flex-col gap-6 rounded shadow-lg text-lg  font-normal leading-8 bg-white border-1 border-[#f9fafc]">
                   {/* heading */}
-                  <div className="flex justify-between text-lg ">
+                  <div className="w-full flex justify-between text-lg ">
                     <div className="flex flex-col gap-2">
                       <span className=" text-lg font-semibold text-amber-500">
-                        -2018-Present
+                        -Sep 2022 - Mar 2023
                       </span>
                       <span className=" text-xl font-extrabold">
-                        Web Developer
+                        <p>MERN Stack Intern</p>
                       </span>
                     </div>
 
-                    <span className="text-xl font-medium">-Envato Market</span>
+                    <span className="text-xl font-medium">-Xanther Services</span>
                   </div>
                   {/* text */}
                   <div>
@@ -130,9 +129,32 @@ const About:FC = () => {
                   </div>
                 </div>
               </li>
-              
-              
-             
+              <li className="w-full md:w-1/2 mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
+                <div className="w-full relative p-9 lg:px-20 lg:py-11 flex flex-col gap-6 rounded shadow-lg text-lg  font-normal leading-8 bg-white border-1 border-[#f9fafc]">
+                  {/* heading */}
+                  <div className="flex justify-between text-lg ">
+                    <div className="flex flex-col gap-2">
+                      <span className=" text-lg font-semibold text-amber-500">
+                        -Sep 2022 - Mar 2023
+                      </span>
+                      <span className=" text-xl font-extrabold">
+                        <p>MERN Stack Intern</p>
+                      </span>
+                    </div>
+
+                    <span className="text-xl font-medium"><p>-Xanther Services</p></span>
+                  </div>
+                  {/* text */}
+                  <div>
+                    <p>
+                      Website development is the process of building,
+                      programming, coding and maintaining websites and web
+                      applications.
+                    </p>
+                  </div>
+                </div>
+              </li>
+           
             </ul>
           </div>
         </div>

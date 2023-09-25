@@ -33,7 +33,7 @@ const SideBar: FC = (props: Props) => {
         </div>
 
         <div className="">
-          <ul className="flex flex-col items-center gap-4 text-[#534f80] text-lg cursor-pointer">
+          <ul className="flex flex-col items-center gap-7 text-[#534f80] text-lg cursor-pointer">
             <li>
               <a href="#home" className="hover:text-[#a5a6ff] cursor-pointer">
                 Home

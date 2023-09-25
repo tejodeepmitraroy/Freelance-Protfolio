@@ -16,13 +16,13 @@ const Home:FC = () => {
                 <h3 className="">
                   Hi, I&apos;m <span className="text-[#C1AEFC]">Tejodeep!</span>
                 </h3>
-                <h3>Came here to solve</h3>
-                <h3>your online businesses </h3>
+                <h3>A Full Stack Web Developer</h3>
+                {/* <h3>your online businesses </h3> */}
               </div>
               <span className="w-full max-w-[80%] text-xl md:text-2xl">
                 <p>
-                  👋I&apos;m a India based freelance Web developer to improve
-                  your business needs
+                  👋I&apos;m a India based Full Stack Web developer to improve
+                  your business needs.
                 </p>
               </span>
               <div className="flex gap-4  md:text-lg">
