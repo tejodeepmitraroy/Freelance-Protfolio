@@ -1,5 +1,5 @@
 "use client";
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
@@ -9,6 +9,7 @@ import db from "@/DB/db";
 import Modal from "../Modal";
 
 const Projects: FC = () => {
+  const [isModalData, setIsModalData] = useState<any>(false);
   return (
     <>
       <div
@@ -35,9 +36,10 @@ const Projects: FC = () => {
                 {db.projects.map((project, index) => (
                   <SwiperSlide key={index}>
                     <div className=" w-[360] h-full mr-8 ">
-                      <a
-                        href="http://"
+                      <span
                         className="w-full h-full flex flex-col gap-4 cursor-pointer "
+                        data-modal-target="defaultModal"
+                        data-modal-toggle="defaultModal"
                       >
                         <div className="relative w-[360] h-[380] mb-6 flex items-center justify-center border border-black rounded overflow-hidden ">
                           <Image
@@ -58,16 +60,16 @@ const Projects: FC = () => {
                         className=" rounded mb-6 hover:scale-125 transition duration-300 ease-in-out"
                       /> */}
                         </div>
-                      </a>
-                      <a
-                        href="http://"
+                      </span>
+                      <span 
                         className="w-full h-full flex flex-col gap-4 cursor-pointer "
+                        onClick={()=>setIsModalData(project)}
                       >
                         {/* <span className=" font-Inter font-medium">{project.title}</span> */}
                         <h3 className=" font-Inter  font-bold text-2xl">
                           {project.title}
                         </h3>
-                      </a>
+                      </span>
                     </div>
                   </SwiperSlide>
                 ))}
@@ -77,7 +79,7 @@ const Projects: FC = () => {
         </div>
       </div>
       {/* Modal */}
-   <Modal/>
+      <Modal data={isModalData} isClose={()=>setIsModalData(false)}  />
     </>
   );
 };
