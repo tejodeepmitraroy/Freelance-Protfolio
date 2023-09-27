@@ -5,15 +5,17 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import Image from "next/image";
-import db from "@/DB/db";
+import db, { projects } from "@/DB/db";
 import Modal from "../Modal";
 
 const Projects: FC = () => {
-  const [isModalData, setIsModalData] = useState<any>(false);
+  const [isModal, setIsModal] = useState<boolean>(false);
+  const [isData, setIsData] = useState<projects>({} as projects);
+
   return (
     <>
       <div
-        className="relative w-full h-screen bg-[#f3f9ff] py-28"
+        className="relative w-full min-h-screen bg-[#f3f9ff] py-28"
         id="projects"
       >
         <div className="w-full ">
@@ -38,10 +40,15 @@ const Projects: FC = () => {
                     <div className=" w-[360] h-full mr-8 ">
                       <span
                         className="w-full h-full flex flex-col gap-4 cursor-pointer "
-                        data-modal-target="defaultModal"
-                        data-modal-toggle="defaultModal"
+                        
                       >
-                        <div className="relative w-[360] h-[380] mb-6 flex items-center justify-center border border-black rounded overflow-hidden ">
+                        <div
+                          className="relative w-[360] h-[380] mb-6 flex items-center justify-center border border-black rounded overflow-hidden "
+                          onClick={() => {
+                            setIsModal(true);
+                            setIsData(project);
+                          }}
+                        >
                           <Image
                             src={"/default.jpg"}
                             width={380}
@@ -61,11 +68,14 @@ const Projects: FC = () => {
                       /> */}
                         </div>
                       </span>
-                      <span 
+                      <span
                         className="w-full h-full flex flex-col gap-4 cursor-pointer "
-                        onClick={()=>setIsModalData(project)}
+                        onClick={() => {
+                          setIsModal(true);
+                          setIsData(project);
+                        }}
                       >
-                        {/* <span className=" font-Inter font-medium">{project.title}</span> */}
+                        {/* <span className=" font-Inter font-medium">Title</span> */}
                         <h3 className=" font-Inter  font-bold text-2xl">
                           {project.title}
                         </h3>
@@ -79,7 +89,7 @@ const Projects: FC = () => {
         </div>
       </div>
       {/* Modal */}
-      <Modal data={isModalData} isClose={()=>setIsModalData(false)}  />
+      <Modal data={isData} isOpen={isModal} isClose={() => setIsModal(false)} />
     </>
   );
 };

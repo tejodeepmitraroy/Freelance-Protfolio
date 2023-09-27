@@ -1,3 +1,4 @@
+import { database, projects } from "@/DB/db";
 import {
   faArrowUpRightFromSquare,
   faXmark,
@@ -9,15 +10,16 @@ import React, { FC } from "react";
 
 interface ModalProps {
   isClose: any;
-  data: unknown;
+  isOpen: boolean;
+  data: projects;
 }
-const Modal: FC<ModalProps> = ({ data, isClose }) => {
+const Modal: FC<ModalProps> = ({ data, isOpen, isClose }) => {
   console.log(data);
   return (
     <>
       <div
         className={`fixed ${
-          !data ? "hidden" : ""
+          !isOpen ? "hidden" : ""
         } top-0 left-0 bottom-0 right-0 w-full h-screen z-10 transition ease-in `}
       >
         <div className="relative w-full h-full  bg-black opacity-70 flex justify-center "></div>
@@ -43,29 +45,15 @@ const Modal: FC<ModalProps> = ({ data, isClose }) => {
             <div className="w-full  flex flex-col text">
               <div className="flex flex-col">
                 <span className="w-full mb-4 font-Inter font-medium text-xl text-[rgba(19,15,73,.5)]">
-                  Modal Box
+                  Project Name
                 </span>
                 <h3 className="w-full mb-8 text-2xl font-bold font-Inter leading-5">
-                  FrontEnd Development
+                  {data.title}
                 </h3>
               </div>
               <div className="w-full h-auto flex text-lg">
-                <div className="w-[70%] pr-10 border opacity-[0.7] text-[#55527c]">
-                  <p>
-                    Web development is the process of bilduing programming Lorem
-                    ipsum dolor, sit amet consectetur adipisicing elit. Soluta
-                    aspernatur, dolore, autem qui non quae magni aliquam sint
-                    doloremque, itaque voluptatum! Deserunt laborum nihil, qui
-                    quam commodi consequatur? Veniam laborum recusandae autem
-                  </p>
-
-                  <p>
-                    neque distinctio! Tenetur, repellendus harum. Ipsam totam
-                    eaque neque atque, et error soluta quasi fugit ullam sunt
-                    aliquam, sit officiis ea officia quia, eos mollitia quod
-                    voluptatibus molestias dolores praesentium sint eum. Hic
-                    iure ducimus et nemo quod. Accusantium, neque!
-                  </p>
+                <div className="w-[70%] pr-10 opacity-[0.7] text-[#55527c]">
+                  <p>{data.description}</p>
                 </div>
                 <div className="w-[30%] pl-10">
                   <ul className="flex flex-col gap-5">
@@ -75,35 +63,29 @@ const Modal: FC<ModalProps> = ({ data, isClose }) => {
                       </span>
                       <span className=" opacity-80 text-l">
                         link{" "}
-                        <FontAwesomeIcon
-                          icon={faArrowUpRightFromSquare}
-                          size="xs"
-                        />
+                        <Link href={data.live ? data.live : ""} target="_blank">
+                          <FontAwesomeIcon
+                            icon={faArrowUpRightFromSquare}
+                            size="xs"
+                          />
+                        </Link>
                       </span>
                     </li>
-                    <li className="flex flex-col gap-1">
+                    <li className="flex flex-col gap-2">
                       <span className=" font-semibold text-xl ">
                         Tech Stacks
                       </span>
-                      <span className="w-full flex gap-2">
-                        <Image
-                          src={"/logos/react.png"}
-                          width={"30"}
-                          height={"30"}
-                          alt=""
-                        ></Image>
-                        <Image
-                          src={"/logos/react.png"}
-                          width={"30"}
-                          height={"30"}
-                          alt=""
-                        ></Image>
-                        <Image
-                          src={"/logos/react.png"}
-                          width={"30"}
-                          height={"30"}
-                          alt=""
-                        ></Image>
+                      <span className="w-full flex flex-wrap gap-3  ">
+                        {data.technologies?.map((item: any, index: any) => (
+                          <Image
+                            src={item}
+                            width={"30"}
+                            height={"30"}
+                            alt=""
+                            key={index}
+                            className="mb-3"
+                          />
+                        ))}
                       </span>
                     </li>
                     <li className="flex flex-col gap-1">
@@ -112,34 +94,24 @@ const Modal: FC<ModalProps> = ({ data, isClose }) => {
                       </span>
                       <span className=" opacity-80 text-l">
                         <ul>
-                          <li>
-                            Frontend Code
-                            <Link href={""}>
-                              {" "}
-                              <FontAwesomeIcon
-                                icon={faArrowUpRightFromSquare}
-                                size="xs"
-                              />
-                            </Link>
-                          </li>
-                          <li>
-                            Backend Code
-                            <Link href={""}>
-                              {" "}
-                              <FontAwesomeIcon
-                                icon={faArrowUpRightFromSquare}
-                                size="xs"
-                              />
-                            </Link>
-                          </li>
+                          {data.repolink?.map((item, index) => (
+                            <li key={index}>
+                              {item.name}
+                              <Link href={item.link ? item.link : ""}>
+                                {" "}
+                                <FontAwesomeIcon
+                                  icon={faArrowUpRightFromSquare}
+                                  size="xs"
+                                />
+                              </Link>
+                            </li>
+                          ))}
                         </ul>
                       </span>
                     </li>
                     <li className="flex flex-col gap-1">
                       <span className=" font-semibold text-xl ">Date</span>
-                      <span className=" opacity-80 text-l">
-                        jun 2023 - jul 2023
-                      </span>
+                      <span className=" opacity-80 text-l">{data.date}</span>
                     </li>
                   </ul>
                 </div>

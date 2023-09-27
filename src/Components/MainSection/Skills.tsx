@@ -5,9 +5,9 @@ import React from "react";
 
 const Skills = () => {
   return (
-    <div>
-      <div className="relative w-full h-auto" id="services">
-        <div className="w-full my-28 ">
+    <>
+      <div className="relative w-full h-auto py-28" id="services">
+        <div className="w-full">
           <div className="w-full max-w-7xl px-5 lg:px-10  mx-auto  flex flex-col gap-5">
             <span className="font-medium text-lg">- SKILLS</span>
             <div className=" flex flex-col gap-10 md:flex-row justify-between">
@@ -193,6 +193,47 @@ const Skills = () => {
                           </span>
                         </li> */}
                     </ul>
+                    <ul className="w-full flex justify-between">
+                      <li className="">
+                        <span className="flex flex-col items-center">
+                          <span className="w-fit h-10">
+                            <Image
+                              src="/logos/prisma.png"
+                              width={45}
+                              height={45}
+                              alt=""
+                            />
+                          </span>
+                          <p className="font-bold">Prisma</p>
+                        </span>
+                      </li>
+                      {/* <li className="">
+                        <span className="flex flex-col items-center">
+                          <span className="w-fit h-10">
+                            <Image
+                              src="/logos/tailwind.png"
+                              width={40}
+                              height={40}
+                              alt=""
+                            />
+                          </span>
+                          <p className="font-bold">Tailwind Css</p>
+                        </span>
+                      </li>
+                      <li className="">
+                        <span className="flex flex-col items-center">
+                          <span className="w-fit h-10">
+                            <Image
+                              src="/logos/typescript.png"
+                              width={40}
+                              height={40}
+                              alt=""
+                            />
+                          </span>
+                          <p className="font-bold">Typescript</p>
+                        </span>
+                      </li> */}
+                    </ul>
                   </div>
                   {/* <span className="w-full mb-6 opacity-[0.7] text-[#55527c]">
                     Web development is the process of bilduing programming...
@@ -308,7 +349,7 @@ const Skills = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

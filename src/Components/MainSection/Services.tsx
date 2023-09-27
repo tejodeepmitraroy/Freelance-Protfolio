@@ -8,7 +8,7 @@ const Services: FC = () => {
           <span className="font-medium text-lg">- SERVICES</span>
           <div className=" flex flex-col gap-10 md:flex-row justify-between">
             <span className="font-extrabold text-4xl font-Inter">
-              My Extra Services
+              My Freelance Services
             </span>
             <span className=" text-base md:text-xl font-medium">
               <a
@@ -27,7 +27,7 @@ const Services: FC = () => {
                   01
                 </span>
                 <h3 className="w-full mb-3 text-xl font-bold font-Inter leading-5">
-                  FrontEnd Development
+                  Web Development
                 </h3>
                 <span className="w-full mb-6 opacity-[0.7] text-[#55527c]">
                   Web development is the process of bilduing programming...
@@ -52,7 +52,7 @@ const Services: FC = () => {
                 </div>
               </div>
             </li>
-            <li className="w-full md:w-1/3 mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
+            {/* <li className="w-full md:w-1/3 mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
               <div className="w-full h-full p-10  flex flex-col border border-black rounded text-lg">
                 <span className="w-full mb-4 font-Inter font-medium text-[rgba(19,15,73,.5)]">
                   02
@@ -82,8 +82,8 @@ const Services: FC = () => {
                   </span>
                 </div>
               </div>
-            </li>
-            <li className="w-full md:w-1/3 mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
+            </li> */}
+            {/* <li className="w-full md:w-1/3 mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
               <div className="w-full h-full p-10  flex flex-col border border-black rounded text-lg">
                 <span className="w-full mb-4 font-Inter font-medium text-[rgba(19,15,73,.5)]">
                   01
@@ -113,7 +113,7 @@ const Services: FC = () => {
                   </span>
                 </div>
               </div>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

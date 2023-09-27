@@ -2,6 +2,7 @@ import {
   faFacebookF,
   faXTwitter,
   faLinkedinIn,
+  faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
@@ -49,7 +50,7 @@ const SideBar: FC = (props: Props) => {
                 href="#services"
                 className="hover:text-[#a5a6ff] cursor-pointer"
               >
-                Services
+                Skills
               </a>
             </li>
             <li>
@@ -57,7 +58,15 @@ const SideBar: FC = (props: Props) => {
                 href="#projects"
                 className="hover:text-[#a5a6ff] cursor-pointer"
               >
-                Portfolio
+                Projects
+              </a>
+            </li>
+            <li>
+              <a
+                href="#services"
+                className="hover:text-[#a5a6ff] cursor-pointer"
+              >
+                Services
               </a>
             </li>
             <li>
@@ -73,20 +82,27 @@ const SideBar: FC = (props: Props) => {
 
         <div className="flex flex-col gap-6 items-center text-[#534f80]  font-medium ">
           <span className="flex gap-2">
-            <span className="w-9 h-9 bg-gray-100 flex justify-center items-center  rounded-full">
+            {/* <span className="w-9 h-9 bg-gray-100 flex justify-center items-center  rounded-full">
               <FontAwesomeIcon icon={faFacebookF} className="w-2" />
             </span>
             <span className="w-9 h-9 bg-gray-100 flex justify-center items-center  rounded-full">
               {" "}
               <FontAwesomeIcon icon={faXTwitter} className="w-4" />
-            </span>
+            </span> */}
             <Link
-              href={"https://www.linkedin.com/in/tejodeep-mitra-roy/"}
-              target="./"
+              href={"https://www.linkedin.com/in/tejodeep-mitra-roy"}
+              target="_blank"
               className="w-9 h-9 bg-gray-100 flex justify-center items-center  rounded-full"
             >
-              {" "}
               <FontAwesomeIcon icon={faLinkedinIn} className="w-4" />
+            </Link>
+            <Link
+              href={"https://github.com/Tejodeep2002"}
+              target="_blank"
+              className="w-9 h-9 bg-gray-100 flex justify-center items-center  rounded-full"
+             
+            >
+              <FontAwesomeIcon icon={faGithub} className="w-6" />
             </Link>
           </span>
 
