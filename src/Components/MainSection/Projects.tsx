@@ -26,58 +26,57 @@ const Projects: FC = () => {
             </span>
             <div className="w-full mt-10  text-lg">
               <Swiper
-                slidesPerView={3}
+                slidesPerView={"auto"}
                 spaceBetween={30}
-                // pagination={{
-                //   clickable: true,
-                // }}
                 style={{ width: "100%", paddingBottom: "1rem" }}
                 modules={[Pagination]}
                 className="mySwiper "
               >
                 {db.projects.map((project, index) => (
-                  <SwiperSlide key={index} style={{ width: "100%" }}>
+                  <SwiperSlide
+                    key={index}
+                  >
                     <div className="w-full md:w-[360px] h-full mr-8 ">
-                      <span className="w-full h-full flex flex-col gap-4 cursor-pointer ">
+                    <span className="w-full h-full flex flex-col gap-4 cursor-pointer ">
+                      <div
+                        className="relative w-[360] h-[380] mb-6 flex items-center justify-center border border-black rounded overflow-hidden "
+                        onClick={() => {
+                          setIsModal(true);
+                          setIsData(project);
+                        }}
+                      >
+                        <Image
+                          src={"/default.jpg"}
+                          width={380}
+                          height={360}
+                          alt=""
+                          className="w-full"
+                        />
                         <div
-                          className="relative w-[360] h-[380] mb-6 flex items-center justify-center border border-black rounded overflow-hidden "
-                          onClick={() => {
-                            setIsModal(true);
-                            setIsData(project);
-                          }}
-                        >
-                          <Image
-                            src={"/default.jpg"}
-                            width={380}
-                            height={360}
-                            alt=""
-                            className="w-full"
-                          />
-                          <div
-                            data-img-url={project.thumbnail}
-                            className={`absolute top-0 left-0 w-full h-full hover:scale-110 transition-transform duration-200 ease-in bg-[url("/img.png")]`}
-                          ></div>
-                          {/* <Image
+                          data-img-url={project.thumbnail}
+                          className={`absolute top-0 left-0 w-full h-full bg-cover hover:scale-110 transition-transform duration-200 ease-in bg-[url("/img.png")]`}
+                        ></div>
+                        {/* <Image
                         src={"/img2.jpg"}
                         width={380}
                         height={360}
                         alt=""
                         className=" rounded mb-6 hover:scale-125 transition duration-300 ease-in-out"
                       /> */}
-                        </div>
-                      </span>
-                      <span
-                        className="w-full h-full flex flex-col gap-4 cursor-pointer "
-                        onClick={() => {
-                          setIsModal(true);
-                          setIsData(project);
-                        }}
-                      >
-                        {/* <span className=" font-Inter font-medium">Title</span> */}
-                        <h3 className=" font-Inter  font-bold text-2xl">
-                          {project.title}
-                        </h3>
-                      </span>
+                      </div>
+                    </span>
+                    <span
+                      className="w-full h-full flex flex-col gap-4 cursor-pointer "
+                      onClick={() => {
+                        setIsModal(true);
+                        setIsData(project);
+                      }}
+                    >
+                      {/* <span className=" font-Inter font-medium">Title</span> */}
+                      <h3 className=" font-Inter  font-bold text-2xl">
+                        {project.title}
+                      </h3>
+                    </span>
                     </div>
                   </SwiperSlide>
                 ))}
