@@ -14,27 +14,27 @@ interface Props {}
 const SideBar: FC = (props: Props) => {
   return (
     <>
-      <div className="lg:w-[19%] hidden h-screen border-r lg:flex flex-col p-14 items-center justify-between font-Karla antialiased">
+      <div className="lg:w-[25%] 2xl:w-[20%]  hidden h-screen border-r lg:flex flex-col p-8 xl:p-14 items-center justify-between font-Karla antialiased">
         <div className="flex flex-col gap-7 items-center">
           <Image
             src={"/img.png"}
             width={110}
             height={110}
             alt=""
-            className=" border-2 border-[#a5a6ff] rounded-full"
+            className="w-25 h-25 border-2 border-[#a5a6ff] rounded-full"
           />
           <div className="flex flex-col items-center justify-center ">
-            <span className="font-Inter font-bold text-2xl z-10 top">
+            <span className="font-Inter font-bold text-xl 2xl:text-2xl z-10 mt-3">
               Tejodeep Mitra Roy
             </span>
-            <span className="fixed font-Pacifico text-4xl opacity-10 z-0 text">
+            <span className="fixed font-Pacifico text-3xl 2xl:text-4xl opacity-10 z-0 text">
               Tejodeep Mitra Roy
             </span>
           </div>
         </div>
 
         <div className="">
-          <ul className="flex flex-col items-center gap-7 text-[#534f80] text-lg cursor-pointer">
+          <ul className="flex flex-col items-center gap-3 2xl:gap-5 text-[#534f80] text-base 2xl:text-lg cursor-pointer">
             <li>
               <a href="#home" className="hover:text-[#a5a6ff] cursor-pointer">
                 Home
@@ -111,6 +111,8 @@ const SideBar: FC = (props: Props) => {
           </span>
         </div>
       </div>
+
+
       <nav className="fixed z-10 lg:hidden w-full h-12 px-6 bg-white flex justify-between items-center">
         <span className=" font-Inter text-3xl font-extrabold text-[#C1AEFC]">
           T.M.Roy

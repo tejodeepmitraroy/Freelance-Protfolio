@@ -25,7 +25,7 @@ const Skills = () => {
             </span> */}
             </div>
             <ul className="w-full flex flex-col md:flex-row flex-wrap md:-ml-2 lg:-ml-8 mt-7">
-              <li className="w-full md:w-1/3 mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
+              <li className="w-full md:w-[400px] mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
                 <div className="w-full h-full p-10  flex flex-col border border-black rounded text-lg">
                   <span className="w-full mb-4 font-Inter font-medium text-[rgba(19,15,73,.5)]">
                     01
@@ -34,7 +34,7 @@ const Skills = () => {
                     FrontEnd Development
                   </h3>
                   <div className="w-full h-full  ">
-                    <ul className="w-full flex justify-between mb-3">
+                    <ul className="w-full flex justify-between text-base mb-3">
                       <li className="">
                         <span className="flex flex-col items-center ">
                           <span className="w-fit h-10">
@@ -132,7 +132,7 @@ const Skills = () => {
                   </div>
                 </div>
               </li>
-              <li className="w-full md:w-1/3 mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
+              <li className="w-full md:w-[400px]  mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
                 <div className="w-full h-full p-10  flex flex-col border border-black rounded text-lg">
                   <span className="w-full mb-4 font-Inter font-medium text-[rgba(19,15,73,.5)]">
                     02
@@ -141,7 +141,7 @@ const Skills = () => {
                     BackEnd Development
                   </h3>
                   <div className="w-full h-full">
-                    <ul className="w-full flex justify-between mb-3">
+                    <ul className="w-full flex mb-3 text-base justify-between ">
                       <li className="">
                         <span className="flex flex-col items-center ">
                           <span className="w-fit h-10">
@@ -258,7 +258,7 @@ const Skills = () => {
                   </div> */}
                 </div>
               </li>
-              <li className="w-full md:w-1/3 mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
+              <li className="w-full md:w-[400px]  mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
                 <div className="w-full h-full p-10  flex flex-col border border-black rounded text-lg">
                   <span className="w-full mb-4 font-Inter font-medium text-[rgba(19,15,73,.5)]">
                     03
@@ -268,7 +268,7 @@ const Skills = () => {
                   </h3>
 
                   <div className="w-full h-full">
-                    <ul className="w-full flex justify-between mb-3">
+                    <ul className="w-full flex justify-between text-base mb-3">
                       <li className="">
                         <span className="flex flex-col items-center ">
                           <span className="w-fit h-10">

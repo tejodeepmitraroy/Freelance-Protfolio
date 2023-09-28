@@ -108,7 +108,7 @@ const About: FC = () => {
                 <div className="w-full relative p-9 lg:px-20 lg:py-11 flex flex-col gap-6 rounded shadow-lg text-lg  font-normal leading-8 bg-white border-1 border-[#f9fafc]">
                   {/* heading */}
                   <div className="w-full flex justify-between text-lg ">
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-1">
                       <span className=" text-base font-semibold text-amber-500">
                         -Sep 2022 - Mar 2023
                       </span>
@@ -117,7 +117,57 @@ const About: FC = () => {
                       </span>
                     </div>
 
-                    <span className="w-fit text-lg font-medium md:text-xl">-Xanther Services</span>
+                    <span className="w-fit text-base font-medium md:text-xl">-Xanther Services</span>
+                  </div>
+                  {/* text */}
+                  <div>
+                    <p>
+                      Website development is the process of building,
+                      programming, coding and maintaining websites and web
+                      applications.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li className="w-full md:w-1/2 mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
+                <div className="w-full relative p-9 lg:px-20 lg:py-11 flex flex-col gap-6 rounded shadow-lg text-lg  font-normal leading-8 bg-white border-1 border-[#f9fafc]">
+                  {/* heading */}
+                  <div className="w-full flex justify-between text-lg ">
+                    <div className="flex flex-col gap-1">
+                      <span className=" text-base font-semibold text-amber-500">
+                        -Sep 2022 - Mar 2023
+                      </span>
+                      <span className="text-xl font-extrabold">
+                        <p>MERN Stack Intern</p>
+                      </span>
+                    </div>
+
+                    <span className="w-fit text-base font-medium md:text-xl">-Xanther Services</span>
+                  </div>
+                  {/* text */}
+                  <div>
+                    <p>
+                      Website development is the process of building,
+                      programming, coding and maintaining websites and web
+                      applications.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li className="w-full md:w-1/2 mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
+                <div className="w-full relative p-9 lg:px-20 lg:py-11 flex flex-col gap-6 rounded shadow-lg text-lg  font-normal leading-8 bg-white border-1 border-[#f9fafc]">
+                  {/* heading */}
+                  <div className="w-full flex justify-between text-lg ">
+                    <div className="flex flex-col gap-1">
+                      <span className=" text-base font-semibold text-amber-500">
+                        -Sep 2022 - Mar 2023
+                      </span>
+                      <span className="text-xl font-extrabold">
+                        <p>MERN Stack Intern</p>
+                      </span>
+                    </div>
+
+                    <span className="w-fit text-base font-medium md:text-xl">-Xanther Services</span>
                   </div>
                   {/* text */}
                   <div>

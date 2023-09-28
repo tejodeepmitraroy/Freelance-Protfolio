@@ -19,7 +19,7 @@ const Projects: FC = () => {
         id="projects"
       >
         <div className="w-full ">
-          <div className="w-full max-w-7xl px-10 mx-auto  flex flex-col gap-5">
+          <div className="w-full max-w-7xl px-5 lg:px-10 mx-auto  flex flex-col gap-5">
             <span className="font-medium text-lg">- PROJECTS</span>
             <span className="font-extrabold text-4xl font-Inter">
               Recent Completed Project
@@ -28,20 +28,17 @@ const Projects: FC = () => {
               <Swiper
                 slidesPerView={3}
                 spaceBetween={30}
-                pagination={{
-                  clickable: true,
-                }}
-                style={{ paddingBottom: "rem" }}
+                // pagination={{
+                //   clickable: true,
+                // }}
+                style={{ width: "100%", paddingBottom: "1rem" }}
                 modules={[Pagination]}
                 className="mySwiper "
               >
                 {db.projects.map((project, index) => (
-                  <SwiperSlide key={index}>
-                    <div className=" w-[360] h-full mr-8 ">
-                      <span
-                        className="w-full h-full flex flex-col gap-4 cursor-pointer "
-                        
-                      >
+                  <SwiperSlide key={index} style={{ width: "100%" }}>
+                    <div className="w-full md:w-[360px] h-full mr-8 ">
+                      <span className="w-full h-full flex flex-col gap-4 cursor-pointer ">
                         <div
                           className="relative w-[360] h-[380] mb-6 flex items-center justify-center border border-black rounded overflow-hidden "
                           onClick={() => {
@@ -54,6 +51,7 @@ const Projects: FC = () => {
                             width={380}
                             height={360}
                             alt=""
+                            className="w-full"
                           />
                           <div
                             data-img-url={project.thumbnail}
