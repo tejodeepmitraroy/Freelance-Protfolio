@@ -37,7 +37,7 @@ const Skills = () => {
                     <ul className="w-full flex justify-between text-base mb-3">
                       <li className="">
                         <span className="flex flex-col items-center ">
-                          <span className="w-fit h-10">
+                          <span className="w-fit h-10 mb-1">
                             <Image
                               src="/logos/html.png"
                               width={40}
@@ -45,12 +45,14 @@ const Skills = () => {
                               alt=""
                             />
                           </span>
-                          <p className="font-bold">HTML</p>
+                          <span>
+                            <p className="font-bold">HTML</p>
+                          </span>
                         </span>
                       </li>
                       <li className="">
                         <span className="flex flex-col items-center">
-                          <span className="w-fit h-10">
+                          <span className="w-fit h-10  mb-1">
                             <Image
                               src="/logos/css.png"
                               width={40}
@@ -58,12 +60,14 @@ const Skills = () => {
                               alt=""
                             />
                           </span>
-                          <p className="font-bold">CSS</p>
+                          <span>
+                            <p className="font-bold">CSS</p>
+                          </span>
                         </span>
                       </li>
                       <li className="">
                         <span className="flex flex-col items-center">
-                          <span className="w-fit h-10">
+                          <span className="w-fit h-10  mb-1">
                             <Image
                               src="/logos/js.png"
                               width={40}
@@ -71,12 +75,14 @@ const Skills = () => {
                               alt=""
                             />
                           </span>
-                          <p className="font-bold">JS</p>
+                          <span>
+                            <p className="font-bold">JS</p>
+                          </span>
                         </span>
                       </li>
                       <li className="">
                         <span className="flex flex-col items-center">
-                          <span className="w-fit h-10">
+                          <span className="w-fit h-10  mb-1">
                             <Image
                               src="/logos/react.png"
                               width={40}
@@ -84,14 +90,16 @@ const Skills = () => {
                               alt=""
                             />
                           </span>
-                          <p className="font-bold">React Js</p>
+                          <span>
+                            <p className="font-bold">React Js</p>
+                          </span>
                         </span>
                       </li>
                     </ul>
                     <ul className="w-full flex justify-between">
                       <li className="">
                         <span className="flex flex-col items-center">
-                          <span className="w-fit h-10">
+                          <span className="w-fit h-10  mb-1">
                             <Image
                               src="/logos/nextjs.png"
                               width={40}
@@ -99,12 +107,14 @@ const Skills = () => {
                               alt=""
                             />
                           </span>
-                          <p className="font-bold">Next Js</p>
+                          <span>
+                            <p className="font-bold">Next Js</p>
+                          </span>
                         </span>
                       </li>
                       <li className="">
                         <span className="flex flex-col items-center">
-                          <span className="w-fit h-10">
+                          <span className="w-fit h-10  mb-1">
                             <Image
                               src="/logos/tailwind.png"
                               width={40}
@@ -112,12 +122,14 @@ const Skills = () => {
                               alt=""
                             />
                           </span>
-                          <p className="font-bold">Tailwind Css</p>
+                          <span>
+                            <p className="font-bold">Tailwind Css</p>
+                          </span>
                         </span>
                       </li>
                       <li className="">
                         <span className="flex flex-col items-center">
-                          <span className="w-fit h-10">
+                          <span className="w-fit h-10  mb-1">
                             <Image
                               src="/logos/typescript.png"
                               width={40}
@@ -125,7 +137,9 @@ const Skills = () => {
                               alt=""
                             />
                           </span>
-                          <p className="font-bold">Typescript</p>
+                          <span>
+                            <p className="font-bold">Typescript</p>
+                          </span>
                         </span>
                       </li>
                     </ul>
@@ -144,7 +158,7 @@ const Skills = () => {
                     <ul className="w-full flex mb-3 text-base justify-between ">
                       <li className="">
                         <span className="flex flex-col items-center ">
-                          <span className="w-fit h-10">
+                          <span className="w-fit h-10  mb-1">
                             <Image
                               src="/logos/nodejs.png"
                               width={60}
@@ -152,12 +166,14 @@ const Skills = () => {
                               alt=""
                             />
                           </span>
-                          <p className="font-bold">Node js</p>
+                          <span>
+                            <p className="font-bold">Node js</p>
+                          </span>
                         </span>
                       </li>
                       <li className="">
                         <span className="flex flex-col items-center">
-                          <span className="w-fit h-10">
+                          <span className="w-fit h-10  mb-1">
                             <Image
                               src="/logos/mongodb.png"
                               width={100}
@@ -165,12 +181,14 @@ const Skills = () => {
                               alt=""
                             />
                           </span>
-                          <p className="font-bold">Mongo DB</p>
+                          <span>
+                            <p className="font-bold">Mongo DB</p>
+                          </span>
                         </span>
                       </li>
                       <li className="">
                         <span className="flex flex-col items-center">
-                          <span className="w-fit h-10">
+                          <span className="w-fit h-10  mb-1">
                             <Image
                               src="/logos/websocket.png"
                               width={50}
@@ -178,7 +196,9 @@ const Skills = () => {
                               alt=""
                             />
                           </span>
-                          <p className="font-bold">Websockets</p>
+                          <span>
+                            <p className="font-bold">Websockets</p>
+                          </span>
                         </span>
                       </li>
                       {/*<li className="">
@@ -196,7 +216,7 @@ const Skills = () => {
                     <ul className="w-full flex justify-between">
                       <li className="">
                         <span className="flex flex-col items-center">
-                          <span className="w-fit h-10">
+                          <span className="w-fit h-10  mb-1">
                             <Image
                               src="/logos/prisma.png"
                               width={45}
@@ -204,7 +224,9 @@ const Skills = () => {
                               alt=""
                             />
                           </span>
-                          <p className="font-bold">Prisma</p>
+                          <span>
+                            <p className="font-bold">Prisma</p>
+                          </span>
                         </span>
                       </li>
                       {/* <li className="">
@@ -271,7 +293,7 @@ const Skills = () => {
                     <ul className="w-full flex justify-between text-base mb-3">
                       <li className="">
                         <span className="flex flex-col items-center ">
-                          <span className="w-fit h-10">
+                          <span className="w-fit h-10  mb-1">
                             <Image
                               src="/logos/visualstudio.png"
                               width={40}
@@ -279,12 +301,14 @@ const Skills = () => {
                               alt=""
                             />
                           </span>
-                          <p className="font-bold">Visual Code</p>
+                          <span>
+                            <p className="font-bold">Visual Code</p>
+                          </span>
                         </span>
                       </li>
                       <li className="">
                         <span className="flex flex-col items-center">
-                          <span className="w-fit h-10">
+                          <span className="w-fit h-10  mb-1">
                             <Image
                               src="/logos/github.png"
                               width={40}
@@ -292,7 +316,9 @@ const Skills = () => {
                               alt=""
                             />
                           </span>
-                          <p className="font-bold">Github</p>
+                          <span>
+                            <p className="font-bold">Github</p>
+                          </span>
                         </span>
                       </li>
                       <li className="">
@@ -305,7 +331,9 @@ const Skills = () => {
                               alt=""
                             />
                           </span>
-                          <p className="font-bold">Netlify</p>
+                          <span>
+                            <p className="font-bold">Netlify</p>
+                          </span>
                         </span>
                       </li>
                       {/* <li className="">

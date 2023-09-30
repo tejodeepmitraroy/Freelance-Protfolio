@@ -19,7 +19,7 @@ const Testimonials:FC = () => {
           <div className="w-full h-full px-10 md:px-28 pt-36 pb-28">
             <div className="w-full flex flex-col items-center gap-5 ">
               <span className="font-medium text-lg">-TESTIMONIAL</span>
-              <span className="font-extrabold text-4xl font-Inter ">
+              <span className="font-extrabold text-4xl font-Inter text-center">
                 What clients say?
               </span>
               {/* <div className="w-full h-auto mt-11 border"> */}
@@ -40,7 +40,7 @@ const Testimonials:FC = () => {
               >
                 <SwiperSlide>
                   <div className="w-full text-3xl font-Inter flex flex-col justify-center items-center">
-                    <div className="text-xl md:text-2xl mb-8">
+                    <div className="text-xl md:text-2xl mb-8 text-center">
                       <p>
                         Loved the template design, documentation,
                         customizability and the customer support from Marketify

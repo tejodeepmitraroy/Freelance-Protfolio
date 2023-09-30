@@ -1,19 +1,24 @@
-import { Url } from "url";
-
-export interface projects {
-  thumbnail: String;
-  title: String;
-  subtitle: String;
-  date: String;
-  description: String;
-  live: string;
-  repolink: { name: string; link: string }[];
-  technologies: String[];
-}
-export interface database {
-  projects: projects[];
-}
 const db: database = {
+  name: "Tejodeep Mitra Roy",
+  subtitle:"Website & webApp Developer",
+  phone:"",
+  mail:"",
+  bio: ["", ""],
+  experienceYears: "1+",
+  projectDone: "10",
+  socialLinks: [
+    {
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/in/tejodeep-mitra-roy/",
+      icon: "faLinkedinIn",
+    },
+    {
+      name: "Github",
+      link: "https://github.com/Tejodeep2002",
+      icon: "faGithub",
+    },
+  ],
+
   projects: [
     {
       thumbnail: "projects/pro1.jpg",
@@ -102,7 +107,6 @@ const db: database = {
         "/logos/mongodb-leaf.png",
       ],
     },
-   
   ],
 };
 
