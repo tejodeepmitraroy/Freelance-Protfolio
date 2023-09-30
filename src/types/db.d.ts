@@ -17,6 +17,9 @@ interface socialLinks {
 interface database {
   name: string;
   bio: string[];
+  subtitle:string;
+  phone:string;
+  mail:string;
   experienceYears: string;
   projectDone: string;
   socialLinks: socialLinks[];

@@ -1,4 +1,3 @@
-import { database, projects } from "@/DB/db";
 import {
   faArrowUpRightFromSquare,
   faXmark,
