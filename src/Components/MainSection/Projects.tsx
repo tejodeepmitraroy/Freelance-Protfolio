@@ -50,10 +50,12 @@ const Projects: FC = () => {
                             alt=""
                             className="w-full"
                           />
-                          <div
-                            data-img-url={project.thumbnail}
-                            className={`absolute top-0 left-0 w-full h-full bg-cover hover:scale-110 transition-transform duration-200 ease-in bg-[url("/img.png")]`}
-                          ></div>
+                          <img
+                            src={project.thumbnail}
+                        
+                            alt=""
+                            className={`absolute top-0 left-0 w-full h-full bg-cover hover:scale-110 transition-transform duration-200 ease-in `}
+                          ></img>
                           {/* <Image
                         src={"/img2.jpg"}
                         width={380}

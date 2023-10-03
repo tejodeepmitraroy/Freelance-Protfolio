@@ -1,11 +1,25 @@
 const db: database = {
   name: "Tejodeep Mitra Roy",
-  subtitle:"Website & webApp Developer",
-  phone:"",
-  mail:"",
-  bio: ["", ""],
+  age: 21,
+  born: "Kolkata,India",
+  subtitle: "Website & webApp Developer",
+  phone: "+91-9674128921",
+  mail: "tejodeepmitraroy2002@gmail.com",
+  bio: [
+    "I'm Tejodeep Mitra Roy, a passionate web developer based in India, specializing in the Full stack Application. With a focus on crafting remarkable digital experiences, I transform ideas into visually stunning and high-performance websites and web applications.",
+  ],
   experienceYears: "1+",
   projectDone: "10",
+  experience: [
+    {
+      company: "Xanther Services",
+      position: "Full Stack Intern",
+      timeRange: "Sep 2022 - Mar 2023",
+      description: [
+        "Website development is the process of building, programming, coding and maintaining websites and web applications.",
+      ],
+    },
+  ],
   socialLinks: [
     {
       name: "LinkedIn",
@@ -21,7 +35,7 @@ const db: database = {
 
   projects: [
     {
-      thumbnail: "projects/pro1.jpg",
+      thumbnail: "/projects/pro1.jpg",
       title: "Full Stack Chat App",
       subtitle: "",
       date: "jun 2023 - jul 2023",

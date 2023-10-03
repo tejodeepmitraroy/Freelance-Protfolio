@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import db from "@/DB/db";
 
 const About: FC = () => {
   return (
@@ -13,10 +14,10 @@ const About: FC = () => {
               <span className=" font-medium text-lg ">-NICE TO MEET YOU!</span>
               <div className="flex flex-col gap-2">
                 <span className=" font-extrabold text-4xl font-Inter">
-                  <h3>Tejodeep Mitra Roy</h3>
+                  <h3>{db.name}</h3>
                 </span>
                 <span className="text-lg font-bold">
-                  <p>Website & WebApp Developer </p>
+                  <p>{db.subtitle}</p>
                 </span>
               </div>
               <span className="w-fit px-10 py-3 mt-6 rounded-lg bg-[#0C134F] hover:bg-transparent text-white text-lg hover:text-[#0C134F] border border-[#0C134F] transition duration-300 ease-in-out">
@@ -26,28 +27,18 @@ const About: FC = () => {
             {/* right */}
             <div className="w-full lg:w-[60%] flex flex-col gap-10  text-lg">
               <span>
-                <p>
-                  I&apos;m Tejodeep Mitra Roy, a passionate web developer based
-                  in India, specializing in the Full stack Application. With a
-                  focus on crafting remarkable digital experiences, I transform
-                  ideas into visually stunning and high-performance websites and
-                  web applications.
-                </p>
+                {db.bio.map((bio, index) => (
+                  <p key={index} className="mb-7">
+                    {bio}
+                  </p>
+                ))}
               </span>
-              {/* <span>
-                <p>
-                  Clear communication is key, and I&apos;m dedicated to understanding
-                  your goals and delivering tailored solutions. Whether you&apos;re a
-                  startup, business, or individual, Im here to bring your
-                  online vision to life.
-                </p>
-              </span> */}
 
               <div className="w-full ">
                 <ul className="w-full flex  flex-wrap ">
                   <li className="flex flex-col mr-6 mb-3">
                     <span className="underline">AGE</span>
-                    <span className="font-extrabold text-xl">21</span>
+                    <span className="font-extrabold text-xl">{db.age}</span>
                   </li>
                   <li className="flex flex-col mr-6 mb-3">
                     <span className="underline">BORN</span>
@@ -55,25 +46,25 @@ const About: FC = () => {
                       href=""
                       className="font-extrabold text-xl cursor-pointer hover:text-amber-500 transition duration-300 ease-in-out "
                     >
-                      Kolkata,India
+                      {db.born}
                     </a>
                   </li>
                   <li className="flex flex-col mr-6 mb-3">
                     <span className="underline">PHONE</span>
                     <a
-                      href="tel:+91-9674128921"
+                      href={`tel:${db.phone}`}
                       className="font-extrabold text-xl cursor-pointer hover:text-amber-500 transition duration-300 ease-in-out "
                     >
-                      +91-9674128921
+                      {db.phone}
                     </a>
                   </li>
                   <li className="flex flex-col mb-3">
                     <span className="underline">MAIL</span>
                     <a
-                      href="mailto:tejodeepmitraroy2002@gmail.com"
+                      href={`mailto:${db.mail}`}
                       className="font-extrabold text-xl cursor-pointer hover:text-amber-500 transition duration-300 ease-in-out "
                     >
-                      tejodeepmitraroy2002@gmail.com
+                      {db.mail}
                     </a>
                   </li>
                 </ul>
@@ -83,11 +74,15 @@ const About: FC = () => {
           {/* counter */}
           <div className="w-full flex flex-col md:flex-row  gap-10 mb-28 ">
             <div className="w-full md:w-[50%] lg:w-[30%] h-48 bg-[#F6F7C1] rounded-md flex flex-col gap-4 items-center justify-center ">
-              <span className="font-extrabold text-4xl font-Inter">1+</span>
+              <span className="font-extrabold text-4xl font-Inter">
+                {db.experienceYears}
+              </span>
               <span className="font-semibold text-lg">YEARS OF EXPERIENCE</span>
             </div>
             <div className="w-full md:w-[50%]  lg:w-[30%] h-48 bg-[#BEF0CB] rounded-md flex flex-col gap-4 items-center justify-center">
-              <span className="font-extrabold text-4xl font-Inter">10+</span>
+              <span className="font-extrabold text-4xl font-Inter">
+                {db.projectDone}
+              </span>
               <span className="font-semibold text-lg">PROJECT COMPLETED</span>
             </div>
             {/* <div className=" w-[30%] h-48 bg-[#D1FFF3] rounded-md flex flex-col gap-4 items-center justify-center">
@@ -104,83 +99,38 @@ const About: FC = () => {
               Everything about me!
             </span>
             <ul className="w-full flex flex-wrap mt-10 lg:-ml-8">
-              <li className="w-full md:w-1/2 mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
-                <div className="w-full relative p-9 lg:px-20 lg:py-11 flex flex-col gap-6 rounded shadow-lg text-lg  font-normal leading-8 bg-white border-1 border-[#f9fafc]">
-                  {/* heading */}
-                  <div className="w-full flex justify-between text-lg ">
-                    <div className="flex flex-col gap-1">
-                      <span className=" text-base font-semibold text-amber-500">
-                        -Sep 2022 - Mar 2023
-                      </span>
-                      <span className="text-xl font-extrabold">
-                        <p>MERN Stack Intern</p>
+              {db.experience.map((experience, index) => (
+                <li
+                  key={index}
+                  className="w-full md:w-1/2 mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out"
+                >
+                  <div className="w-full relative p-9 lg:px-20 lg:py-11 flex flex-col gap-6 rounded shadow-lg text-lg  font-normal leading-8 bg-white border-1 border-[#f9fafc]">
+                    {/* heading */}
+                    <div className="w-full flex justify-between text-lg ">
+                      <div className="flex flex-col gap-1">
+                        <span className=" text-base font-semibold text-amber-500">
+                          {experience.timeRange}
+                        </span>
+                        <span className="text-xl font-extrabold">
+                          <p>{experience.position}</p>
+                        </span>
+                      </div>
+
+                      <span className="w-fit text-base font-medium md:text-xl">
+                        -{experience.company}
                       </span>
                     </div>
-
-                    <span className="w-fit text-base font-medium md:text-xl">-Xanther Services</span>
-                  </div>
-                  {/* text */}
-                  <div>
-                    <p>
-                      Website development is the process of building,
-                      programming, coding and maintaining websites and web
-                      applications.
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li className="w-full md:w-1/2 mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
-                <div className="w-full relative p-9 lg:px-20 lg:py-11 flex flex-col gap-6 rounded shadow-lg text-lg  font-normal leading-8 bg-white border-1 border-[#f9fafc]">
-                  {/* heading */}
-                  <div className="w-full flex justify-between text-lg ">
-                    <div className="flex flex-col gap-1">
-                      <span className=" text-base font-semibold text-amber-500">
-                        -Sep 2022 - Mar 2023
-                      </span>
-                      <span className="text-xl font-extrabold">
-                        <p>MERN Stack Intern</p>
-                      </span>
+                    {/* text */}
+                    <div>
+                      {experience.description.map((description,index)=>(
+                        <p key={index} className="mb-4">
+                          {description}
+                        </p>
+                      ))}
                     </div>
-
-                    <span className="w-fit text-base font-medium md:text-xl">-Xanther Services</span>
                   </div>
-                  {/* text */}
-                  <div>
-                    <p>
-                      Website development is the process of building,
-                      programming, coding and maintaining websites and web
-                      applications.
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li className="w-full md:w-1/2 mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
-                <div className="w-full relative p-9 lg:px-20 lg:py-11 flex flex-col gap-6 rounded shadow-lg text-lg  font-normal leading-8 bg-white border-1 border-[#f9fafc]">
-                  {/* heading */}
-                  <div className="w-full flex justify-between text-lg ">
-                    <div className="flex flex-col gap-1">
-                      <span className=" text-base font-semibold text-amber-500">
-                        -Sep 2022 - Mar 2023
-                      </span>
-                      <span className="text-xl font-extrabold">
-                        <p>MERN Stack Intern</p>
-                      </span>
-                    </div>
-
-                    <span className="w-fit text-base font-medium md:text-xl">-Xanther Services</span>
-                  </div>
-                  {/* text */}
-                  <div>
-                    <p>
-                      Website development is the process of building,
-                      programming, coding and maintaining websites and web
-                      applications.
-                    </p>
-                  </div>
-                </div>
-              </li>
-              
-           
+                </li>
+              ))}
             </ul>
           </div>
         </div>

@@ -33,7 +33,7 @@ const Modal: FC<ModalProps> = ({ data, isOpen, isClose }) => {
           </button>
           {/* Main Modal */}
 
-          <div className="relative w-full h-full border bg-white p-[30px_25px_25px] lg:p-[50px] rounded overflow-y-auto before:fixed before:h-[30px] before:lg:h-[50px] before:top-0 before:left-0 before:right-0 before:z-30 before:rounded before:bg-red-500 after:fixed after:h-[25px] lg:after:h-[50px] after:bottom-0 after:left-0 after:right-0 after:bg-white after:z-10">
+          <div className="absolute w-full h-full border bg-white p-[30px_25px_25px] lg:p-[50px] rounded overflow-y-auto before:fixed before:h-[30px] before:lg:h-[50px] before:top-0 before:left-0 before:right-0 before:z-30 before:rounded before:bg-red-500 after:fixed after:h-[25px] lg:after:h-[50px] after:bottom-0 after:left-0 after:right-0 after:bg-white after:z-10">
             <Image
               src={"/projects/pro1.jpg"}
               width={"1080"}
