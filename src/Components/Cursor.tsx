@@ -1,5 +1,6 @@
 "use client";
-import React, { FC, ReactNode, useRef, useState } from "react";
+import useMousePosition from "@/Hooks/useMousePosition";
+import React, { FC, ReactNode, useEffect, useRef, useState } from "react";
 
 interface CursorProps {
   children: ReactNode;
@@ -9,27 +10,22 @@ const Cursor: FC<CursorProps> = ({ children }) => {
   const [positionY, setPositionY] = useState();
   const [positionX, setPositionX] = useState();
 
-  const mouse = useRef(null);
+  let mouse = useRef<HTMLInputElement>(null);
 
-  const mouseMove = (e: any) => {
-    setPositionY(e.pageY);
-    setPositionX(e.pageX);
-  };
+  const mousePosition = useMousePosition();
 
-  // const toggleCoursorVisibleity = (e:any)=>{
-
-  //   mouse.current.style.top=e.pageY+"px"
-  //   mouse.current.style.left=e.pageX-20+"px"
-
-  // }
+  useEffect(() => {
+    setTimeout(() => {
+      mouse.current!.style.left = mousePosition.x-12 + "px";
+      mouse.current!.style.top = mousePosition.y-12 + "px";
+    }, 200);
+  }, [mousePosition]);
 
   return (
-    <div className="w-full h-screen" 
-    // onMouseMove={toggleCoursorVisibleity}
-    >
+    <div className="w-full h-full ">
       <div
         ref={mouse}
-        className={`w-8 h-8 border-2 border-black rounded-full absolute`}
+        className={`w-8 h-8 border-2 border-black rounded-full absolute z-50`}
       ></div>
       {children}
     </div>

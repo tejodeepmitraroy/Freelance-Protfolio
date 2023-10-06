@@ -13,7 +13,7 @@ interface ModalProps {
   data: projects;
 }
 const Modal: FC<ModalProps> = ({ data, isOpen, isClose }) => {
-  console.log(data);
+  
   return (
     <>
       <div
@@ -33,7 +33,7 @@ const Modal: FC<ModalProps> = ({ data, isOpen, isClose }) => {
           </button>
           {/* Main Modal */}
 
-          <div className="absolute w-full h-full border bg-white p-[30px_25px_25px] lg:p-[50px] rounded overflow-y-auto before:fixed before:h-[30px] before:lg:h-[50px] before:top-0 before:left-0 before:right-0 before:z-30 before:rounded before:bg-red-500 after:fixed after:h-[25px] lg:after:h-[50px] after:bottom-0 after:left-0 after:right-0 after:bg-white after:z-10">
+          <div className="absolute w-full h-full border bg-white p-[30px_25px_25px] lg:p-[50px] rounded overflow-y-auto ">
             <Image
               src={"/projects/pro1.jpg"}
               width={"1080"}
@@ -61,13 +61,14 @@ const Modal: FC<ModalProps> = ({ data, isOpen, isClose }) => {
                       <span className=" font-semibold text-xl ">
                         Hosted Link
                       </span>
-                      <span className=" opacity-80 text-l">
-                        link{" "}
+                      <span className=" opacity-80 text-l hover:text-[#c1aefc]">
+                        {/* {data.live} */}
                         <Link href={data.live ? data.live : ""} target="_blank">
-                          <FontAwesomeIcon
+                        {data.live}
+                          {/* <FontAwesomeIcon
                             icon={faArrowUpRightFromSquare}
                             size="xs"
-                          />
+                          /> */}
                         </Link>
                       </span>
                     </li>
@@ -94,7 +95,7 @@ const Modal: FC<ModalProps> = ({ data, isOpen, isClose }) => {
                       </span>
                       <span className=" opacity-80 text-l">
                         <ul>
-                          {data.repolink?.map((item, index) => (
+                          {data.repoLink?.map((item, index) => (
                             <li key={index}>
                               {item.name}
                               <Link href={item.link ? item.link : ""}>

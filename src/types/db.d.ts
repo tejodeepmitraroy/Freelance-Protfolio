@@ -5,7 +5,7 @@ interface projects {
   date: String;
   description: String;
   live: string;
-  repolink: { name: string; link: string }[];
+  repoLink: { name: string; link: string }[];
   technologies: String[];
 }
 
@@ -16,12 +16,30 @@ interface socialLinks {
 }
 
 interface experience{
-  company:String,
-  position:String,
-  timeRange:String,
+  company:String;
+  position:String;
+  timeRange:String;
   description: String[]
 }
 
+interface services{
+  id: number;
+  title: String;
+  description: String[];
+}
+
+interface testimonial {
+    id: Number;
+    image: string;
+    name: String;
+    subtitle: String;
+    feedback: String; 
+}
+
+interface contactUs{
+  description: String
+  location:String
+}  
 interface database {
   name: string;
   age: number;
@@ -35,4 +53,7 @@ interface database {
   experience:experience[]
   socialLinks: socialLinks[];
   projects: projects[];
+  services:services[];
+  testimonial:testimonial[];
+  contactUs:contactUs
 }

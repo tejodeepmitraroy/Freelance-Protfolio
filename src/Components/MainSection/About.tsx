@@ -116,7 +116,7 @@ const About: FC = () => {
                         </span>
                       </div>
 
-                      <span className="w-fit text-base font-medium md:text-xl">
+                      <span className=" w-44 text-base font-medium md:text-xl">
                         -{experience.company}
                       </span>
                     </div>

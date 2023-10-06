@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React, { FC } from "react";
+import db from "@/DB/db";
 
 const Home:FC = () => {
   return (
@@ -39,18 +40,19 @@ const Home:FC = () => {
               <ul className=" relative px-3 py-2 font-semibold before:absolute before:w-1 before:bg-amber-500 before:top-0 before:bottom-0 text-sm sm:text-lg ">
                 <li className="px-3 ">
                   <a
-                    href="tel:+91-9674128921"
+                    href={`tel:${db.phone}`}
                     className="hover:text-amber-500 transition duration-300 ease-in-out "
                   >
-                    +91-9674128921{" "}
+                    {db.phone}
+                    
                   </a>
                 </li>
                 <li className="px-3 ">
                   <a
-                    href="mailto:tejodeepmitraroy2002@gmail.com"
+                    href={`mailto:${db.mail}`}
                     className="hover:text-amber-500 transition duration-300 ease-in-out "
                   >
-                    tejodeepmitraroy2002@gmail.com
+                    {db.mail}
                   </a>
                 </li>
               </ul>

@@ -1,7 +1,7 @@
 "use client";
 import React, { FC, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import Image from "next/image";
@@ -24,60 +24,77 @@ const Projects: FC = () => {
             <span className="font-extrabold text-4xl font-Inter">
               Recent Completed Project
             </span>
+
             <div className="w-full mt-10  text-lg">
               <Swiper
                 slidesPerView={"auto"}
                 spaceBetween={30}
-                style={{ width: "100%", paddingBottom: "1rem" }}
-                modules={[Pagination]}
-                className="mySwiper "
+                style={{ paddingBottom: "1rem" }}
+                modules={[Pagination, Navigation]}
+                className="mySwiper"
+                breakpoints={{
+                  640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                  },
+                  768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                  },
+                  1100: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                  },
+                }}
               >
                 {db.projects.map((project, index) => (
-                  <SwiperSlide key={index}>
-                    <div className="w-full md:w-[360px] h-full mr-8 ">
-                      <span className="w-full h-full flex flex-col gap-4 cursor-pointer ">
-                        <div
-                          className="relative w-[360] h-[380] mb-6 flex items-center justify-center border border-black rounded overflow-hidden "
-                          onClick={() => {
-                            setIsModal(true);
-                            setIsData(project);
-                          }}
-                        >
-                          <Image
-                            src={"/default.jpg"}
-                            width={380}
-                            height={360}
-                            alt=""
-                            className="w-full"
-                          />
-                          <img
-                            src={project.thumbnail}
-                        
-                            alt=""
-                            className={`absolute top-0 left-0 w-full h-full bg-cover hover:scale-110 transition-transform duration-200 ease-in `}
-                          ></img>
-                          {/* <Image
+                  <SwiperSlide
+                    key={index}
+                    className="w-full md:w-[360px] h-full mr-8 border-4 border-gray-600 rounded-lg p-2"
+                  >
+                    {/* <div className="w-full md:w-[360px] h-full mr-8 border-4 border-gray-600 rounded-lg p-2"> */}
+                    <span className="w-full h-full flex flex-col gap-4 cursor-pointer ">
+                      <div
+                        className="relative w-[360] h-[380] mb-6 flex items-center justify-center border border-black rounded overflow-hidden "
+                        onClick={() => {
+                          setIsModal(true);
+                          setIsData(project);
+                        }}
+                      >
+                        <Image
+                          src={"/default.jpg"}
+                          width={380}
+                          height={360}
+                          alt=""
+                          className="w-full"
+                        />
+                        <img
+                          src={project.thumbnail}
+                          alt=""
+                          className={`absolute top-0 left-0 w-full h-full bg-cover hover:scale-110 transition-transform duration-200 ease-in `}
+                        ></img>
+                        {/* <Image
                         src={"/img2.jpg"}
                         width={380}
                         height={360}
                         alt=""
                         className=" rounded mb-6 hover:scale-125 transition duration-300 ease-in-out"
                       /> */}
-                        </div>
-                      </span>
-                      <span
-                        className="w-full h-full flex flex-col gap-4 cursor-pointer "
-                        onClick={() => {
-                          setIsModal(true);
-                          setIsData(project);
-                        }}
-                      >
-                        {/* <span className=" font-Inter font-medium">Title</span> */}
-                        <h3 className=" font-Inter  font-bold text-2xl">
-                          {project.title}
-                        </h3>
-                      </span>
-                    </div>
+                      </div>
+                    </span>
+                    <span
+                      className="w-full h-full flex flex-col gap-4 cursor-pointer "
+                      onClick={() => {
+                        setIsModal(true);
+                        setIsData(project);
+                      }}
+                    >
+                      {/* <span className=" font-Inter font-medium">Title</span> */}
+                      <h3 className=" font-Inter  font-semibold text-xl">
+                        {project.title}
+                      </h3>
+                    </span>
+                    {/* </div> */}
                   </SwiperSlide>
                 ))}
               </Swiper>

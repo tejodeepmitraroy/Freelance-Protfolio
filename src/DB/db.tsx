@@ -19,6 +19,14 @@ const db: database = {
         "Website development is the process of building, programming, coding and maintaining websites and web applications.",
       ],
     },
+    {
+      company: "Institution's Innovation Council",
+      position: "Head of VFX Editor",
+      timeRange: "Feb 2022 - jul 2023",
+      description: [
+        "Website development is the process of building, programming, coding and maintaining websites and web applications.",
+      ],
+    },
   ],
   socialLinks: [
     {
@@ -42,7 +50,7 @@ const db: database = {
       description:
         " Web development is the process of bilduing programming Loremipsum dolor, sit amet consectetur adi pisicing elit. Soluta aspernatur, dolore, autem qui non quae magni aliquam sint doloremque, itaque voluptatum! Deserunt laborum nihil, qui quam commodi consequatur? Veniam laborum recusandae autem,link:",
       live: "https://talk-a-tive-1.netlify.app/#/",
-      repolink: [
+      repoLink: [
         {
           name: "FrontEnd Code",
           link: "https://github.com/Tejodeep2002/Chat-app-frontend",
@@ -64,43 +72,14 @@ const db: database = {
       ],
     },
     {
-      thumbnail: "projects/pro1.jpg",
-      title: "Full Stack Chat App",
+      thumbnail: "/projects/pro1.jpg",
+      title: "Link Shortner",
       subtitle: "",
       date: "jun 2023 - jul 2023",
       description:
         " Web development is the process of bilduing programming Loremipsum dolor, sit amet consectetur adi pisicing elit. Soluta aspernatur, dolore, autem qui non quae magni aliquam sint doloremque, itaque voluptatum! Deserunt laborum nihil, qui quam commodi consequatur? Veniam laborum recusandae autem,link:",
       live: "https://talk-a-tive-1.netlify.app/#/",
-      repolink: [
-        {
-          name: "FrontEnd Code",
-          link: "https://github.com/Tejodeep2002/Chat-app-frontend",
-        },
-        {
-          name: "Backend Code",
-          link: "https://github.com/Tejodeep2002/Chat-app-backend",
-        },
-      ],
-      technologies: [
-        "/logos/html.png",
-        "/logos/css.png",
-        "/logos/js.png",
-        "/logos/typescript.png",
-        "/logos/react.png",
-        "/logos/chakra-ui.png",
-        "/logos/node.png",
-        "/logos/mongodb-leaf.png",
-      ],
-    },
-    {
-      thumbnail: "projects/pro1.jpg",
-      title: "Full Stack Chat App",
-      subtitle: "",
-      date: "jun 2023 - jul 2023",
-      description:
-        " Web development is the process of bilduing programming Loremipsum dolor, sit amet consectetur adi pisicing elit. Soluta aspernatur, dolore, autem qui non quae magni aliquam sint doloremque, itaque voluptatum! Deserunt laborum nihil, qui quam commodi consequatur? Veniam laborum recusandae autem,link:",
-      live: "https://talk-a-tive-1.netlify.app/#/",
-      repolink: [
+      repoLink: [
         {
           name: "FrontEnd Code",
           link: "https://github.com/Tejodeep2002/Chat-app-frontend",
@@ -122,6 +101,46 @@ const db: database = {
       ],
     },
   ],
+
+  services: [
+    {
+      id: 1,
+      title: "Web Development 1",
+      description: [
+        "Web development is the process of bilduing programming...",
+      ],
+    },
+    {
+      id: 2,
+      title: "Web Development 2",
+      description: [
+        "Web development is the process of bilduing programming...",
+      ],
+    },
+  ],
+
+  testimonial: [
+    {
+      id: 1,
+      image: "/img.png",
+      name: "Alan Walker",
+      subtitle: "Sales Manager at Vivaco Shop",
+      feedback:
+        "Loved the template design, documentation, customizability and the customer support from Marketify team! I am a noob in programming but the Marketify team helped me successfully.",
+    },
+    {
+      id: 2,
+      image: "/img.png",
+      name: "Alan 2 Walker",
+      subtitle: "Sales Manager  Vivaco Shop",
+      feedback:
+        "Loved the template design, documentation, customizability and the customer support from Marketify team! I am a noob in programming but the Marketify team helped me successfully.",
+    },
+  ],
+  contactUs:{
+    description:"I'm currently available to take on new projects, so fell free to snd me a message about anything that you want to run past me. you can contact at 24/7",
+    location:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29455.92847020909!2d88.40960262601587!3d22.654121982998415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89e6c605d82ff%3A0x1f6779d05c4879ee!2sDum%20Dum%2C%20Kolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1694771815112!5m2!1sen!2sin"
+  }
 };
 
 export default db;

@@ -110,7 +110,7 @@ const SideBar: FC = (props: Props) => {
           </span>
 
           <span>
-            <p>All Copyrights 2023 Tejodeep Mitra Roy. All rights reserved.</p>
+            <p>All Copyrights 2023, Tejodeep Mitra Roy. All rights reserved.</p>
           </span>
         </div>
       </div>

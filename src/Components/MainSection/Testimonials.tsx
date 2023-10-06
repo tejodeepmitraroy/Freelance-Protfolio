@@ -10,8 +10,9 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
+import db from "@/DB/db";
 
-const Testimonials:FC = () => {
+const Testimonials: FC = () => {
   return (
     <div className="relative w-full h-auto">
       <div className="w-full my-28 ">
@@ -31,43 +32,41 @@ const Testimonials:FC = () => {
                   delay: 5000,
                   disableOnInteraction: false,
                 }}
+                navigation={true}
                 pagination={{
                   clickable: true,
                 }}
-                
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper w-full h-auto mt-11 "
               >
-                <SwiperSlide>
-                  <div className="w-full text-3xl font-Inter flex flex-col justify-center items-center">
-                    <div className="text-xl md:text-2xl mb-8 text-center">
-                      <p>
-                        Loved the template design, documentation,
-                        customizability and the customer support from Marketify
-                        team! I am a noob in programming but the Marketify team
-                        helped me successfully.
+                {db.testimonial.map((item, index) => (
+                  <SwiperSlide key={index}>
+                    <div className="w-full text-3xl font-Inter flex flex-col justify-center items-center">
+                      <div className="text-xl md:text-2xl mb-8 text-center">
+                        <p>
+                          {item.feedback}
+                          
+                        </p>
+                      </div>
+                      <div className="w-auto flex items-center gap-5 justify-center">
+                        <span>
+                          {" "}
+                          <Image
+                            src={item.image}
+                            width={60}
+                            height={60}
+                            alt=""
+                            className=" w-16 h-16 rounded-full border-4 border-white"
+                          />
+                        </span>
+                        <h3 className=" text-2xl font-medium">{item.name}</h3>
+                      </div>
+                      <p className=" text-base md:text-lg mb-8">
+                        {item.subtitle}
                       </p>
                     </div>
-                    <div className="w-auto flex items-center gap-5 justify-center">
-                      <span>
-                        {" "}
-                        <Image
-                          src={"/img.png"}
-                          width={60}
-                          height={60}
-                          alt=""
-                          className=" w-16 h-16 rounded-full border-4 border-white"
-                        />
-                      </span>
-                      <h3 className=" text-2xl font-medium">Alan Walker</h3>
-                    </div>
-                    <p className=" text-base md:text-lg mb-8">
-                      Sales Manager at Vivaco Shop
-                    </p>
-                  </div>
-                </SwiperSlide>
-
-                
+                  </SwiperSlide>
+                ))}
               </Swiper>
             </div>
           </div>
