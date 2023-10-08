@@ -3,6 +3,7 @@ interface projects {
   title: String;
   subtitle: String;
   date: String;
+  preview: string[];
   description: String;
   live: string;
   repoLink: { name: string; link: string }[];
@@ -10,36 +11,37 @@ interface projects {
 }
 
 interface socialLinks {
-  name: string;
-  link: string;
-  icon: string;
+  linkedIn: string;
+  github: string;
+  facebook: string;
+  twitter: string;
 }
 
-interface experience{
-  company:String;
-  position:String;
-  timeRange:String;
-  description: String[]
+interface experience {
+  company: String;
+  position: String;
+  timeRange: String;
+  description: String[];
 }
 
-interface services{
+interface services {
   id: number;
   title: String;
   description: String[];
 }
 
 interface testimonial {
-    id: Number;
-    image: string;
-    name: String;
-    subtitle: String;
-    feedback: String; 
+  id: Number;
+  image: string;
+  name: String;
+  subtitle: String;
+  feedback: String;
 }
 
-interface contactUs{
-  description: String
-  location:String
-}  
+interface contactUs {
+  description: String;
+  location: String;
+}
 interface database {
   name: string;
   age: number;
@@ -50,10 +52,10 @@ interface database {
   mail: string;
   experienceYears: string;
   projectDone: string;
-  experience:experience[]
-  socialLinks: socialLinks[];
+  experience: experience[];
+  socialLinks: socialLinks;
   projects: projects[];
-  services:services[];
-  testimonial:testimonial[];
-  contactUs:contactUs
+  services: services[];
+  testimonial: testimonial[];
+  contactUs: contactUs;
 }

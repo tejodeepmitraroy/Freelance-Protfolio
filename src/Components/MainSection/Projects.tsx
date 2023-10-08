@@ -57,8 +57,8 @@ const Projects: FC = () => {
                       <div
                         className="relative w-[360] h-[380] mb-6 flex items-center justify-center border border-black rounded overflow-hidden "
                         onClick={() => {
-                          setIsModal(true);
                           setIsData(project);
+                          setIsModal(true);
                         }}
                       >
                         <Image

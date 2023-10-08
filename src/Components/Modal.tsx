@@ -6,6 +6,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import React, { FC } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 interface ModalProps {
   isClose: any;
@@ -13,7 +18,7 @@ interface ModalProps {
   data: projects;
 }
 const Modal: FC<ModalProps> = ({ data, isOpen, isClose }) => {
-  
+  console.log(data)
   return (
     <>
       <div
@@ -34,13 +39,27 @@ const Modal: FC<ModalProps> = ({ data, isOpen, isClose }) => {
           {/* Main Modal */}
 
           <div className="absolute w-full h-full border bg-white p-[30px_25px_25px] lg:p-[50px] rounded overflow-y-auto ">
-            <Image
-              src={"/projects/pro1.jpg"}
-              width={"1080"}
-              height={"0"}
-              className="w-full rounded mb-9"
-              alt=""
-            />
+            <Swiper
+              pagination={{
+                type: "fraction",
+              }}
+              navigation={true}
+              modules={[Pagination, Navigation]}
+              className="mySwiper"
+            >
+              {data.preview?.map((item, index) => (
+                <SwiperSlide key={index}>
+                  <Image
+                    src={item}
+                    width={"1080"}
+                    height={"0"}
+                    className="w-full h-[450px] rounded mb-9"
+                    alt=""
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
 
             <div className="w-full  flex flex-col text">
               <div className="flex flex-col">
@@ -64,7 +83,7 @@ const Modal: FC<ModalProps> = ({ data, isOpen, isClose }) => {
                       <span className=" opacity-80 text-l hover:text-[#c1aefc]">
                         {/* {data.live} */}
                         <Link href={data.live ? data.live : ""} target="_blank">
-                        {data.live}
+                          {data.live}
                           {/* <FontAwesomeIcon
                             icon={faArrowUpRightFromSquare}
                             size="xs"

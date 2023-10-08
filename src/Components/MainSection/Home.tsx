@@ -27,7 +27,7 @@ const Home:FC = () => {
                 </p>
               </span>
               <div className="flex gap-4  md:text-lg">
-                <span className="px-7 md:px-10 py-3 rounded-lg bg-[#0C134F] hover:bg-transparent text-white  hover:text-[#0C134F] border border-[#0C134F] transition duration-300 ease-in-out">
+                <span className="px-7  md:px-10 py-3 rounded-lg bg-[#0C134F] hover:bg-transparent text-white  hover:text-[#0C134F] border border-[#0C134F] transition duration-300 ease-in-out">
                   <p>Got a project?</p>
                 </span>
                 <span className="px-10 py-3 rounded-lg hover:bg-[#0C134F] bg-transparent  hover:text-white  text-[#0C134F] border border-[#0C134F] transition-all duration-300 ease-in-out">

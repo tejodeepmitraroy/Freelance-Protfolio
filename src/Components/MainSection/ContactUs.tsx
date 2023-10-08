@@ -4,6 +4,14 @@ import db from "@/DB/db";
 import emailjs from "@emailjs/browser";
 import axios from "axios";
 import { toast } from "react-toastify";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebookF,
+  faGithub,
+  faLinkedinIn,
+  faXTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 const ContactUs: FC = () => {
   const [name, setName] = useState<string>("");
@@ -113,6 +121,36 @@ const ContactUs: FC = () => {
                     </a>
                   </li>
                 </ul>
+              </div>
+              <div className="w-fit h-16 flex gap-2 items-center mt-4">
+                <Link
+                href={db.socialLinks.facebook}
+                target="_blank"
+                className="w-11 h-11 bg-gray-200  text-[#130f49]  flex justify-center items-center rounded-full hover:bg-[#130f49]  hover:text-gray-200 hover:w-14 hover:h-14  transition duration-900 ease-in-out">
+                  <FontAwesomeIcon icon={faFacebookF} size={"lg"} />
+                </Link>
+                <Link
+                href={db.socialLinks.twitter}
+                target="_blank"
+                className="w-11 h-11 bg-gray-200  text-[#130f49]  flex justify-center items-center rounded-full hover:bg-[#130f49]  hover:text-gray-200 hover:w-14 hover:h-14  transition duration-900 ease-in-out">
+                  
+                  <FontAwesomeIcon icon={faXTwitter} size={"lg"} />
+                </Link>
+
+                <Link
+                  href={db.socialLinks.linkedIn}
+                  target="_blank"
+                  className="w-11 h-11 bg-gray-200  text-[#130f49]  flex justify-center items-center rounded-full hover:bg-[#130f49]  hover:text-gray-200 hover:w-14 hover:h-14  transition duration-900 ease-in-out"
+                >
+                  <FontAwesomeIcon icon={faLinkedinIn} size={"lg"} />
+                </Link>
+                <Link
+                  href={db.socialLinks.github}
+                  target="_blank"
+                  className="w-11 h-11 bg-gray-200  text-[#130f49]  flex justify-center items-center rounded-full hover:bg-[#130f49]  hover:text-gray-200 hover:w-14 hover:h-14 transition duration-900 ease-in-out"
+                >
+                  <FontAwesomeIcon icon={faGithub} size={"lg"} />
+                </Link>
               </div>
             </div>
 

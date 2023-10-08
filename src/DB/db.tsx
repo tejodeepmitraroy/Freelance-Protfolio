@@ -28,25 +28,24 @@ const db: database = {
       ],
     },
   ],
-  socialLinks: [
-    {
-      name: "LinkedIn",
-      link: "https://www.linkedin.com/in/tejodeep-mitra-roy/",
-      icon: "faLinkedinIn",
-    },
-    {
-      name: "Github",
-      link: "https://github.com/Tejodeep2002",
-      icon: "faGithub",
-    },
-  ],
+  socialLinks: {
+    linkedIn: "https://www.linkedin.com/in/tejodeep-mitra-roy/",
+    github: "https://github.com/Tejodeep2002",
+    facebook: "",
+    twitter: "",
+  },
 
   projects: [
     {
-      thumbnail: "/projects/pro1.jpg",
+      thumbnail: "/projects/chatApp/login.png",
       title: "Full Stack Chat App",
       subtitle: "",
       date: "jun 2023 - jul 2023",
+      preview: [
+        "/projects/chatApp/home.jpg",
+        "/projects/chatApp/login.png",
+        "/projects/chatApp/signup.jpg",
+      ],
       description:
         " Web development is the process of bilduing programming Loremipsum dolor, sit amet consectetur adi pisicing elit. Soluta aspernatur, dolore, autem qui non quae magni aliquam sint doloremque, itaque voluptatum! Deserunt laborum nihil, qui quam commodi consequatur? Veniam laborum recusandae autem,link:",
       live: "https://talk-a-tive-1.netlify.app/#/",
@@ -76,6 +75,11 @@ const db: database = {
       title: "Link Shortner",
       subtitle: "",
       date: "jun 2023 - jul 2023",
+      preview: [
+        "/projects/chatApp/home.jpg",
+        "/projects/chatApp/login.png",
+        "/projects/chatApp/signup.jpg",
+      ],
       description:
         " Web development is the process of bilduing programming Loremipsum dolor, sit amet consectetur adi pisicing elit. Soluta aspernatur, dolore, autem qui non quae magni aliquam sint doloremque, itaque voluptatum! Deserunt laborum nihil, qui quam commodi consequatur? Veniam laborum recusandae autem,link:",
       live: "https://talk-a-tive-1.netlify.app/#/",
@@ -137,10 +141,12 @@ const db: database = {
         "Loved the template design, documentation, customizability and the customer support from Marketify team! I am a noob in programming but the Marketify team helped me successfully.",
     },
   ],
-  contactUs:{
-    description:"I'm currently available to take on new projects, so fell free to snd me a message about anything that you want to run past me. you can contact at 24/7",
-    location:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29455.92847020909!2d88.40960262601587!3d22.654121982998415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89e6c605d82ff%3A0x1f6779d05c4879ee!2sDum%20Dum%2C%20Kolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1694771815112!5m2!1sen!2sin"
-  }
+  contactUs: {
+    description:
+      "I'm currently available to take on new projects, so fell free to snd me a message about anything that you want to run past me. you can contact at 24/7",
+    location:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29455.92847020909!2d88.40960262601587!3d22.654121982998415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89e6c605d82ff%3A0x1f6779d05c4879ee!2sDum%20Dum%2C%20Kolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1694771815112!5m2!1sen!2sin",
+  },
 };
 
 export default db;

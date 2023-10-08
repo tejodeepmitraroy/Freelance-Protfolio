@@ -1,7 +1,16 @@
-import React, { FC } from "react";
+"use client";
+import React, { FC, useEffect } from "react";
 import db from "@/DB/db";
-
+import Aos from "aos";
+import "aos/dist/aos.css";
 const About: FC = () => {
+  useEffect(() => {
+    Aos.init({
+      duration: 800,
+      once: false,
+    });
+  }, []);
+
   return (
     <div className="w-full h-auto border bg-white" id="about">
       <div className="w-full h-full mt-28">
@@ -25,6 +34,7 @@ const About: FC = () => {
               </span>
             </div>
             {/* right */}
+
             <div className="w-full lg:w-[60%] flex flex-col gap-10  text-lg">
               <span>
                 {db.bio.map((bio, index) => (
@@ -73,7 +83,9 @@ const About: FC = () => {
           </div>
           {/* counter */}
           <div className="w-full flex flex-col md:flex-row  gap-10 mb-28 ">
-            <div className="w-full md:w-[50%] lg:w-[30%] h-48 bg-[#F6F7C1] rounded-md flex flex-col gap-4 items-center justify-center ">
+            <div
+              className="w-full md:w-[50%] lg:w-[30%] h-48 bg-[#F6F7C1] rounded-md flex flex-col gap-4 items-center justify-center "
+            >
               <span className="font-extrabold text-4xl font-Inter">
                 {db.experienceYears}
               </span>
@@ -122,7 +134,7 @@ const About: FC = () => {
                     </div>
                     {/* text */}
                     <div>
-                      {experience.description.map((description,index)=>(
+                      {experience.description.map((description, index) => (
                         <p key={index} className="mb-4">
                           {description}
                         </p>

@@ -19,11 +19,31 @@ module.exports = {
         Karla: "Karla, sans-serif",
         Pacifico: "Pacifico, cursive",
       },
+      animation: {
+        fadedown: "fadedown 0.5s",
+      },
+      keyframes: {
+        fadedown: {
+          "0%": {
+            transform: "translateY(-30px) scale(0.9)",
+            opacity: 0,
+          },
+          "100%": {
+            transform: "translateY(0px) scale(1)",
+            opacity: 1,
+          },
+        },
+      },
     },
   },
   plugins: [],
   purge: {
-    content: ['./src/**/*.js', './src/**/*.jsx', './src/**/*.ts', './src/**/*.tsx'],
+    content: [
+      "./src/**/*.js",
+      "./src/**/*.jsx",
+      "./src/**/*.ts",
+      "./src/**/*.tsx",
+    ],
     // Other configuration options...
   },
 };

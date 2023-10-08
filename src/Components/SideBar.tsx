@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import {
   faFacebookF,
   faXTwitter,
@@ -9,11 +9,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import React, { FC, useState } from "react";
-import db from "@/DB/db"
+import db from "@/DB/db";
 interface Props {}
 
 const SideBar: FC = (props: Props) => {
-  const [navReveal,setNavReveal]=useState<boolean>(false)
+  const [navReveal, setNavReveal] = useState<boolean>(false);
   return (
     <>
       <div className="lg:w-[25%] 2xl:w-[20%]  hidden h-screen border-r lg:flex flex-col p-8 xl:p-14 items-center justify-between font-Karla antialiased">
@@ -30,7 +30,7 @@ const SideBar: FC = (props: Props) => {
               {db.name}
             </span>
             <span className="fixed font-Pacifico text-3xl 2xl:text-4xl opacity-10 z-0 text">
-            {db.name}
+              {db.name}
             </span>
           </div>
         </div>
@@ -63,14 +63,14 @@ const SideBar: FC = (props: Props) => {
                 Projects
               </a>
             </li>
-            <li>
+            {/* <li>
               <a
                 href="#services"
                 className="hover:text-[#a5a6ff] cursor-pointer"
               >
                 Services
               </a>
-            </li>
+            </li> */}
             <li>
               <a
                 href="#contact"
@@ -83,27 +83,32 @@ const SideBar: FC = (props: Props) => {
         </div>
 
         <div className="flex flex-col gap-6 items-center text-[#534f80]  font-medium ">
-          <span className="flex gap-2">
-            {/* <span className="w-9 h-9 bg-gray-100 flex justify-center items-center  rounded-full">
-              <FontAwesomeIcon icon={faFacebookF} className="w-2" />
-            </span>
-            <span className="w-9 h-9 bg-gray-100 flex justify-center items-center  rounded-full">
-              {" "}
-              <FontAwesomeIcon icon={faXTwitter} className="w-4" />
-            </span> */}
-            
-              
-            <Link
-              href={"https://www.linkedin.com/in/tejodeep-mitra-roy"}
+          <span className="w-fit h-12 flex gap-2 items-center">
+            {/* <Link
+              href={db.socialLinks.facebook}
               target="_blank"
-              className="w-9 h-9 bg-gray-100 flex justify-center items-center  rounded-full"
+              className="w-9 h-9 bg-gray-200  text-[#130f49]  flex justify-center items-center rounded-full hover:bg-[#130f49]  hover:text-gray-200 hover:w-10 hover:h-10  transition duration-900 ease-in-out"
+            >
+              <FontAwesomeIcon icon={faFacebookF} className="w-2" />
+            </Link>
+            <Link
+              href={db.socialLinks.twitter}
+              target="_blank"
+              className="w-9 h-9 bg-gray-200  text-[#130f49]  flex justify-center items-center rounded-full hover:bg-[#130f49]  hover:text-gray-200 hover:w-10 hover:h-10  transition duration-900 ease-in-out"
+            >
+              <FontAwesomeIcon icon={faXTwitter} className="w-4" />
+            </Link> */}
+            <Link
+              href={db.socialLinks.linkedIn}
+              target="_blank"
+              className="w-9 h-9 bg-gray-200  text-[#130f49]  flex justify-center items-center rounded-full hover:bg-[#130f49]  hover:text-gray-200 hover:w-10 hover:h-10  transition duration-900 ease-in-out"
             >
               <FontAwesomeIcon icon={faLinkedinIn} className="w-4" />
             </Link>
             <Link
-              href={"https://github.com/Tejodeep2002"}
+              href={db.socialLinks.github}
               target="_blank"
-              className="w-9 h-9 bg-gray-100 flex justify-center items-center  rounded-full"
+              className="w-9 h-9 bg-gray-200  text-[#130f49]  flex justify-center items-center rounded-full hover:bg-[#130f49]  hover:text-gray-200 hover:w-10 hover:h-10  transition duration-900 ease-in-out"
             >
               <FontAwesomeIcon icon={faGithub} className="w-6" />
             </Link>
@@ -127,7 +132,7 @@ const SideBar: FC = (props: Props) => {
             aria-controls="navbar-default"
             aria-expanded="false"
             title=" button"
-            onClick={()=>setNavReveal(!navReveal)}
+            onClick={() => setNavReveal(!navReveal)}
           >
             <svg
               className="w-5 h-5"
@@ -147,8 +152,16 @@ const SideBar: FC = (props: Props) => {
           </button>
         </div>
       </div>
-      <nav className={`fixed ${navReveal ? "":"hidden"} top-12 right-0 w-52 h-screen bg-white z-50`} >
-        <div className="relative w-full h-full text-right flex flex-col gap-6 pt-12 pb-5 px-5 font-Karla antialiased">
+      <nav
+        className={`fixed ${
+          navReveal ? "" : "hidden"
+        } top-12 right-0 w-full h-screen z-50 `}
+      >
+        <div
+          className="absolute w-full h-full opacity-0 bg-black"
+          onClick={() => setNavReveal(!navReveal)}
+        ></div>
+        <div className="fixed top-12 right-0 w-52 h-full bg-white text-right flex flex-col gap-6 pt-12 pb-5 px-5 font-Karla antialiased">
           <div className="flex flex-col items-end">
             <Image
               src={"/img.png"}
