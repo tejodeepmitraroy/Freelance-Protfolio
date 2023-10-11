@@ -28,18 +28,17 @@ const Projects: FC = () => {
             <div className="w-full mt-10  text-lg">
               <Swiper
                 slidesPerView={"auto"}
-                spaceBetween={30}
                 style={{ paddingBottom: "1rem" }}
                 modules={[Pagination, Navigation]}
                 className="mySwiper"
                 breakpoints={{
                   640: {
                     slidesPerView: 1,
-                    spaceBetween: 20,
+                    spaceBetween: 10,
                   },
                   768: {
                     slidesPerView: 2,
-                    spaceBetween: 20,
+                    spaceBetween: 0,
                   },
                   1100: {
                     slidesPerView: 3,
