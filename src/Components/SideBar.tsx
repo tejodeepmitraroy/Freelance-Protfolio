@@ -15,7 +15,7 @@ interface Props {}
 const SideBar: FC = (props: Props) => {
   const [navReveal, setNavReveal] = useState<boolean>(false);
   return (
-    <>
+    <aside>
       <div className="lg:w-[25%] 2xl:w-[20%]  hidden h-screen border-r lg:flex flex-col p-8 xl:p-14 items-center justify-between font-Karla antialiased">
         <div className="flex flex-col gap-7 items-center">
           <Image
@@ -29,13 +29,13 @@ const SideBar: FC = (props: Props) => {
             <span className="font-Inter font-bold text-xl 2xl:text-2xl z-10 mt-3">
               {db.name}
             </span>
-            <span className="fixed font-Pacifico text-3xl 2xl:text-4xl opacity-10 z-0 text">
+            <h1 className="fixed font-Pacifico text-3xl 2xl:text-4xl opacity-10 z-0 text">
               {db.name}
-            </span>
+            </h1>
           </div>
         </div>
 
-        <div className="">
+        <nav className="">
           <ul className="flex flex-col items-center gap-3 2xl:gap-5 text-[#534f80] text-base 2xl:text-lg cursor-pointer">
             <li>
               <a href="#home" className="hover:text-[#a5a6ff] cursor-pointer">
@@ -80,7 +80,7 @@ const SideBar: FC = (props: Props) => {
               </a>
             </li>
           </ul>
-        </div>
+        </nav>
 
         <div className="flex flex-col gap-6 items-center text-[#534f80]  font-medium ">
           <span className="w-fit h-12 flex gap-2 items-center">
@@ -263,7 +263,7 @@ const SideBar: FC = (props: Props) => {
           </div>
         </div>
       </nav>
-    </>
+    </aside>
   );
 };
 
