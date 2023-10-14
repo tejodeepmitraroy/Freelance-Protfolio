@@ -37,13 +37,13 @@ const db: database = {
 
   projects: [
     {
-      thumbnail: "/projects/chatApp/thumbnail.jpeg",
+      thumbnail: "/projects/chatApp/login.png",
       title: "Full Stack Chat App",
       subtitle: "",
       date: "jun 2023 - jul 2023",
       preview: [
-        "/projects/chatApp/login.png",
         "/projects/chatApp/home.jpg",
+        "/projects/chatApp/login.png",
         "/projects/chatApp/signup.jpg",
       ],
       description:
@@ -82,7 +82,7 @@ const db: database = {
       ],
       description:
         " Web development is the process of bilduing programming Loremipsum dolor, sit amet consectetur adi pisicing elit. Soluta aspernatur, dolore, autem qui non quae magni aliquam sint doloremque, itaque voluptatum! Deserunt laborum nihil, qui quam commodi consequatur? Veniam laborum recusandae autem,link:",
-      live: "https://urlshortner123.netlify.app",
+      live: "https://talk-a-tive-1.netlify.app/#/",
       repoLink: [
         {
           name: "FrontEnd Code",

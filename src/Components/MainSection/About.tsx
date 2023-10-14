@@ -11,24 +11,24 @@ const About: FC = () => {
   const about = useRef<HTMLDivElement>(null);
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      let aboutTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: about.current,
-          scroller: ".main",
-          markers: true,
-          start: "10% center",
-          end: "60% 20%",
-        },
-      });
+      // let aboutTl = gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: about.current,
+      //     scroller: ".main",
+      //     markers: true,
+      //     start: "10% center",
+      //     end: "60% 20%",
+      //   },
+      // });
 
-      aboutTl.from(".counter", {
-        y: -60,
-        duration: 0.4,
-        opacity: 0,
-        delay: 0.2,
-        stagger: 0.4,
-        ease: "power1.inOut",
-      });
+      // aboutTl.from(".counter", {
+      //   y: -60,
+      //   duration: 0.4,
+      //   opacity: 0,
+      //   delay: 0.2,
+      //   stagger: 0.4,
+      //   ease: "power1.inOut",
+      // });
     });
 
     return () => ctx.revert();
