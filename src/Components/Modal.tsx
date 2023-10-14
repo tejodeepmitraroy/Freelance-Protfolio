@@ -18,7 +18,7 @@ interface ModalProps {
   data: projects;
 }
 const Modal: FC<ModalProps> = ({ data, isOpen, isClose }) => {
-  console.log(data)
+  console.log(data);
   return (
     <>
       <div
@@ -59,7 +59,6 @@ const Modal: FC<ModalProps> = ({ data, isOpen, isClose }) => {
                 </SwiperSlide>
               ))}
             </Swiper>
-
 
             <div className="w-full  flex flex-col text">
               <div className="flex flex-col">
