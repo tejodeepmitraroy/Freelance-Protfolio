@@ -1,18 +1,41 @@
 "use client";
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, useLayoutEffect, useRef } from "react";
 import db from "@/DB/db";
-import Aos from "aos";
-import "aos/dist/aos.css";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const About: FC = () => {
-  useEffect(() => {
-    Aos.init({
-      duration: 800,
-      once: false,
+  const counter = useRef<HTMLDivElement>(null);
+  const about = useRef<HTMLDivElement>(null);
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      let aboutTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: about.current,
+          scroller: ".main",
+          markers: true,
+          start: "10% center",
+          end: "60% 20%",
+        },
+      });
+
+      aboutTl.from(".counter", {
+        y: -60,
+        duration: 0.4,
+        opacity: 0,
+        delay: 0.2,
+        stagger: 0.4,
+        ease: "power1.inOut",
+      });
     });
+
+    return () => ctx.revert();
   }, []);
 
   return (
-    <div className="w-full h-auto border bg-white" id="about">
+    <div ref={about} className="about w-full h-auto border bg-white" id="about">
       <div className="w-full h-full mt-28">
         {/* About */}
         <div className="w-full max-w-7xl px-5 lg:px-10 h-auto mx-auto flex flex-col gap-16">
@@ -82,16 +105,17 @@ const About: FC = () => {
             </div>
           </div>
           {/* counter */}
-          <div className="w-full flex flex-col md:flex-row  gap-10 mb-28 ">
-            <div
-              className="w-full md:w-[50%] lg:w-[30%] h-48 bg-[#F6F7C1] rounded-md flex flex-col gap-4 items-center justify-center "
-            >
+          <div
+            ref={counter}
+            className=" counter w-full flex flex-col md:flex-row  gap-10 mb-28 "
+          >
+            <div className=" counter w-full md:w-[50%] lg:w-[30%] h-48 bg-[#F6F7C1] rounded-md flex flex-col gap-4 items-center justify-center ">
               <span className="font-extrabold text-4xl font-Inter">
                 {db.experienceYears}
               </span>
               <span className="font-semibold text-lg">YEARS OF EXPERIENCE</span>
             </div>
-            <div className="w-full md:w-[50%]  lg:w-[30%] h-48 bg-[#BEF0CB] rounded-md flex flex-col gap-4 items-center justify-center">
+            <div className=" counter  w-full md:w-[50%]  lg:w-[30%] h-48 bg-[#BEF0CB] rounded-md flex flex-col gap-4 items-center justify-center">
               <span className="font-extrabold text-4xl font-Inter">
                 {db.projectDone}
               </span>

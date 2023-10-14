@@ -10,7 +10,6 @@ export default function Home() {
     <div className="lg:flex">
       <SideBar />
       <MainSection />
-     
     </div>
     // </Cursor>
   );
