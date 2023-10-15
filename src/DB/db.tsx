@@ -5,6 +5,7 @@ const db: database = {
   subtitle: "Website & webApp Developer",
   phone: "+91-9674128921",
   mail: "tejodeepmitraroy2002@gmail.com",
+  profilePic:"/profilePic/profile1.png",
   bio: [
     "I'm Tejodeep Mitra Roy, a passionate web developer based in India, specializing in the Full stack Application. With a focus on crafting remarkable digital experiences, I transform ideas into visually stunning and high-performance websites and web applications.",
   ],

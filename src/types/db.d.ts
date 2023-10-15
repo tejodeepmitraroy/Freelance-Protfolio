@@ -50,6 +50,7 @@ interface database {
   subtitle: string;
   phone: string;
   mail: string;
+  profilePic:string;
   experienceYears: string;
   projectDone: string;
   experience: experience[];

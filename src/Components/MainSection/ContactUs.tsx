@@ -87,9 +87,9 @@ const ContactUs: FC = () => {
                 <span className="font-medium text-lg">
                   <p>LET&lsquo;S CONNECT </p>
                 </span>
-                <span className=" font-extrabold text-4xl font-Inter">
+                <Link href={"#skills"} className=" font-extrabold text-4xl font-Inter">
                   <p>Get in Touch</p>
-                </span>
+                </Link>
               </div>
               <span className=" mt-5 text-lg leading-8">
                 <p>{db.contactUs.description}</p>

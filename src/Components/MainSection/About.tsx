@@ -10,27 +10,61 @@ const About: FC = () => {
   const counter = useRef<HTMLDivElement>(null);
   const about = useRef<HTMLDivElement>(null);
   useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      // let aboutTl = gsap.timeline({
-      //   scrollTrigger: {
-      //     trigger: about.current,
-      //     scroller: ".main",
-      //     markers: true,
-      //     start: "10% center",
-      //     end: "60% 20%",
-      //   },
-      // });
+    gsap.registerPlugin(ScrollTrigger);
+    const ctx = gsap.context(() => {
+      let homeTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: about.current,
+          scroller: "main",
+          start: "20% 70%",
+          end: "40% 20%",
+          markers:true
+          
+        },
+      });
 
-      // aboutTl.from(".counter", {
-      //   y: -60,
-      //   duration: 0.4,
+      // homeTl.from(".mainHeading", {
+      //   y: 30,
       //   opacity: 0,
-      //   delay: 0.2,
+      //   skewX: "-10deg",
+      //   duration: 0.7,
+      //   delay: 0.4,
       //   stagger: 0.4,
-      //   ease: "power1.inOut",
-      // });
-    });
+      //   ease: "circ.inOut",
+      // },"a");
+      // homeTl.to(".hand", {
+      //   fontSize: "2.3rem",
+      //   duration: 2,
+      //   ease: "back.inOut(1.7)",
+      // },);
 
+      // homeTl.from(".homeButtons", {
+      //   y: -30,
+      //   opacity: 0,
+      //   delay: 0.3,
+      //   stagger: 0.5,
+      //   ease: "back.inOut",
+      // });
+      
+      // gsap.from(".profilePic", {
+      //   x: 30,
+      //   opacity: 0,
+      //   duration: 1.5,
+      //   delay: 0.8,
+      //   stagger: 0.4,
+      //   ease: "power3.inOut",
+      // });
+      // gsap.from(".contactLink", {
+      //   x: 30,
+      //   opacity: 0,
+      //   duration: 1,
+      //   delay: 0.8,
+      //   stagger: 0.4,
+      //   ease: "power3.inOut",
+      // });
+      
+      
+    });
     return () => ctx.revert();
   }, []);
 
@@ -38,11 +72,11 @@ const About: FC = () => {
     <div ref={about} className="about w-full h-auto border bg-white" id="about">
       <div className="w-full h-full mt-28">
         {/* About */}
-        <div className="w-full max-w-7xl px-5 lg:px-10 h-auto mx-auto flex flex-col gap-16">
+        <section className="w-full max-w-7xl px-5 lg:px-10 h-auto mx-auto flex flex-col gap-16">
           {/* biography */}
           <div className="flex flex-col lg:flex-row ">
             {/* left */}
-            <div className="w-full lg:w-[40%] mb-16 flex flex-col gap-5">
+            <section className="w-full lg:w-[40%] mb-16 flex flex-col gap-5">
               <span className=" font-medium text-lg ">-NICE TO MEET YOU!</span>
               <div className="flex flex-col gap-2">
                 <span className=" font-extrabold text-4xl font-Inter">
@@ -55,10 +89,10 @@ const About: FC = () => {
               <span className="w-fit px-10 py-3 mt-6 rounded-lg bg-[#0C134F] hover:bg-transparent text-white text-lg hover:text-[#0C134F] border border-[#0C134F] transition duration-300 ease-in-out">
                 <p>Got a project?</p>
               </span>
-            </div>
+            </section>
             {/* right */}
 
-            <div className="w-full lg:w-[60%] flex flex-col gap-10  text-lg">
+            <section className="w-full lg:w-[60%] flex flex-col gap-10  text-lg">
               <span>
                 {db.bio.map((bio, index) => (
                   <p key={index} className="mb-7">
@@ -102,10 +136,10 @@ const About: FC = () => {
                   </li>
                 </ul>
               </div>
-            </div>
+            </section>
           </div>
           {/* counter */}
-          <div
+          <section
             ref={counter}
             className=" counter w-full flex flex-col md:flex-row  gap-10 mb-28 "
           >
@@ -125,10 +159,10 @@ const About: FC = () => {
               <span className="font-extrabold text-4xl font-Inter">10+</span>
               <span className="font-semibold text-lg">Happy Clients</span>
             </div> */}
-          </div>
-        </div>
+          </section>
+        </section>
         {/* Experiecnce */}
-        <div className="w-full  h-auto pt-28 pb-16 bg-[#f3f9ff] ">
+        <section className="w-full  h-auto pt-28 pb-16 bg-[#f3f9ff] ">
           <div className="max-w-7xl px-5 lg:px-10 h-auto mx-auto flex flex-col gap-5">
             <span className="font-medium text-lg">-EXPERIENCE</span>
             <span className=" font-extrabold text-4xl font-Inter">
@@ -169,7 +203,7 @@ const About: FC = () => {
               ))}
             </ul>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );

@@ -1,70 +1,149 @@
+"use client";
 import Image from "next/image";
-import React, { FC } from "react";
+import React, { FC, useLayoutEffect, useRef } from "react";
 import db from "@/DB/db";
+import useIsomorphicLayoutEffect from "@/Hooks/IsomorphicEffect";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const Home:FC = () => {
+import Link from "next/link";
+
+const Home: FC = () => {
+  const home = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const ctx = gsap.context(() => {
+      let homeTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: home.current,
+          scroller: "main",
+          start: "40% 70%",
+          end: "40% 20%",
+          
+        },
+      });
+
+      homeTl.from(".mainHeading", {
+        y: 30,
+        opacity: 0,
+        skewX: "-10deg",
+        duration: 0.7,
+        delay: 0.4,
+        stagger: 0.4,
+        ease: "circ.inOut",
+      },"a");
+      homeTl.to(".hand", {
+        fontSize: "2.3rem",
+        duration: 2,
+        ease: "back.inOut(1.7)",
+      },);
+
+      homeTl.from(".homeButtons", {
+        y: -30,
+        opacity: 0,
+        delay: 0.3,
+        stagger: 0.5,
+        ease: "back.inOut",
+      });
+      
+      gsap.from(".profilePic", {
+        x: 30,
+        opacity: 0,
+        duration: 1.5,
+        delay: 0.8,
+        stagger: 0.4,
+        ease: "power3.inOut",
+      });
+      gsap.from(".contactLink", {
+        x: 30,
+        opacity: 0,
+        duration: 1,
+        delay: 0.8,
+        stagger: 0.4,
+        ease: "power3.inOut",
+      });
+      
+      
+    });
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div
-      className="w-full min-h-screen py-24 lg:py-0 bg-[#D1FFF3] text-[#0C134F] subpixel-antialiased "
+    <section
+      ref={home}
+      className="home w-full min-h-screen py-24 lg:py-0 bg-[#D1FFF3] text-[#0C134F] subpixel-antialiased "
       id="home"
     >
       <div className=" w-full max-w-7xl lg:mx-auto px-5 h-auto ">
         <div className="w-full min-h-screen flex flex-col-reverse lg:flex-row  items-center">
           {/* left */}
-          <div className="w-full lg:w-[50%] flex flex-col gap-40">
-            <div className="flex flex-col gap-10 ">
+          <section className="w-full lg:w-[50%] flex flex-col gap-40">
+            <section className="flex flex-col gap-10 ">
               <div className="flex flex-col text-4xl md:text-6xl">
-                <h3 className="">
+                <h3 className="mainHeading">
                   Hi, I&apos;m <span className="text-[#C1AEFC]">Tejodeep!</span>
                 </h3>
-                <h3>A Full Stack Web Developer</h3>
+                <h3 className="mainHeading">A Full Stack Web</h3>
+                <h3 className="mainHeading">Developer</h3>
                 {/* <h3>your online businesses </h3> */}
               </div>
-              <span className="w-full max-w-[80%] text-xl md:text-2xl">
+              <span className="mainHeading w-full max-w-[80%] text-xl md:text-2xl">
                 <p>
-                  👋I&apos;m a India based Full Stack Web developer to improve
-                  your business needs.
+                  <span className="hand">👋</span>I&apos;m a India based Full
+                  Stack Web developer to improve your business needs.
                 </p>
               </span>
-              <div className="flex gap-4  md:text-lg">
-                <span className="px-7  md:px-10 py-3 rounded-lg bg-[#0C134F] hover:bg-transparent text-white  hover:text-[#0C134F] border border-[#0C134F] transition duration-300 ease-in-out">
-                  <p>Got a project?</p>
-                </span>
-                <span className="px-10 py-3 rounded-lg hover:bg-[#0C134F] bg-transparent  hover:text-white  text-[#0C134F] border border-[#0C134F] transition-all duration-300 ease-in-out">
-                  <p>Lets talk</p>
-                </span>
-              </div>
-            </div>
+              <section>
+                <ul className="flex gap-4 flex-wrap md:text-lg">
+                  <li className="homeButtons">
+                    <Link
+                      href={"#about"}
+                      className="px-7 mb-7 md:px-10 py-3 rounded-lg bg-[#0C134F] hover:bg-transparent text-white  hover:text-[#0C134F] border border-[#0C134F] transition duration-300 ease-in-out"
+                    >
+                      know about me
+                    </Link>
+                  </li>
+                  <li className="homeButtons">
+                    <Link
+                      href={"#contact"}
+                      className="px-10 py-3 rounded-lg hover:bg-[#0C134F] bg-transparent  hover:text-white  text-[#0C134F] border border-[#0C134F] transition-all duration-300 ease-in-out"
+                    >
+                      Lets talk
+                    </Link>
+                  </li>
+                </ul>
+              </section>
+            </section>
 
-            <div className="w-full h-auto ">
-              <ul className=" relative px-3 py-2 font-semibold before:absolute before:w-1 before:bg-amber-500 before:top-0 before:bottom-0 text-sm sm:text-lg ">
-                <li className="px-3 ">
-                  <a
+            <section className="w-full h-auto ">
+              <ul className="contactLinkBar relative px-3 py-2 font-semibold before:absolute before:w-1 before:bg-amber-500 before:top-0 before:bottom-0 text-sm sm:text-lg ">
+                <li className=" contactLink px-3 ">
+                  <Link
                     href={`tel:${db.phone}`}
                     className="hover:text-amber-500 transition duration-300 ease-in-out "
                   >
                     {db.phone}
-                    
-                  </a>
+                  </Link>
                 </li>
-                <li className="px-3 ">
-                  <a
+                <li className=" contactLink px-3  ">
+                  <Link
                     href={`mailto:${db.mail}`}
-                    className="hover:text-amber-500 transition duration-300 ease-in-out "
+                    className=" hover:text-amber-500 transition duration-300 ease-in-out "
                   >
                     {db.mail}
-                  </a>
+                  </Link>
                 </li>
               </ul>
-            </div>
-          </div>
+            </section>
+          </section>
           {/* right */}
-          <div className="w-full mb-12 lg:w-[50%] lg:pl-11">
-            <Image src={"/img.png"} width={500} height={600} alt="" />
-          </div>
+          <section className="profilePic w-full mb-12 lg:w-[50%] lg:pl-11">
+            <Image src={db.profilePic} width={450} height={0} alt="" />
+          </section>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
