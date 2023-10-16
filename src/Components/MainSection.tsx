@@ -14,7 +14,6 @@ import Testimonials from "./MainSection/Testimonials";
 import ContactUs from "./MainSection/ContactUs";
 import Skills from "./MainSection/Skills";
 import Navbar from "./Navbar";
-import LocomotiveScroll from "locomotive-scroll";
 import "@/app/Locomotive.css";
 
 interface Props {}
