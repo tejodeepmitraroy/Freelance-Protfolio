@@ -96,19 +96,19 @@ const Home: FC = () => {
                 </p>
               </span>
               <section>
-                <ul className="flex gap-4 flex-wrap md:text-lg">
-                  <li className="homeButtons">
-                    <Link
+                <ul className="flex gap-8 flex-wrap md:text-lg">
+                  <li className="homeButtons w-fit h-fit ">
+                    <a
                       href={"#about"}
-                      className="px-7 mb-7 md:px-10 py-3 rounded-lg bg-[#0C134F] hover:bg-transparent text-white  hover:text-[#0C134F] border border-[#0C134F] transition duration-300 ease-in-out"
+                      className="w-fit h-fit px-7 mb-7 md:px-10 py-3 rounded-lg bg-[#0C134F] hover:bg-transparent text-white  hover:text-[#0C134F] border border-[#0C134F] transition duration-300 ease-in-out"
                     >
                       know about me
-                    </Link>
+                    </a>
                   </li>
-                  <li className="homeButtons">
+                  <li className="homeButtons w-fit h-fit ">
                     <Link
                       href={"#contact"}
-                      className="px-10 py-3 rounded-lg hover:bg-[#0C134F] bg-transparent  hover:text-white  text-[#0C134F] border border-[#0C134F] transition-all duration-300 ease-in-out"
+                      className="w-fit h-fit px-10 py-3 rounded-lg hover:bg-[#0C134F] bg-transparent  hover:text-white  text-[#0C134F] border border-[#0C134F] transition-all duration-300 ease-in-out"
                     >
                       Lets talk
                     </Link>
@@ -140,7 +140,7 @@ const Home: FC = () => {
           </section>
           {/* right */}
           <section className="profilePic w-full mb-12 lg:w-[50%] lg:pl-11">
-            <Image src={db.profilePic} width={450} height={0} alt="" priority />
+            <img src={db.profilePic} width={450} height={0} alt="" />
           </section>
         </div>
       </div>

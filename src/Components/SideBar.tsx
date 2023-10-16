@@ -69,30 +69,24 @@ const SideBar: FC = (props: Props) => {
       <nav className="">
         <ul className="flex flex-col items-center gap-3 2xl:gap-5 text-[#534f80] text-base 2xl:text-lg cursor-pointer">
           <li className="sideBarNav">
-            <Link href="#home" className="hover:text-[#a5a6ff] cursor-pointer">
+            <a href="#home" className="hover:text-[#a5a6ff] cursor-pointer">
               Home
-            </Link>
+            </a>
           </li>
           <li className="sideBarNav">
-            <Link href="#about" className="hover:text-[#a5a6ff] cursor-pointer">
+            <a href="#about" className="hover:text-[#a5a6ff] cursor-pointer">
               About
-            </Link>
+            </a>
           </li>
           <li className="sideBarNav">
-            <Link
-              href="#services"
-              className="hover:text-[#a5a6ff] cursor-pointer"
-            >
+            <a href="#services" className="hover:text-[#a5a6ff] cursor-pointer">
               Skills
-            </Link>
+            </a>
           </li>
           <li className="sideBarNav">
-            <Link
-              href="#projects"
-              className="hover:text-[#a5a6ff] cursor-pointer"
-            >
+            <a href="#projects" className="hover:text-[#a5a6ff] cursor-pointer">
               Projects
-            </Link>
+            </a>
           </li>
           {/* <li>
               <a
@@ -103,19 +97,16 @@ const SideBar: FC = (props: Props) => {
               </a>
             </li> */}
           <li className="sideBarNav">
-            <Link
-              href="#contact"
-              className="hover:text-[#a5a6ff] cursor-pointer"
-            >
+            <a href="#contact" className="hover:text-[#a5a6ff] cursor-pointer">
               Contact
-            </Link>
+            </a>
           </li>
         </ul>
       </nav>
 
       <section className="flex flex-col gap-6 items-center text-[#534f80]  font-medium ">
         <ul className="w-fit h-12 flex gap-2 items-center">
-            <li className="sideBarLink"> 
+          <li className="sideBarLink">
             <Link
               href={db.socialLinks.facebook}
               target="_blank"
@@ -132,7 +123,7 @@ const SideBar: FC = (props: Props) => {
             >
               <FontAwesomeIcon icon={faXTwitter} className="w-4" />
             </Link>
-          </li> 
+          </li>
           <li className="sideBarLink">
             <Link
               href={db.socialLinks.linkedIn}
@@ -142,7 +133,7 @@ const SideBar: FC = (props: Props) => {
               <FontAwesomeIcon icon={faLinkedinIn} className="w-4" />
             </Link>
           </li>
-          <li  className="sideBarLink">
+          <li className="sideBarLink">
             <Link
               href={db.socialLinks.github}
               target="_blank"

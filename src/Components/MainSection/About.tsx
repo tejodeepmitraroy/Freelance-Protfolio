@@ -55,10 +55,10 @@ const About: FC = () => {
 
       gsap.from(".expBox", {
         y: 40,
-        skewX:2,
+        skewX: 2,
         opacity: 0,
         stagger: 0.9,
-        delay:0.3,
+        delay: 0.3,
         scrollTrigger: {
           trigger: experience.current,
           scroller: "main",
@@ -71,7 +71,7 @@ const About: FC = () => {
   }, []);
 
   return (
-    <div className="about w-full h-auto border bg-white" id="about">
+    <section className="about w-full h-auto border bg-white" id="about">
       <div className="w-full h-full mt-28">
         {/* About */}
         <section
@@ -92,12 +92,12 @@ const About: FC = () => {
                 </span>
               </div>
               <span className="aboutGotProject w-fit h-fit mt-4">
-                <Link
-                  href={"/"}
+                <a
+                  href={"#projects"}
                   className="w-fit h-fit px-10 py-3 mt-6 rounded-lg bg-[#0C134F] hover:bg-transparent text-white text-lg hover:text-[#0C134F] border border-[#0C134F] transition duration-300 ease-in-out"
                 >
                   Got a project?
-                </Link>
+                </a>
               </span>
             </section>
             {/* right */}
@@ -115,22 +115,19 @@ const About: FC = () => {
                 <ul className="w-full flex  flex-wrap ">
                   <li className="info flex flex-col mr-6 mb-3">
                     <span className="underline">AGE</span>
-                    <span className="font-extrabold text-xl">{db.age}</span>
+                    <span className="font-extrabold text-lg">{db.age}</span>
                   </li>
                   <li className="info flex flex-col mr-6 mb-3">
                     <span className="underline">BORN</span>
-                    <a
-                      href=""
-                      className="font-extrabold text-xl cursor-pointer hover:text-amber-500 transition duration-300 ease-in-out "
-                    >
+                    <span className="font-extrabold text-lg cursor-pointer hover:text-amber-500 transition duration-300 ease-in-out ">
                       {db.born}
-                    </a>
+                    </span>
                   </li>
                   <li className="info flex flex-col mr-6 mb-3">
                     <span className="underline">PHONE</span>
                     <a
                       href={`tel:${db.phone}`}
-                      className="font-extrabold text-xl cursor-pointer hover:text-amber-500 transition duration-300 ease-in-out "
+                      className="font-extrabold text-lg cursor-pointer hover:text-amber-500 transition duration-300 ease-in-out "
                     >
                       {db.phone}
                     </a>
@@ -139,7 +136,7 @@ const About: FC = () => {
                     <span className="underline">MAIL</span>
                     <a
                       href={`mailto:${db.mail}`}
-                      className="font-extrabold text-xl cursor-pointer hover:text-amber-500 transition duration-300 ease-in-out "
+                      className="font-extrabold text-lg cursor-pointer hover:text-amber-500 transition duration-300 ease-in-out "
                     >
                       {db.mail}
                     </a>
@@ -215,7 +212,7 @@ const About: FC = () => {
           </div>
         </section>
       </div>
-    </div>
+    </section>
   );
 };
 

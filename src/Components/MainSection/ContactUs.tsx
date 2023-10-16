@@ -137,12 +137,11 @@ const ContactUs: FC = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      href="tel:+91-9674128921"
+                    <span
                       className="relative pb-1 hover:no-underline before:absolute  before:w-full before:h-[1.5px] before:left-0 before:bottom-1  before:bg-black before:transition before:duration-1000 before:ease-in-out before:hover:w-0"
                     >
                       {db.born}
-                    </Link>
+                    </span>
                   </li>
                 </ul>
               </section>
