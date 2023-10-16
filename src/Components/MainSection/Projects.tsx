@@ -1,5 +1,5 @@
 "use client";
-import React, { FC, useState } from "react";
+import React, { FC, useLayoutEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -7,14 +7,36 @@ import "swiper/css/pagination";
 import Image from "next/image";
 import db from "@/DB/db";
 import Modal from "../Modal";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import useIsomorphicLayoutEffect from "@/Hooks/IsomorphicEffect";
 
 const Projects: FC = () => {
   const [isModal, setIsModal] = useState<boolean>(false);
   const [isData, setIsData] = useState<projects>({} as projects);
 
+  useIsomorphicLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const ctx = gsap.context(() => {
+      // gsap.from(".skillContainer", {
+      //   x: 30,
+      //   opacity: 0,
+      //   stagger: 0.8,
+      //   scrollTrigger: {
+      //     // trigger: skill.current,
+      //     scroller: "main",
+      //     start: "25% 60%",
+      //     markers: true,
+      //   },
+      //   ease: "expo.out",
+      // });
+    });
+    return () => ctx.revert();
+  }, []);
+
   return (
     <>
-      <div
+      <section
         className="relative w-full min-h-screen bg-[#f3f9ff] py-28"
         id="projects"
       >
@@ -25,17 +47,16 @@ const Projects: FC = () => {
               Recent Completed Project
             </span>
 
-            <div className="w-full mt-10  text-lg">
+            <section className="w-full mt-10  text-lg">
               <Swiper
                 slidesPerView={"auto"}
-                spaceBetween={30}
                 style={{ paddingBottom: "1rem" }}
                 modules={[Pagination, Navigation]}
                 className="mySwiper"
                 breakpoints={{
                   640: {
                     slidesPerView: 1,
-                    spaceBetween: 20,
+                    spaceBetween: 40,
                   },
                   768: {
                     slidesPerView: 2,
@@ -50,7 +71,7 @@ const Projects: FC = () => {
                 {db.projects.map((project, index) => (
                   <SwiperSlide
                     key={index}
-                    className="w-full md:w-[360px] h-full mr-8 border-4 border-gray-600 rounded-lg p-2"
+                    className="w-full md:w-[360px]  h-full mr-8 border-4 border-gray-600 rounded-lg p-2"
                   >
                     {/* <div className="w-full md:w-[360px] h-full mr-8 border-4 border-gray-600 rounded-lg p-2"> */}
                     <span className="w-full h-full flex flex-col gap-4 cursor-pointer ">
@@ -68,11 +89,14 @@ const Projects: FC = () => {
                           alt=""
                           className="w-full"
                         />
-                        <img
+                        <Image
                           src={project.thumbnail}
+                          width={"380"}
+                          height={"360"}
                           alt=""
+                          priority
                           className={`absolute top-0 left-0 w-full h-full bg-cover hover:scale-110 transition-transform duration-200 ease-in `}
-                        ></img>
+                        ></Image>
                         {/* <Image
                         src={"/img2.jpg"}
                         width={380}
@@ -98,10 +122,10 @@ const Projects: FC = () => {
                   </SwiperSlide>
                 ))}
               </Swiper>
-            </div>
+            </section>
           </div>
         </div>
-      </div>
+      </section>
       {/* Modal */}
       <Modal data={isData} isOpen={isModal} isClose={() => setIsModal(false)} />
     </>

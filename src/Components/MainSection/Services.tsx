@@ -3,11 +3,11 @@ import db from "@/DB/db";
 
 const Services: FC = () => {
   return (
-    <div className="relative w-full h-auto" id="services">
+    <section className="relative w-full h-auto" id="services">
       <div className="w-full my-28 ">
-        <div className="w-full max-w-7xl px-5 lg:px-10  mx-auto  flex flex-col gap-5">
+        <section className="w-full max-w-7xl px-5 lg:px-10  mx-auto  flex flex-col gap-5">
           <span className="font-medium text-lg">- SERVICES</span>
-          <div className=" flex flex-col gap-10 md:flex-row justify-between">
+          <section className=" flex flex-col gap-10 md:flex-row justify-between">
             <span className="font-extrabold text-4xl font-Inter">
               My Freelance Services
             </span>
@@ -19,7 +19,7 @@ const Services: FC = () => {
                 {db.mail}
               </a>
             </span>
-          </div>
+          </section>
           <ul className="w-full flex flex-col md:flex-row flex-wrap md:-ml-2 lg:-ml-8 mt-7">
             {db.services.map((item, index) => (
               <li
@@ -58,9 +58,9 @@ const Services: FC = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </section>
       </div>
-    </div>
+    </section>
   );
 };
 

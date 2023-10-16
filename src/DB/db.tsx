@@ -5,7 +5,7 @@ const db: database = {
   subtitle: "Website & webApp Developer",
   phone: "+91-9674128921",
   mail: "tejodeepmitraroy2002@gmail.com",
-  profilePic:"/profilePic/profile1.png",
+  profilePic: "/profilePic/profile1.png",
   bio: [
     "I'm Tejodeep Mitra Roy, a passionate web developer based in India, specializing in the Full stack Application. With a focus on crafting remarkable digital experiences, I transform ideas into visually stunning and high-performance websites and web applications.",
   ],
@@ -21,7 +21,7 @@ const db: database = {
       ],
     },
     {
-      company: "Institution's Innovation Council",
+      company: "IIC-TMSL",
       position: "Head of VFX Editor",
       timeRange: "Feb 2022 - jul 2023",
       description: [
@@ -38,9 +38,9 @@ const db: database = {
 
   projects: [
     {
-      thumbnail: "/projects/chatApp/login.png",
+      thumbnail: "/projects/chatApp/thumbnail.jpeg",
       title: "Full Stack Chat App",
-      subtitle: "",
+      subtitle: "Personal",
       date: "jun 2023 - jul 2023",
       preview: [
         "/projects/chatApp/home.jpg",
@@ -72,18 +72,18 @@ const db: database = {
       ],
     },
     {
-      thumbnail: "/projects/pro1.jpg",
+      thumbnail: "/projects/urlShortner/thumbnail.png",
       title: "Link Shortner",
-      subtitle: "",
+      subtitle: "Personal",
       date: "jun 2023 - jul 2023",
       preview: [
-        "/projects/chatApp/home.jpg",
-        "/projects/chatApp/login.png",
-        "/projects/chatApp/signup.jpg",
+        "/projects/urlShortner/demo1.png",
+        "/projects/urlShortner/demo2.gif",
+        
       ],
       description:
         " Web development is the process of bilduing programming Loremipsum dolor, sit amet consectetur adi pisicing elit. Soluta aspernatur, dolore, autem qui non quae magni aliquam sint doloremque, itaque voluptatum! Deserunt laborum nihil, qui quam commodi consequatur? Veniam laborum recusandae autem,link:",
-      live: "https://talk-a-tive-1.netlify.app/#/",
+      live: "https://urlshortner123.netlify.app/",
       repoLink: [
         {
           name: "FrontEnd Code",

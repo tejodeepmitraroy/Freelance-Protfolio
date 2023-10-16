@@ -11,7 +11,7 @@ import Link from "next/link";
 const Home: FC = () => {
   const home = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const ctx = gsap.context(() => {
       let homeTl = gsap.timeline({
@@ -20,24 +20,27 @@ const Home: FC = () => {
           scroller: "main",
           start: "40% 70%",
           end: "40% 20%",
-          
         },
       });
 
-      homeTl.from(".mainHeading", {
-        y: 30,
-        opacity: 0,
-        skewX: "-10deg",
-        duration: 0.7,
-        delay: 0.4,
-        stagger: 0.4,
-        ease: "circ.inOut",
-      },"a");
+      homeTl.from(
+        ".mainHeading",
+        {
+          y: 30,
+          opacity: 0,
+          skewX: "-10deg",
+          duration: 0.7,
+          delay: 0.4,
+          stagger: 0.4,
+          ease: "circ.inOut",
+        },
+        "a"
+      );
       homeTl.to(".hand", {
         fontSize: "2.3rem",
         duration: 2,
-        ease: "back.inOut(1.7)",
-      },);
+        ease: "bounce",
+      });
 
       homeTl.from(".homeButtons", {
         y: -30,
@@ -46,7 +49,7 @@ const Home: FC = () => {
         stagger: 0.5,
         ease: "back.inOut",
       });
-      
+
       gsap.from(".profilePic", {
         x: 30,
         opacity: 0,
@@ -63,8 +66,6 @@ const Home: FC = () => {
         stagger: 0.4,
         ease: "power3.inOut",
       });
-      
-      
     });
     return () => ctx.revert();
   }, []);
@@ -139,7 +140,7 @@ const Home: FC = () => {
           </section>
           {/* right */}
           <section className="profilePic w-full mb-12 lg:w-[50%] lg:pl-11">
-            <Image src={db.profilePic} width={450} height={0} alt="" />
+            <Image src={db.profilePic} width={450} height={0} alt="" priority />
           </section>
         </div>
       </div>

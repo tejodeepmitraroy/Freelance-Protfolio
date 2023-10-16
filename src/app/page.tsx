@@ -4,10 +4,12 @@ import SideBar from "@/Components/SideBar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 export default function Home() {
+  
   return (
     // <Cursor>
-    <div className="relative w-full h-screen lg:flex">
+    <div data-scroll className="relative w-full h-screen lg:flex">
       <SideBar />
       <MainSection />
     </div>

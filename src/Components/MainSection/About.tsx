@@ -1,78 +1,83 @@
 "use client";
-import React, { FC, useEffect, useLayoutEffect, useRef } from "react";
+import React, { FC, useLayoutEffect, useRef } from "react";
 import db from "@/DB/db";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import Link from "next/link";
+import useIsomorphicLayoutEffect from "@/Hooks/IsomorphicEffect";
 
 const About: FC = () => {
-  const counter = useRef<HTMLDivElement>(null);
   const about = useRef<HTMLDivElement>(null);
-  useLayoutEffect(() => {
+  const experience = useRef<HTMLDivElement>(null);
+  useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const ctx = gsap.context(() => {
-      let homeTl = gsap.timeline({
+      gsap.from(".aboutGotProject", {
+        x: -30,
+        opacity: 0,
+        duration: 1,
+        delay: 0.3,
+        stagger: 0.5,
         scrollTrigger: {
           trigger: about.current,
           scroller: "main",
-          start: "20% 70%",
-          end: "40% 20%",
-          markers:true
-          
+          start: "5% 70%",
         },
+        ease: "expo.inOut",
       });
 
-      // homeTl.from(".mainHeading", {
-      //   y: 30,
-      //   opacity: 0,
-      //   skewX: "-10deg",
-      //   duration: 0.7,
-      //   delay: 0.4,
-      //   stagger: 0.4,
-      //   ease: "circ.inOut",
-      // },"a");
-      // homeTl.to(".hand", {
-      //   fontSize: "2.3rem",
-      //   duration: 2,
-      //   ease: "back.inOut(1.7)",
-      // },);
+      gsap.from(".info", {
+        x: 30,
+        opacity: 0,
+        duration: 1,
+        delay: 0.4,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: about.current,
+          scroller: "main",
+          start: "25% 60%",
+        },
+        ease: "power3.inOut",
+      });
 
-      // homeTl.from(".homeButtons", {
-      //   y: -30,
-      //   opacity: 0,
-      //   delay: 0.3,
-      //   stagger: 0.5,
-      //   ease: "back.inOut",
-      // });
-      
-      // gsap.from(".profilePic", {
-      //   x: 30,
-      //   opacity: 0,
-      //   duration: 1.5,
-      //   delay: 0.8,
-      //   stagger: 0.4,
-      //   ease: "power3.inOut",
-      // });
-      // gsap.from(".contactLink", {
-      //   x: 30,
-      //   opacity: 0,
-      //   duration: 1,
-      //   delay: 0.8,
-      //   stagger: 0.4,
-      //   ease: "power3.inOut",
-      // });
-      
-      
+      gsap.from(".counter", {
+        y: 20,
+        duration: 1,
+        opacity: 0,
+        stagger: 1,
+        scrollTrigger: {
+          trigger: about.current,
+          scroller: "main",
+          start: "50% 60%",
+        },
+        ease: "back.inOut(1.7)",
+      });
+
+      gsap.from(".expBox", {
+        y: 40,
+        skewX:2,
+        opacity: 0,
+        stagger: 0.9,
+        delay:0.3,
+        scrollTrigger: {
+          trigger: experience.current,
+          scroller: "main",
+          start: "30% 60%",
+        },
+        ease: "expo.out",
+      });
     });
     return () => ctx.revert();
   }, []);
 
   return (
-    <div ref={about} className="about w-full h-auto border bg-white" id="about">
+    <div className="about w-full h-auto border bg-white" id="about">
       <div className="w-full h-full mt-28">
         {/* About */}
-        <section className="w-full max-w-7xl px-5 lg:px-10 h-auto mx-auto flex flex-col gap-16">
+        <section
+          ref={about}
+          className="w-full max-w-7xl px-5 lg:px-10 h-auto mx-auto flex flex-col gap-16"
+        >
           {/* biography */}
           <div className="flex flex-col lg:flex-row ">
             {/* left */}
@@ -86,8 +91,13 @@ const About: FC = () => {
                   <p>{db.subtitle}</p>
                 </span>
               </div>
-              <span className="w-fit px-10 py-3 mt-6 rounded-lg bg-[#0C134F] hover:bg-transparent text-white text-lg hover:text-[#0C134F] border border-[#0C134F] transition duration-300 ease-in-out">
-                <p>Got a project?</p>
+              <span className="aboutGotProject w-fit h-fit mt-4">
+                <Link
+                  href={"/"}
+                  className="w-fit h-fit px-10 py-3 mt-6 rounded-lg bg-[#0C134F] hover:bg-transparent text-white text-lg hover:text-[#0C134F] border border-[#0C134F] transition duration-300 ease-in-out"
+                >
+                  Got a project?
+                </Link>
               </span>
             </section>
             {/* right */}
@@ -103,11 +113,11 @@ const About: FC = () => {
 
               <div className="w-full ">
                 <ul className="w-full flex  flex-wrap ">
-                  <li className="flex flex-col mr-6 mb-3">
+                  <li className="info flex flex-col mr-6 mb-3">
                     <span className="underline">AGE</span>
                     <span className="font-extrabold text-xl">{db.age}</span>
                   </li>
-                  <li className="flex flex-col mr-6 mb-3">
+                  <li className="info flex flex-col mr-6 mb-3">
                     <span className="underline">BORN</span>
                     <a
                       href=""
@@ -116,7 +126,7 @@ const About: FC = () => {
                       {db.born}
                     </a>
                   </li>
-                  <li className="flex flex-col mr-6 mb-3">
+                  <li className="info flex flex-col mr-6 mb-3">
                     <span className="underline">PHONE</span>
                     <a
                       href={`tel:${db.phone}`}
@@ -125,7 +135,7 @@ const About: FC = () => {
                       {db.phone}
                     </a>
                   </li>
-                  <li className="flex flex-col mb-3">
+                  <li className="info flex flex-col mb-3">
                     <span className="underline">MAIL</span>
                     <a
                       href={`mailto:${db.mail}`}
@@ -139,10 +149,7 @@ const About: FC = () => {
             </section>
           </div>
           {/* counter */}
-          <section
-            ref={counter}
-            className=" counter w-full flex flex-col md:flex-row  gap-10 mb-28 "
-          >
+          <section className="w-full flex flex-col md:flex-row  gap-10 mb-28 ">
             <div className=" counter w-full md:w-[50%] lg:w-[30%] h-48 bg-[#F6F7C1] rounded-md flex flex-col gap-4 items-center justify-center ">
               <span className="font-extrabold text-4xl font-Inter">
                 {db.experienceYears}
@@ -162,7 +169,10 @@ const About: FC = () => {
           </section>
         </section>
         {/* Experiecnce */}
-        <section className="w-full  h-auto pt-28 pb-16 bg-[#f3f9ff] ">
+        <section
+          ref={experience}
+          className="w-full  h-auto pt-28 pb-16 bg-[#f3f9ff] "
+        >
           <div className="max-w-7xl px-5 lg:px-10 h-auto mx-auto flex flex-col gap-5">
             <span className="font-medium text-lg">-EXPERIENCE</span>
             <span className=" font-extrabold text-4xl font-Inter">
@@ -172,9 +182,9 @@ const About: FC = () => {
               {db.experience.map((experience, index) => (
                 <li
                   key={index}
-                  className="w-full md:w-1/2 mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out"
+                  className=" w-full md:w-1/2 mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out"
                 >
-                  <div className="w-full relative p-9 lg:px-20 lg:py-11 flex flex-col gap-6 rounded shadow-lg text-lg  font-normal leading-8 bg-white border-1 border-[#f9fafc]">
+                  <div className=" expBox w-full relative p-9 lg:px-20 lg:py-11 flex flex-col gap-6 rounded shadow-lg text-lg  font-normal leading-8 bg-white border-1 border-[#f9fafc]">
                     {/* heading */}
                     <div className="w-full flex justify-between text-lg ">
                       <div className="flex flex-col gap-1">
@@ -186,7 +196,7 @@ const About: FC = () => {
                         </span>
                       </div>
 
-                      <span className=" w-44 text-base font-medium md:text-xl">
+                      <span className=" w-44 text-base flex justify-end font-medium md:text-xl">
                         -{experience.company}
                       </span>
                     </div>

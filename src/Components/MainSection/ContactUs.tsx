@@ -1,5 +1,5 @@
 "use client";
-import React, { FC, useState } from "react";
+import React, { FC, useRef, useState } from "react";
 import db from "@/DB/db";
 import emailjs from "@emailjs/browser";
 import axios from "axios";
@@ -12,12 +12,35 @@ import {
   faLinkedinIn,
   faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import useIsomorphicLayoutEffect from "@/Hooks/IsomorphicEffect";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
 
 const ContactUs: FC = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
   const [loading, setLoading] = useState<boolean>();
+  const contact = useRef<HTMLDivElement>(null);
+
+  useIsomorphicLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const ctx = gsap.context(() => {
+      gsap.from(".contactSocialLinks", {
+        y: 30,
+        opacity: 0,
+        delay: 0.7,
+        stagger: 0.2,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: contact.current,
+          scroller: "main",
+          start: "20% 60%",
+        },
+      });
+    });
+    return () => ctx.revert();
+  }, []);
 
   const sendEmail = async (e: any) => {
     e.preventDefault();
@@ -48,13 +71,10 @@ const ContactUs: FC = () => {
         autoClose: 4000,
         hideProgressBar: false,
         closeOnClick: true,
-
         draggable: true,
         progress: undefined,
         theme: "light",
       });
-
-      console.log(res);
       setName("");
       setEmail("");
       setMessage("");
@@ -65,94 +85,108 @@ const ContactUs: FC = () => {
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
-
         draggable: true,
         progress: undefined,
         theme: "light",
       });
-
-      console.log(error);
       setLoading(false);
     }
   };
   return (
-    <div className="relative w-full min-h-screen" id="contact">
+    <section
+      ref={contact}
+      className="relative w-full min-h-screen"
+      id="contact"
+    >
       <div className="w-full min-h-screen py-28 bg-[#e9f9ff] ">
-        <div className="w-full max-w-7xl px-5 lg:px-10 mx-auto flex flex-col">
+        <section className="w-full max-w-7xl px-5 lg:px-10 mx-auto flex flex-col">
           {/* Connects */}
-          <div className="w-full flex flex-col  md:flex-row">
+          <section className="w-full flex flex-col  md:flex-row">
             {/* left */}
-            <div className="w-full md:w-1/2 md:pr-12 flex flex-col gap-5 ">
+            <section className="w-full md:w-1/2 md:pr-12 flex flex-col gap-5 ">
               <div className=" flex flex-col gap-5">
                 <span className="font-medium text-lg">
                   <p>LET&lsquo;S CONNECT </p>
                 </span>
-                <Link href={"#skills"} className=" font-extrabold text-4xl font-Inter">
+                <Link
+                  href={"#skills"}
+                  className=" font-extrabold text-4xl font-Inter"
+                >
                   <p>Get in Touch</p>
                 </Link>
               </div>
               <span className=" mt-5 text-lg leading-8">
                 <p>{db.contactUs.description}</p>
               </span>
-              <div className="w-full">
+              <section className="w-full">
                 <ul className="relative text-lg leading-8 text-[#55527C] font-semibold font-Inter">
-                  <li className="w-full">
-                    <a
+                  <li className="w-full ">
+                    <Link
                       href="tel:+91-9674128921"
                       className="relative pb-1 hover:no-underline before:absolute  before:w-full before:h-[1.5px] before:left-0 before:bottom-1  before:bg-black before:transition before:duration-1000 before:ease-in-out before:hover:w-0"
                     >
                       {db.phone}
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       href="mailto:tejodeepmitraroy2002@gmail.com"
                       className="relative pb-1 hover:no-underline before:absolute  before:w-full before:h-[1.5px] before:left-0 before:bottom-1  before:bg-black before:transition before:duration-1000 before:ease-in-out before:hover:w-0"
                     >
                       {db.mail}
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       href="tel:+91-9674128921"
                       className="relative pb-1 hover:no-underline before:absolute  before:w-full before:h-[1.5px] before:left-0 before:bottom-1  before:bg-black before:transition before:duration-1000 before:ease-in-out before:hover:w-0"
                     >
                       {db.born}
-                    </a>
+                    </Link>
                   </li>
                 </ul>
-              </div>
-              <div className="w-fit h-16 flex gap-2 items-center mt-4">
-                <Link
-                href={db.socialLinks.facebook}
-                target="_blank"
-                className="w-11 h-11 bg-gray-200  text-[#130f49]  flex justify-center items-center rounded-full hover:bg-[#130f49]  hover:text-gray-200 hover:w-14 hover:h-14  transition duration-900 ease-in-out">
-                  <FontAwesomeIcon icon={faFacebookF} size={"lg"} />
-                </Link>
-                <Link
-                href={db.socialLinks.twitter}
-                target="_blank"
-                className="w-11 h-11 bg-gray-200  text-[#130f49]  flex justify-center items-center rounded-full hover:bg-[#130f49]  hover:text-gray-200 hover:w-14 hover:h-14  transition duration-900 ease-in-out">
-                  
-                  <FontAwesomeIcon icon={faXTwitter} size={"lg"} />
-                </Link>
-
-                <Link
-                  href={db.socialLinks.linkedIn}
-                  target="_blank"
-                  className="w-11 h-11 bg-gray-200  text-[#130f49]  flex justify-center items-center rounded-full hover:bg-[#130f49]  hover:text-gray-200 hover:w-14 hover:h-14  transition duration-900 ease-in-out"
-                >
-                  <FontAwesomeIcon icon={faLinkedinIn} size={"lg"} />
-                </Link>
-                <Link
-                  href={db.socialLinks.github}
-                  target="_blank"
-                  className="w-11 h-11 bg-gray-200  text-[#130f49]  flex justify-center items-center rounded-full hover:bg-[#130f49]  hover:text-gray-200 hover:w-14 hover:h-14 transition duration-900 ease-in-out"
-                >
-                  <FontAwesomeIcon icon={faGithub} size={"lg"} />
-                </Link>
-              </div>
-            </div>
+              </section>
+              <section className="w-fit h-16  mt-4">
+                <ul className="w-full h-full flex gap-2 items-center">
+                  <li className="contactSocialLinks">
+                    <Link
+                      href={db.socialLinks.facebook}
+                      target="_blank"
+                      className="w-12 h-12 bg-gray-200  text-[#130f49]  flex justify-center items-center rounded-full hover:bg-[#4267B2]  hover:text-gray-200 hover:w-14 hover:h-14   transition duration-900 ease-in-out"
+                    >
+                      <FontAwesomeIcon icon={faFacebookF} size={"lg"} />
+                    </Link>
+                  </li>
+                  <li className="contactSocialLinks">
+                    <Link
+                      href={db.socialLinks.twitter}
+                      target="_blank"
+                      className="w-12 h-12 bg-gray-200  text-[#130f49]  flex justify-center items-center rounded-full hover:bg-[#130f49]  hover:text-gray-200 hover:w-14 hover:h-14  transition duration-900 ease-in-out"
+                    >
+                      <FontAwesomeIcon icon={faXTwitter} size={"lg"} />
+                    </Link>
+                  </li>
+                  <li className="contactSocialLinks">
+                    <Link
+                      href={db.socialLinks.linkedIn}
+                      target="_blank"
+                      className="w-12 h-12 bg-gray-200  text-[#130f49]  flex justify-center items-center rounded-full hover:bg-[#0072b1]  hover:text-gray-200 hover:w-14 hover:h-14  transition duration-900 ease-in-out"
+                    >
+                      <FontAwesomeIcon icon={faLinkedinIn} size={"lg"} />
+                    </Link>
+                  </li>
+                  <li className="contactSocialLinks">
+                    <Link
+                      href={db.socialLinks.github}
+                      target="_blank"
+                      className="w-12 h-12 bg-gray-200  text-[#130f49]  flex justify-center items-center rounded-full hover:bg-[#130f49]  hover:text-gray-200 hover:w-14 hover:h-14 transition duration-900 ease-in-out"
+                    >
+                      <FontAwesomeIcon icon={faGithub} size={"lg"} />
+                    </Link>
+                  </li>
+                </ul>
+              </section>
+            </section>
 
             {/* right */}
             <form className="w-full md:w-1/2 md:pl-12 mt-16 flex flex-col gap-7 ">
@@ -212,22 +246,22 @@ const ContactUs: FC = () => {
                 )}
               </span>
             </form>
-          </div>
+          </section>
           {/* map location */}
-          <div className=" relative mt-28  w-full h-96">
+          <section className=" relative mt-28  w-full h-96">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29455.92847020909!2d88.40960262601587!3d22.654121982998415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89e6c605d82ff%3A0x1f6779d05c4879ee!2sDum%20Dum%2C%20Kolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1694771815112!5m2!1sen!2sin"
               width="100%"
               height="100%"
               title="map"
             ></iframe>
-          </div>
-          <div className="w-full text-4xl font-bold flex mt-10 justify-center">
+          </section>
+          <section className="w-full text-4xl font-bold flex mt-10 justify-center">
             <p>&quot;I hope We will Work Together&quot;</p>
-          </div>
-        </div>
+          </section>
+        </section>
       </div>
-    </div>
+    </section>
   );
 };
 

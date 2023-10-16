@@ -46,13 +46,14 @@ const SideBar: FC = (props: Props) => {
     return () => ctx.revert();
   }, []);
   return (
-    <aside className="  lg:w-[25%] 2xl:w-[20%] hidden h-screen border-r lg:flex flex-col p-8 xl:p-14 items-center justify-between font-Karla antialiased">
+    <aside className=" relative  lg:w-[25%] 2xl:w-[20%] hidden h-screen border-r lg:flex flex-col p-8 xl:p-14 items-center justify-between font-Karla antialiased">
       <section className="flex flex-col gap-7 items-center">
         <Image
           src={"/img.png"}
           width={110}
           height={110}
           alt=""
+          priority
           className=" sideBarHeading w-25 h-25 border-2 border-[#a5a6ff] rounded-full"
         />
         <div className="flex flex-col items-center justify-center ">

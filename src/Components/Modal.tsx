@@ -21,13 +21,13 @@ const Modal: FC<ModalProps> = ({ data, isOpen, isClose }) => {
   console.log(data);
   return (
     <>
-      <div
+      <section
         className={`fixed ${
           !isOpen ? "hidden" : ""
         } top-0 left-0 bottom-0 right-0 w-full h-screen z-10 transition ease-in `}
       >
         <div className="relative w-full h-full  bg-black opacity-70 flex justify-center z-0 "></div>
-        <div className="absolute top-10 bottom-10 md:top-[50px] md:bottom-[50px] lg:top-[70px] lg:bottom-[70px] left-0 right-0 m-[0_auto] opacity-100 w-full max-w-xs md:max-w-xl lg:max-w-3xl 2xl:max-w-5xl h-auto">
+        <div className="absolute top-10 bottom-10 md:top-[50px]  md:bottom-[50px] lg:top-[70px] lg:bottom-[70px] left-0 right-0 m-[0_auto] opacity-100 w-full  md:max-w-xl lg:max-w-3xl 2xl:max-w-5xl h-auto">
           {/* Close button */}
           <button
             className="absolute right-2 md:-right-16 md:scale-75 lg:scale-100 ml-7 w-10 h-10 md:border-2 border-white rounded-xl md:text-white z-20"
@@ -53,7 +53,7 @@ const Modal: FC<ModalProps> = ({ data, isOpen, isClose }) => {
                     src={item}
                     width={"1080"}
                     height={"0"}
-                    className="w-full h-[450px] rounded mb-9"
+                    className="realtive w-full md:h-[300px] lg:h-[450px]   rounded mb-9"
                     alt=""
                   />
                 </SwiperSlide>
@@ -138,7 +138,7 @@ const Modal: FC<ModalProps> = ({ data, isOpen, isClose }) => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };
