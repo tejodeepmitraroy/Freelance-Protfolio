@@ -1,12 +1,16 @@
 "use client";
+import useIsomorphicLayoutEffect from "@/Hooks/IsomorphicEffect";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 const Navbar = () => {
   const [navReveal, setNavReveal] = useState<boolean>(false);
+  const navbarSide = useRef<HTMLDivElement>(null);
+  const navBarInner = useRef<HTMLDivElement>(null);
 
   return (
     <>
@@ -22,7 +26,9 @@ const Navbar = () => {
             aria-controls="navbar-default"
             aria-expanded="false"
             title=" button"
-            onClick={() => setNavReveal(!navReveal)}
+            onClick={() => {
+              setNavReveal(!navReveal);
+            }}
           >
             <svg
               className="w-5 h-5"
@@ -43,6 +49,7 @@ const Navbar = () => {
         </section>
       </header>
       <nav
+        ref={navbarSide}
         className={`fixed ${
           navReveal ? "" : "hidden"
         } top-12 right-0 w-full h-screen z-50 `}
@@ -52,7 +59,10 @@ const Navbar = () => {
           title="Menu Closing button"
           onClick={() => setNavReveal(!navReveal)}
         ></button>
-        <section className="fixed top-12 right-0 w-52 h-full bg-white text-right flex flex-col gap-6 pt-12 pb-5 px-5 font-Karla antialiased">
+        <section
+          ref={navBarInner}
+          className="fixed top-12 right-0 w-52 h-full bg-white text-right flex flex-col gap-6 pt-12 pb-5 px-5 font-Karla antialiased"
+        >
           <div className="flex flex-col items-end">
             <Image
               src={"/img.png"}
@@ -73,7 +83,7 @@ const Navbar = () => {
 
           <nav className="">
             <ul className="flex flex-col items-end gap-3 2xl:gap-5 text-[#534f80] text-base 2xl:text-lg cursor-pointer">
-              <li>
+              <li className="rightSideBarLink">
                 <Link
                   href="#home"
                   className="hover:text-[#a5a6ff] cursor-pointer"
@@ -81,7 +91,7 @@ const Navbar = () => {
                   Home
                 </Link>
               </li>
-              <li>
+              <li className="rightSideBarLink">
                 <Link
                   href="#about"
                   className="hover:text-[#a5a6ff] cursor-pointer"
@@ -89,7 +99,7 @@ const Navbar = () => {
                   About
                 </Link>
               </li>
-              <li>
+              <li className="rightSideBarLink">
                 <Link
                   href="#services"
                   className="hover:text-[#a5a6ff] cursor-pointer"
@@ -97,7 +107,7 @@ const Navbar = () => {
                   Skills
                 </Link>
               </li>
-              <li>
+              <li className="rightSideBarLink">
                 <Link
                   href="#projects"
                   className="hover:text-[#a5a6ff] cursor-pointer"
@@ -105,7 +115,7 @@ const Navbar = () => {
                   Projects
                 </Link>
               </li>
-              <li>
+              <li className="rightSideBarLink">
                 <Link
                   href="#services"
                   className="hover:text-[#a5a6ff] cursor-pointer"
@@ -113,7 +123,7 @@ const Navbar = () => {
                   Services
                 </Link>
               </li>
-              <li>
+              <li className="rightSideBarLink">
                 <Link
                   href="#contact"
                   className="hover:text-[#a5a6ff] cursor-pointer"

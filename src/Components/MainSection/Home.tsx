@@ -5,7 +5,6 @@ import db from "@/DB/db";
 import useIsomorphicLayoutEffect from "@/Hooks/IsomorphicEffect";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 import Link from "next/link";
 
 const Home: FC = () => {
@@ -140,7 +139,7 @@ const Home: FC = () => {
           </section>
           {/* right */}
           <section className="profilePic w-full mb-12 lg:w-[50%] lg:pl-11">
-            <img src={db.profilePic} width={450} height={0} alt="" />
+            <Image src={db.profilePic} width={450} height={0} alt=""/>
           </section>
         </div>
       </div>
