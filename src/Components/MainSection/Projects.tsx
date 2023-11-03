@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import Image from "next/image";
 import db from "@/DB/db";
-import Modal from "../Modal";
+import Modal from "@/Components/Modal";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import useIsomorphicLayoutEffect from "@/Hooks/IsomorphicEffect";

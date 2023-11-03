@@ -39,7 +39,7 @@ const db: database = {
   projects: [
     {
       thumbnail: "/projects/chatApp/thumbnail.jpeg",
-      title: "Full Stack Chat App",
+      title: "Realtime Chat App",
       subtitle: "Personal",
       date: "jun 2023 - jul 2023",
       preview: [
