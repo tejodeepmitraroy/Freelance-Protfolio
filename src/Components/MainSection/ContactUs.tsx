@@ -255,7 +255,7 @@ const ContactUs: FC = () => {
               title="map"
             ></iframe>
           </section>
-          <section className="w-full text-4xl font-bold flex mt-10 justify-center">
+          <section className="w-full text-4xl font-bold flex mt-10 justify-center text-center">
             <p>&quot;I hope We will Work Together&quot;</p>
           </section>
         </section>

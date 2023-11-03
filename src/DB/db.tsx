@@ -17,7 +17,7 @@ const db: database = {
       position: "Full Stack Intern",
       timeRange: "Sep 2022 - Mar 2023",
       description: [
-        "Website development is the process of building, programming, coding and maintaining websites and web applications.",
+        "During my internship at Xanther Services, I honed my skills in MERN stack development. I tackled challenging projects, gaining valuable experience in building robust web applications. Ready to apply my expertise to your projects. 💻",
       ],
     },
     {
@@ -25,14 +25,14 @@ const db: database = {
       position: "Head of VFX Editor",
       timeRange: "Feb 2022 - jul 2023",
       description: [
-        "Website development is the process of building, programming, coding and maintaining websites and web applications.",
+        "As the Head VFX Editor for Institutions Innovation Council (IICs), I led dynamic video projects on entrepreneurship and outsourced content. Proudly part of MHRD's Innovation Cell, under the Ministry of HRD, Govt. of India. 🎥🚀",
       ],
     },
   ],
   socialLinks: {
     linkedIn: "https://www.linkedin.com/in/tejodeep-mitra-roy/",
     github: "https://github.com/Tejodeep2002",
-    facebook: "",
+    facebook: "https://www.facebook.com/profile.php?id=100077729720611",
     twitter: "",
   },
 

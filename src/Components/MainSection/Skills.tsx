@@ -54,7 +54,7 @@ const Skills = () => {
                   FrontEnd Development
                 </h3>
                 <section className="w-full h-full  ">
-                  <ul className="w-full flex justify-between text-base mb-3">
+                  <ul className="w-full flex justify-between text-center text-sm md:text-base " >
                     <li className="">
                       <span className="flex flex-col items-center ">
                         <span className="w-fit h-10 mb-1">
@@ -66,7 +66,7 @@ const Skills = () => {
                           />
                         </span>
                         <span>
-                          <p className="font-bold">HTML</p>
+                          <p className="font-bold text-center">HTML</p>
                         </span>
                       </span>
                     </li>
@@ -116,7 +116,7 @@ const Skills = () => {
                       </span>
                     </li>
                   </ul>
-                  <ul className="w-full flex justify-between">
+                  <ul className="w-full flex justify-between text-center text-sm md:text-base">
                     <li className="">
                       <span className="flex flex-col items-center">
                         <span className="w-fit h-10  mb-1">
@@ -128,7 +128,7 @@ const Skills = () => {
                           />
                         </span>
                         <span>
-                          <p className="font-bold">Next Js</p>
+                          <p className="font-bold ">Next Js</p>
                         </span>
                       </span>
                     </li>
@@ -175,7 +175,7 @@ const Skills = () => {
                   BackEnd Development
                 </h3>
                 <section className="w-full h-full">
-                  <ul className="w-full flex mb-3 text-base justify-between ">
+                  <ul className="w-full flex mb-3 justify-between text-center text-sm md:text-base">
                     <li className="">
                       <span className="flex flex-col items-center ">
                         <span className="w-fit h-10  mb-1">
@@ -222,7 +222,7 @@ const Skills = () => {
                       </span>
                     </li>
                   </ul>
-                  <ul className="w-full flex justify-between">
+                  <ul className="w-full flex justify-between text-center text-sm md:text-base">
                     <li className="">
                       <span className="flex flex-col items-center">
                         <span className="w-fit h-10  mb-1">
@@ -252,7 +252,7 @@ const Skills = () => {
                 </h3>
 
                 <section className="w-full h-full">
-                  <ul className="w-full flex justify-between text-base mb-3">
+                  <ul className="w-full flex justify-between mb-3 text-center text-sm md:text-base">
                     <li className="">
                       <span className="flex flex-col items-center ">
                         <span className="w-fit h-10  mb-1">

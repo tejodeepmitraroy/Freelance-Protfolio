@@ -37,13 +37,13 @@ module.exports = {
     },
   },
   plugins: [],
-  purge: {
-    content: [
-      "./src/**/*.js",
-      "./src/**/*.jsx",
-      "./src/**/*.ts",
-      "./src/**/*.tsx",
-    ],
-    // Other configuration options...
-  },
+  // purge: {
+  //   content: [
+  //     "./src/**/*.js",
+  //     "./src/**/*.jsx",
+  //     "./src/**/*.ts",
+  //     "./src/**/*.tsx",
+  //   ],
+  //   // Other configuration options...
+  // },
 };
