@@ -11,6 +11,7 @@ import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import Markdown from "react-markdown";
 
 interface ModalProps {
   isClose: any;
@@ -18,6 +19,8 @@ interface ModalProps {
   data: projects;
 }
 const Modal: FC<ModalProps> = ({ data, isOpen, isClose }) => {
+  // const mdFile: string = data.description;
+
   console.log(data);
   return (
     <>
@@ -71,7 +74,8 @@ const Modal: FC<ModalProps> = ({ data, isOpen, isClose }) => {
               </div>
               <div className="w-full h-auto flex flex-col lg:flex-row text-lg">
                 <div className="w-full lg:w-[70%] lg:pr-10 opacity-[0.7] text-[#55527c]">
-                  <p>{data.description}</p>
+                  {/* <p>{data.description}</p> */}
+                  <Markdown className="markDown">{data.description}</Markdown>
                 </div>
                 <div className="w-full lg:w-[30%] lg:pl-10 mt-10">
                   <ul className="flex flex-col gap-5">

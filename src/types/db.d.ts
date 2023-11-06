@@ -4,7 +4,7 @@ interface projects {
   subtitle: String;
   date: String;
   preview: string[];
-  description: String;
+  description: string;
   live: string;
   repoLink: { name: string; link: string }[];
   technologies: String[];
