@@ -6,8 +6,13 @@ import useIsomorphicLayoutEffect from "@/Hooks/IsomorphicEffect";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
+import { imageUrlFor } from "@/config/imageBuilder";
 
-const Home: FC = () => {
+interface HomeProps {
+  infoData: getInfo;
+}
+
+const Home: FC<HomeProps> = ({ infoData }) => {
   const home = useRef<HTMLDivElement>(null);
 
   useIsomorphicLayoutEffect(() => {
@@ -16,7 +21,7 @@ const Home: FC = () => {
       let homeTl = gsap.timeline({
         scrollTrigger: {
           trigger: home.current,
-          scroller: "main",
+          scroller: ".main",
           start: "40% 70%",
           end: "40% 20%",
         },
@@ -120,18 +125,18 @@ const Home: FC = () => {
               <ul className="contactLinkBar relative px-3 py-2 font-semibold before:absolute before:w-1 before:bg-amber-500 before:top-0 before:bottom-0 text-sm sm:text-lg ">
                 <li className=" contactLink px-3 ">
                   <Link
-                    href={`tel:${db.phone}`}
+                    href={`tel:${infoData.phone}`}
                     className="hover:text-amber-500 transition duration-300 ease-in-out "
                   >
-                    {db.phone}
+                    {infoData.phone}
                   </Link>
                 </li>
                 <li className=" contactLink px-3  ">
                   <Link
-                    href={`mailto:${db.mail}`}
+                    href={`mailto:${infoData.mail}`}
                     className=" hover:text-amber-500 transition duration-300 ease-in-out "
                   >
-                    {db.mail}
+                    {infoData.mail}
                   </Link>
                 </li>
               </ul>
@@ -139,7 +144,7 @@ const Home: FC = () => {
           </section>
           {/* right */}
           <section className="profilePic w-full mb-12 lg:w-[50%] lg:pl-11">
-            <Image src={db.profilePic} width={450} height={0} alt="" />
+            <Image src={imageUrlFor(infoData.profilePic).url() } width={450} height={0} alt="" />
           </section>
         </div>
       </div>

@@ -6,7 +6,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import useIsomorphicLayoutEffect from "@/Hooks/IsomorphicEffect";
 
-const About: FC = () => {
+interface AboutProps {
+  infoData: getInfo
+  experienceData:getExperience[]
+}
+
+const About: FC<AboutProps> = ({ infoData,experienceData }) => {
   const about = useRef<HTMLDivElement>(null);
   const experience = useRef<HTMLDivElement>(null);
   useIsomorphicLayoutEffect(() => {
@@ -104,41 +109,44 @@ const About: FC = () => {
 
             <section className="w-full lg:w-[60%] flex flex-col gap-10  text-lg">
               <span>
-                {db.bio.map((bio, index) => (
+                {/* {db.bio.map((bio, index) => (
                   <p key={index} className="mb-7">
                     {bio}
                   </p>
-                ))}
+                ))} */}
+                {
+                  infoData.bio
+                }
               </span>
 
               <div className="w-full ">
                 <ul className="w-full flex  flex-wrap ">
                   <li className="info flex flex-col mr-6 mb-3">
                     <span className="underline">AGE</span>
-                    <span className="font-extrabold text-lg">{db.age}</span>
+                    <span className="font-extrabold text-lg">{infoData.age}</span>
                   </li>
                   <li className="info flex flex-col mr-6 mb-3">
                     <span className="underline">BORN</span>
                     <span className="font-extrabold text-lg cursor-pointer hover:text-amber-500 transition duration-300 ease-in-out ">
-                      {db.born}
+                      {infoData.born}
                     </span>
                   </li>
                   <li className="info flex flex-col mr-6 mb-3">
                     <span className="underline">PHONE</span>
                     <a
-                      href={`tel:${db.phone}`}
+                      href={`tel:${infoData.phone}`}
                       className="font-extrabold text-lg cursor-pointer hover:text-amber-500 transition duration-300 ease-in-out "
                     >
-                      {db.phone}
+                      {infoData.phone}
                     </a>
                   </li>
                   <li className="info flex flex-col mb-3">
                     <span className="underline">MAIL</span>
                     <a
-                      href={`mailto:${db.mail}`}
+                      href={`mailto:${infoData.mail}`}
                       className="font-extrabold text-lg cursor-pointer hover:text-amber-500 transition duration-300 ease-in-out "
                     >
-                      {db.mail}
+                      {infoData.mail}
                     </a>
                   </li>
                 </ul>
@@ -149,13 +157,13 @@ const About: FC = () => {
           <section className="w-full flex flex-col md:flex-row  gap-10 mb-28 ">
             <div className=" counter w-full md:w-[50%] lg:w-[30%] h-48 bg-[#F6F7C1] rounded-md flex flex-col gap-4 items-center justify-center ">
               <span className="font-extrabold text-4xl font-Inter">
-                {db.experienceYears}
+                {infoData.experienceYears}
               </span>
               <span className="font-semibold text-lg">YEARS OF EXPERIENCE</span>
             </div>
             <div className=" counter  w-full md:w-[50%]  lg:w-[30%] h-48 bg-[#BEF0CB] rounded-md flex flex-col gap-4 items-center justify-center">
               <span className="font-extrabold text-4xl font-Inter">
-                {db.projectDone}
+                {infoData.projectDone}
               </span>
               <span className="font-semibold text-lg">PROJECT COMPLETED</span>
             </div>
@@ -176,7 +184,7 @@ const About: FC = () => {
               Everything about me!
             </span>
             <ul className="w-full flex flex-wrap mt-10 lg:-ml-8">
-              {db.experience.map((experience, index) => (
+              {experienceData.map((experience, index) => (
                 <li
                   key={index}
                   className=" w-full md:w-1/2 mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out"
@@ -199,11 +207,12 @@ const About: FC = () => {
                     </div>
                     {/* text */}
                     <div>
-                      {experience.description.map((description, index) => (
+                      {experience.description}
+                      {/* {experience.description.map((description, index) => (
                         <p key={index} className="mb-4">
                           {description}
                         </p>
-                      ))}
+                      ))} */}
                     </div>
                   </div>
                 </li>

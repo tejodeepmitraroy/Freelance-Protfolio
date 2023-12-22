@@ -21,7 +21,7 @@ interface experience {
   company: String;
   position: String;
   timeRange: String;
-  description: String[];
+  description: String;
 }
 
 interface services {
