@@ -16,17 +16,15 @@ const db: database = {
       company: "Xanther Services",
       position: "Full Stack Intern",
       timeRange: "Sep 2022 - Mar 2023",
-      description: [
+      description:
         "During my internship at Xanther Services, I honed my skills in MERN stack development. I tackled challenging projects, gaining valuable experience in building robust web applications. Ready to apply my expertise to your projects. 💻",
-      ],
     },
     {
       company: "IIC-TMSL",
       position: "Head of VFX Editor",
       timeRange: "Feb 2022 - jul 2023",
-      description: [
+      description:
         "As the Head VFX Editor for Institutions Innovation Council (IICs), I led dynamic video projects on entrepreneurship and outsourced content. Proudly part of MHRD's Innovation Cell, under the Ministry of HRD, Govt. of India. 🎥🚀",
-      ],
     },
   ],
   socialLinks: {
