@@ -1,11 +1,15 @@
 "use client";
 import useIsomorphicLayoutEffect from "@/Hooks/IsomorphicEffect";
+import { imageUrlFor } from "@/config/imageBuilder";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { FC, useRef } from "react";
 
-const Skills = () => {
+interface SkillsProps {
+  skills: getSkills[];
+}
+const Skills: FC<SkillsProps> = ({ skills }) => {
   const skill = useRef<HTMLDivElement>(null);
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -45,127 +49,42 @@ const Skills = () => {
             </span> */}
           </section>
           <ul className="w-full flex flex-col md:flex-row flex-wrap md:-ml-2 lg:-ml-8 mt-7">
-            <li className=" w-full md:w-[400px] mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
-              <section className="skillContainer w-full h-full p-10  flex flex-col border border-black rounded text-lg">
-                <span className="w-full mb-4 font-Inter font-medium text-[rgba(19,15,73,.5)]">
-                  01
-                </span>
-                <h3 className="w-full mb-6 text-xl font-bold font-Inter leading-5">
-                  FrontEnd Development
-                </h3>
-                <section className="w-full h-full  ">
-                  <ul className="w-full flex justify-between text-center text-sm md:text-base " >
-                    <li className="">
-                      <span className="flex flex-col items-center ">
+            {skills.sort((a:any,b:any)=>a.id-b.id).map((items) => (
+              <li
+                key={items.id}
+                className=" w-full md:w-[400px] mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out"
+              >
+                <section className="skillContainer w-full h-full p-10  flex flex-col border border-black rounded text-lg">
+                  <span className="w-full mb-4 font-Inter font-medium text-[rgba(19,15,73,.5)]">
+                    {items.id}
+                  </span>
+                  <h3 className="w-full mb-6 text-xl font-bold font-Inter leading-5">
+                    {items.name}
+                  </h3>
+                  <section className="w-full h-full grid grid-cols-3 gap-4">
+                    {items.technologies?.map((tech, index) => (
+                      <span
+                        key={tech._key}
+                        className="flex flex-col items-center "
+                      >
                         <span className="w-fit h-10 mb-1">
                           <Image
-                            src="/logos/html.png"
+                            src={imageUrlFor(tech.logo).url()}
                             width={40}
                             height={40}
                             alt=""
                           />
                         </span>
                         <span>
-                          <p className="font-bold text-center">HTML</p>
+                          <p className="font-bold text-center">{tech.name}</p>
                         </span>
                       </span>
-                    </li>
-                    <li className="">
-                      <span className="flex flex-col items-center">
-                        <span className="w-fit h-10  mb-1">
-                          <Image
-                            src="/logos/css.png"
-                            width={40}
-                            height={40}
-                            alt=""
-                          />
-                        </span>
-                        <span>
-                          <p className="font-bold">CSS</p>
-                        </span>
-                      </span>
-                    </li>
-                    <li className="">
-                      <span className="flex flex-col items-center">
-                        <span className="w-fit h-10  mb-1">
-                          <Image
-                            src="/logos/js.png"
-                            width={40}
-                            height={40}
-                            alt=""
-                          />
-                        </span>
-                        <span>
-                          <p className="font-bold">JS</p>
-                        </span>
-                      </span>
-                    </li>
-                    <li className="">
-                      <span className="flex flex-col items-center">
-                        <span className="w-fit h-10  mb-1">
-                          <Image
-                            src="/logos/react.png"
-                            width={40}
-                            height={40}
-                            alt=""
-                          />
-                        </span>
-                        <span>
-                          <p className="font-bold">React Js</p>
-                        </span>
-                      </span>
-                    </li>
-                  </ul>
-                  <ul className="w-full flex justify-between text-center text-sm md:text-base">
-                    <li className="">
-                      <span className="flex flex-col items-center">
-                        <span className="w-fit h-10  mb-1">
-                          <Image
-                            src="/logos/nextjs.png"
-                            width={40}
-                            height={40}
-                            alt=""
-                          />
-                        </span>
-                        <span>
-                          <p className="font-bold ">Next Js</p>
-                        </span>
-                      </span>
-                    </li>
-                    <li className="">
-                      <span className="flex flex-col items-center">
-                        <span className="w-fit h-10  mb-1">
-                          <Image
-                            src="/logos/tailwind.png"
-                            width={40}
-                            height={40}
-                            alt=""
-                          />
-                        </span>
-                        <span>
-                          <p className="font-bold">Tailwind Css</p>
-                        </span>
-                      </span>
-                    </li>
-                    <li className="">
-                      <span className="flex flex-col items-center">
-                        <span className="w-fit h-10  mb-1">
-                          <Image
-                            src="/logos/typescript.png"
-                            width={40}
-                            height={40}
-                            alt=""
-                          />
-                        </span>
-                        <span>
-                          <p className="font-bold">Typescript</p>
-                        </span>
-                      </span>
-                    </li>
-                  </ul>
+                    ))}
+                  </section>
                 </section>
-              </section>
-            </li>
+              </li>
+            ))}
+            {/* 
             <li className=" w-full md:w-[400px]  mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
               <section className="skillContainer w-full h-full p-10  flex flex-col border border-black rounded text-lg">
                 <span className="w-full mb-4 font-Inter font-medium text-[rgba(19,15,73,.5)]">
@@ -301,7 +220,7 @@ const Skills = () => {
                   </ul>
                 </section>
               </section>
-            </li>
+            </li> */}
           </ul>
         </section>
       </div>

@@ -11,7 +11,10 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import useIsomorphicLayoutEffect from "@/Hooks/IsomorphicEffect";
 
-const Projects: FC = () => {
+interface ProjectsProps {
+  projects: getProjects[];
+}
+const Projects: FC<ProjectsProps> = ({ projects }) => {
   const [isModal, setIsModal] = useState<boolean>(false);
   const [isData, setIsData] = useState<projects>({} as projects);
 
@@ -68,7 +71,7 @@ const Projects: FC = () => {
                   },
                 }}
               >
-                {db.projects.map((project, index) => (
+                {projects.map((project, index) => (
                   <SwiperSlide
                     key={index}
                     className="w-full md:w-[360px]  h-full mr-8 border-4 border-gray-600 rounded-lg p-2"

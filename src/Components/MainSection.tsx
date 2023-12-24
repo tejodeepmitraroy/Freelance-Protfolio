@@ -13,6 +13,7 @@ import getSocialLinks from "@/lib/getSocialLinks";
 import getProjects from "@/lib/getProjects";
 import getServices from "@/lib/getServices";
 import getTestimonial from "@/lib/getTestimonial";
+import getSkills from "@/lib/getSkills";
 
 interface Props {}
 
@@ -23,6 +24,7 @@ const MainSection: FC = async (props: Props) => {
   const projects = await getProjects();
   const services = await getServices();
   const testimonial = await getTestimonial();
+  const skills = await getSkills();
 
 
   console.log(testimonial);
@@ -32,8 +34,8 @@ const MainSection: FC = async (props: Props) => {
       <Navbar />
       <Home infoData={infoData}/>
       <About infoData={infoData} experienceData={experience}/>
-      <Skills />
-      <Projects />
+      <Skills skills={skills}/>
+      <Projects projects={projects}/>
       {/* <Services /> */}
       {/* <Testimonials /> */}
       <ContactUs />

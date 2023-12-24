@@ -18,3 +18,13 @@ interface getSocialLinks extends socialLinks {}
 interface getProjects extends projects {}
 interface getServices extends services {}
 interface getTestimonial extends testimonial {}
+interface getSkills {
+  id: number;
+  name: string;
+  technologies: {
+    _key: string;
+    _type: string;
+    name: string;
+    logo: string;
+  }[];
+}

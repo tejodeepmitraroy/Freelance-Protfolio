@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { parseBody } from "next-sanity/webhook";
 import { revalidateTag } from "next/cache";
 
-export const POST = async (req: NextRequest, res: NextResponse) => {
+export const POST = async (req: NextRequest) => {
   try {
     const { body, isValidSignature } = await parseBody<{
       _type: string;
@@ -14,7 +14,7 @@ export const POST = async (req: NextRequest, res: NextResponse) => {
     }
 
     if (!body?._type) {
-      return NextResponse.json("Bad Request", { status: 401 });
+      return NextResponse.json("Bad Request", { status: 400 });
     }
 
     revalidateTag(body._type);
