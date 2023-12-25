@@ -7,15 +7,19 @@ interface getInfo {
   phone: string;
   mail: string;
   profilePic: string;
+  homePic:string;
   experienceYears: string;
   projectDone: string;
   contactUsDesc: String;
-  location: String;
+  location: string;
 }
 
 interface getExperience extends experience {}
 interface getSocialLinks extends socialLinks {}
-interface getProjects extends projects {}
+interface getProjects extends projects {
+  startDate:Date;
+  endDate:Date;
+}
 interface getServices extends services {}
 interface getTestimonial extends testimonial {}
 interface getSkills {

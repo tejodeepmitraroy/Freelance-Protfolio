@@ -32,6 +32,7 @@ const db: database = {
     github: "https://github.com/Tejodeep2002",
     facebook: "https://www.facebook.com/profile.php?id=100077729720611",
     twitter: "",
+    instagram:""
   },
 
   projects: [
@@ -45,9 +46,7 @@ const db: database = {
         "/projects/chatApp/login.png",
         "/projects/chatApp/signup.jpg",
       ],
-      description: [
-        "Realtime Chat App Documentation\n===============\n\n## Introduction\n\n**Realtime Chat App** is a dynamic and feature-rich web application built using the MERN (MongoDB, Express, React, Node) stack. This application facilitates seamless, real-time, end-to-end messaging, and offers a range of interactive features, including in-built themes, profile picture changes, and group chat capabilities.\n\n## Features\n\n### 1. **Real-time Messaging**\n\n- Experience real-time messaging with instant updates and no delays.\n- Engage in one-on-one conversations with friends and colleagues.\n- Seamlessly exchange messages for efficient communication.\n\n### 2. **Group Chat**\n\n- Create and join group chats for collaboration and team discussions.\n- Manage group conversations with ease.\n- Collaborate with multiple users in one chat.\n\n### 4. **Profile Picture Change**\n\n- Upload, change, or customize your profile picture.\n- Add a personal touch to your chat profile.\n- Easily identify other users by their profile pictures.\n\n## **Technology Stack**\n\n- **Frontend**: Built with React for a dynamic and responsive user interface.\n- **Backend**: Utilizes Express and Node.js to handle server-side operations.\n- **Database**: MongoDB stores user data and chat histories.\n- **Socket.io**: Empowers real-time messaging and updates.\n\n## **Installation**\nfrontend Installation\n >1. Clone the repository from git clone git@github.com:Tejodeep2002/Chat-app-frontend.git```.\n>>2. Navigate to the project directory and run 'npm install' to install dependencies.\n>>3. Set up MongoDB and configure the database connection in the '.env' file.\n>>4. Start the server with 'npm start'.\n\n###backend Installation\n>>1. Clone the repository from `git clone git@github.com:Tejodeep2002/Chat-app-backend.git`.\n>>2. Navigate to the project directory and run 'npm install' to install dependencies.\n>>3. Set up MongoDB and configure the database connection in the '.env' file.\n>>4. Start the server with 'npm start'.",
-      ],
+      description: "Realtime Chat App Documentation\n===============\n\n## Introduction\n\n**Realtime Chat App** is a dynamic and feature-rich web application built using the MERN (MongoDB, Express, React, Node) stack. This application facilitates seamless, real-time, end-to-end messaging, and offers a range of interactive features, including in-built themes, profile picture changes, and group chat capabilities.\n\n## Features\n\n### 1. **Real-time Messaging**\n\n- Experience real-time messaging with instant updates and no delays.\n- Engage in one-on-one conversations with friends and colleagues.\n- Seamlessly exchange messages for efficient communication.\n\n### 2. **Group Chat**\n\n- Create and join group chats for collaboration and team discussions.\n- Manage group conversations with ease.\n- Collaborate with multiple users in one chat.\n\n### 4. **Profile Picture Change**\n\n- Upload, change, or customize your profile picture.\n- Add a personal touch to your chat profile.\n- Easily identify other users by their profile pictures.\n\n## **Technology Stack**\n\n- **Frontend**: Built with React for a dynamic and responsive user interface.\n- **Backend**: Utilizes Express and Node.js to handle server-side operations.\n- **Database**: MongoDB stores user data and chat histories.\n- **Socket.io**: Empowers real-time messaging and updates.\n\n## **Installation**\nfrontend Installation\n >1. Clone the repository from git clone git@github.com:Tejodeep2002/Chat-app-frontend.git```.\n>>2. Navigate to the project directory and run 'npm install' to install dependencies.\n>>3. Set up MongoDB and configure the database connection in the '.env' file.\n>>4. Start the server with 'npm start'.\n\n###backend Installation\n>>1. Clone the repository from `git clone git@github.com:Tejodeep2002/Chat-app-backend.git`.\n>>2. Navigate to the project directory and run 'npm install' to install dependencies.\n>>3. Set up MongoDB and configure the database connection in the '.env' file.\n>>4. Start the server with 'npm start'.",
       live: "https://talk-a-tive-1.netlify.app/#/",
       repoLink: [
         {
@@ -69,6 +68,8 @@ const db: database = {
         "/logos/node.png",
         "/logos/mongodb-leaf.png",
       ],
+      startDate:'2023-10-02',
+      endDate:'2023-10-02'
     },
     {
       thumbnail: "/projects/urlShortner/thumbnail.png",
@@ -104,6 +105,8 @@ const db: database = {
         "/logos/node.png",
         "/logos/mongodb-leaf.png",
       ],
+      startDate:'2023-10-02',
+      endDate:'2023-10-02'
     },
   ],
 

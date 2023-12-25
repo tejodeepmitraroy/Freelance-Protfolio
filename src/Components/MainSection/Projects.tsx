@@ -10,6 +10,7 @@ import Modal from "@/Components/Modal";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import useIsomorphicLayoutEffect from "@/Hooks/IsomorphicEffect";
+import { imageUrlFor } from "@/config/imageBuilder";
 
 interface ProjectsProps {
   projects: getProjects[];
@@ -93,20 +94,13 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
                           className="w-full"
                         />
                         <Image
-                          src={project.thumbnail}
+                          src={imageUrlFor(project.thumbnail).url()}
                           width={"380"}
                           height={"360"}
                           alt=""
                           priority
                           className={`absolute top-0 left-0 w-full h-full bg-cover hover:scale-110 transition-transform duration-200 ease-in `}
-                        ></Image>
-                        {/* <Image
-                        src={"/img2.jpg"}
-                        width={380}
-                        height={360}
-                        alt=""
-                        className=" rounded mb-6 hover:scale-125 transition duration-300 ease-in-out"
-                      /> */}
+                        />
                       </div>
                     </span>
                     <span

@@ -1,15 +1,20 @@
 import Cursor from "@/Components/Cursor";
 import MainSection from "@/Components/MainSection";
 import SideBar from "@/Components/SideBar";
+import getInfo from "@/lib/getInfo";
+import getSocialLinks from "@/lib/getSocialLinks";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function Home() {
+const  Home = async () =>{
+  const infoData = await getInfo();
+  const socialLinks = await getSocialLinks();
   return (
     // <Cursor>
     <div data-scroll className="relative w-full h-screen lg:flex">
-      <SideBar />
+      <SideBar infoData={infoData}  socialLinks={socialLinks}/>
       <MainSection />
     </div>
     // </Cursor>
   );
 }
+export default Home; 

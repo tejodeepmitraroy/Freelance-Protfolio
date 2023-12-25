@@ -16,7 +16,11 @@ import useIsomorphicLayoutEffect from "@/Hooks/IsomorphicEffect";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 
-const ContactUs: FC = () => {
+interface ContactUsProps{
+  infoData:getInfo;
+  socialLinks:getSocialLinks
+}
+const ContactUs: FC<ContactUsProps> = ({infoData,socialLinks}) => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
@@ -116,7 +120,7 @@ const ContactUs: FC = () => {
                 </Link>
               </div>
               <span className=" mt-5 text-lg leading-8">
-                <p>{db.contactUs.description}</p>
+                <p>{infoData.contactUsDesc}</p>
               </span>
               <section className="w-full">
                 <ul className="relative text-lg leading-8 text-[#55527C] font-semibold font-Inter">
@@ -125,7 +129,7 @@ const ContactUs: FC = () => {
                       href="tel:+91-9674128921"
                       className="relative pb-1 hover:no-underline before:absolute  before:w-full before:h-[1.5px] before:left-0 before:bottom-1  before:bg-black before:transition before:duration-1000 before:ease-in-out before:hover:w-0"
                     >
-                      {db.phone}
+                      {infoData.phone}
                     </Link>
                   </li>
                   <li>
@@ -133,14 +137,14 @@ const ContactUs: FC = () => {
                       href="mailto:tejodeepmitraroy2002@gmail.com"
                       className="relative pb-1 hover:no-underline before:absolute  before:w-full before:h-[1.5px] before:left-0 before:bottom-1  before:bg-black before:transition before:duration-1000 before:ease-in-out before:hover:w-0"
                     >
-                      {db.mail}
+                      {infoData.mail}
                     </Link>
                   </li>
                   <li>
                     <span
                       className="relative pb-1 hover:no-underline before:absolute  before:w-full before:h-[1.5px] before:left-0 before:bottom-1  before:bg-black before:transition before:duration-1000 before:ease-in-out before:hover:w-0"
                     >
-                      {db.born}
+                      {infoData.born}
                     </span>
                   </li>
                 </ul>
@@ -149,7 +153,7 @@ const ContactUs: FC = () => {
                 <ul className="w-full h-full flex gap-2 items-center">
                   <li className="contactSocialLinks">
                     <Link
-                      href={db.socialLinks.facebook}
+                      href={socialLinks.facebook?socialLinks.facebook:""}
                       target="_blank"
                       className="w-12 h-12 bg-gray-200  text-[#130f49]  flex justify-center items-center rounded-full hover:bg-[#4267B2]  hover:text-gray-200 hover:w-14 hover:h-14   transition duration-900 ease-in-out"
                     >
@@ -158,7 +162,7 @@ const ContactUs: FC = () => {
                   </li>
                   <li className="contactSocialLinks">
                     <Link
-                      href={db.socialLinks.twitter}
+                      href={socialLinks.twitter?socialLinks.twitter:""}
                       target="_blank"
                       className="w-12 h-12 bg-gray-200  text-[#130f49]  flex justify-center items-center rounded-full hover:bg-[#130f49]  hover:text-gray-200 hover:w-14 hover:h-14  transition duration-900 ease-in-out"
                     >
@@ -167,7 +171,7 @@ const ContactUs: FC = () => {
                   </li>
                   <li className="contactSocialLinks">
                     <Link
-                      href={db.socialLinks.linkedIn}
+                      href={socialLinks.linkedIn?socialLinks.linkedIn:""}
                       target="_blank"
                       className="w-12 h-12 bg-gray-200  text-[#130f49]  flex justify-center items-center rounded-full hover:bg-[#0072b1]  hover:text-gray-200 hover:w-14 hover:h-14  transition duration-900 ease-in-out"
                     >
@@ -176,7 +180,7 @@ const ContactUs: FC = () => {
                   </li>
                   <li className="contactSocialLinks">
                     <Link
-                      href={db.socialLinks.github}
+                      href={socialLinks.github?socialLinks.github:""}
                       target="_blank"
                       className="w-12 h-12 bg-gray-200  text-[#130f49]  flex justify-center items-center rounded-full hover:bg-[#130f49]  hover:text-gray-200 hover:w-14 hover:h-14 transition duration-900 ease-in-out"
                     >
@@ -249,7 +253,7 @@ const ContactUs: FC = () => {
           {/* map location */}
           <section className=" relative mt-28  w-full h-96">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29455.92847020909!2d88.40960262601587!3d22.654121982998415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89e6c605d82ff%3A0x1f6779d05c4879ee!2sDum%20Dum%2C%20Kolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1694771815112!5m2!1sen!2sin"
+              src={infoData.location}
               width="100%"
               height="100%"
               title="map"

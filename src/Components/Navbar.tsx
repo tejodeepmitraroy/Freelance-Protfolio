@@ -1,13 +1,18 @@
 "use client";
 import useIsomorphicLayoutEffect from "@/Hooks/IsomorphicEffect";
-import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { imageUrlFor } from "@/config/imageBuilder";
+import { faFacebookF, faGithub, faLinkedinIn, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useRef, useState } from "react";
+import React, { FC, useRef, useState } from "react";
 
-const Navbar = () => {
+interface NavbarProps {
+  infoData: getInfo;
+  socialLinks:getSocialLinks
+}
+
+const Navbar: FC<NavbarProps> = ({ infoData,socialLinks }) => {
   const [navReveal, setNavReveal] = useState<boolean>(false);
   const navbarSide = useRef<HTMLDivElement>(null);
   const navBarInner = useRef<HTMLDivElement>(null);
@@ -65,7 +70,7 @@ const Navbar = () => {
         >
           <div className="flex flex-col items-end">
             <Image
-              src={"/img.png"}
+              src={imageUrlFor(infoData.profilePic).url()}
               width={90}
               height={90}
               alt=""
@@ -73,10 +78,10 @@ const Navbar = () => {
             />
             <div className="flex flex-col items-center justify-center ">
               <span className="font-Inter font-bold text-base z-10 mt-7">
-                Tejodeep Mitra Roy
+                {infoData.name}
               </span>
               <span className="fixed font-Pacifico text-xl opacity-10 z-0 ">
-                Tejodeep Mitra Roy
+                {infoData.name}
               </span>
             </div>
           </div>
@@ -144,14 +149,28 @@ const Navbar = () => {
               <FontAwesomeIcon icon={faXTwitter} className="w-4" />
             </span> */}
               <Link
-                href={"https://www.linkedin.com/in/tejodeep-mitra-roy"}
+                href={socialLinks.facebook ? socialLinks.facebook : ""}
+                target="_blank"
+                className="w-7 h-7 bg-gray-100 flex justify-center items-center  rounded-full"
+              >
+                <FontAwesomeIcon icon={faFacebookF} className="w-3" />
+              </Link>
+              <Link
+                href={socialLinks.twitter ? socialLinks.twitter : ""}
+                target="_blank"
+                className="w-7 h-7 bg-gray-100 flex justify-center items-center  rounded-full"
+              >
+                <FontAwesomeIcon icon={faXTwitter} className="w-3" />
+              </Link>
+              <Link
+                href={socialLinks.linkedIn ? socialLinks.linkedIn : ""}
                 target="_blank"
                 className="w-7 h-7 bg-gray-100 flex justify-center items-center  rounded-full"
               >
                 <FontAwesomeIcon icon={faLinkedinIn} className="w-3" />
               </Link>
               <Link
-                href={"https://github.com/Tejodeep2002"}
+                href={socialLinks.github ? socialLinks.github : ""}
                 target="_blank"
                 className="w-7 h-7 bg-gray-100 flex justify-center items-center  rounded-full"
               >
