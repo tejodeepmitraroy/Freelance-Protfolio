@@ -68,8 +68,7 @@ const db: database = {
         "/logos/node.png",
         "/logos/mongodb-leaf.png",
       ],
-      startDate:'2023-10-02',
-      endDate:'2023-10-02'
+    
     },
     {
       thumbnail: "/projects/urlShortner/thumbnail.png",
@@ -105,8 +104,7 @@ const db: database = {
         "/logos/node.png",
         "/logos/mongodb-leaf.png",
       ],
-      startDate:'2023-10-02',
-      endDate:'2023-10-02'
+    
     },
   ],
 

@@ -8,8 +8,7 @@ interface projects {
   live: string;
   repoLink: { name: string; link: string }[];
   technologies: String[];
-  startDate:string;
-  endDate:sting;
+
 }
 
 interface socialLinks {

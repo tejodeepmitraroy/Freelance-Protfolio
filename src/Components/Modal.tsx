@@ -18,7 +18,7 @@ import { imageUrlFor } from "@/config/imageBuilder";
 interface ModalProps {
   isClose: any;
   isOpen: boolean;
-  data: projects;
+  data: getProjects;
 }
 
 const Modal: FC<ModalProps> = ({ data, isOpen, isClose }) => {

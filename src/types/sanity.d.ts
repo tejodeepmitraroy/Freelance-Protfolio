@@ -17,8 +17,8 @@ interface getInfo {
 interface getExperience extends experience {}
 interface getSocialLinks extends socialLinks {}
 interface getProjects extends projects {
-  startDate:Date;
-  endDate:Date;
+  startDate:sting;
+  endDate:sting;
 }
 interface getServices extends services {}
 interface getTestimonial extends testimonial {}

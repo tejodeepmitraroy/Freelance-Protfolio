@@ -17,7 +17,7 @@ interface ProjectsProps {
 }
 const Projects: FC<ProjectsProps> = ({ projects }) => {
   const [isModal, setIsModal] = useState<boolean>(false);
-  const [isData, setIsData] = useState<projects>({} as projects);
+  const [isData, setIsData] = useState<getProjects>({} as getProjects);
 
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
