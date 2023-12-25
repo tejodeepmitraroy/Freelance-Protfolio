@@ -4,7 +4,7 @@ export const getProjects = async (): Promise<getProjects[]> => {
   return await client.fetch(
     `*[_type=="projects"]`,
     {},
-    { next: { tags: ['projects'] } }
+    {cache: "force-cache", next: { tags: ['projects'] } }
   );
 };
 export default getProjects;

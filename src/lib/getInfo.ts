@@ -4,7 +4,7 @@ const getInfo = async (): Promise<getInfo> => {
   return await client.fetch(
     `*[_type=="basicInfo"][0]`,
     {},
-    { next: { tags: ["basicInfo"] } }
+    {cache: "force-cache", next: { tags: ['basicInfo'] } }
   );
 };
 export default getInfo;

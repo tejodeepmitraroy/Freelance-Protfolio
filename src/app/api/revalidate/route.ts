@@ -1,12 +1,11 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { parseBody } from "next-sanity/webhook";
-import { revalidateTag } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 
 export const POST = async (req: NextRequest) => {
   try {
     const { body, isValidSignature } = await parseBody<{
       _type: string;
-      slug?: string | undefined;
     }>(req, process.env.NEXT_PUBLIC_SANITY_HOOK_SECRET);
 
     if (!isValidSignature) {
@@ -18,6 +17,7 @@ export const POST = async (req: NextRequest) => {
     }
 
     revalidateTag(body._type);
+    revalidatePath('/');
     return NextResponse.json({
       status: 200,
       revalidated: true,

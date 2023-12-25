@@ -4,7 +4,7 @@ const getExperience = async ():Promise<getExperience[]> => {
   return await client.fetch(
     `*[_type=="experience"]`,
     {},
-    { next: { tags: ['experience'] } }
+    {cache: "force-cache", next: { tags: ['experience'] } }
   );
   };
   export default getExperience;
