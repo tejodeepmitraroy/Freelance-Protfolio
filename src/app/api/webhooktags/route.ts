@@ -4,7 +4,7 @@ import { revalidatePath, revalidateTag } from "next/cache";
 export const POST = async (req: NextRequest) => {
   try {
   
-   const body = req.body;
+   const body= await req.json();
 
     revalidateTag(body?.type);
     return NextResponse.json({
