@@ -2,6 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { parseBody } from "next-sanity/webhook";
 import { revalidatePath, revalidateTag } from "next/cache";
 
+export const dynamic = 'force-dynamic' 
 export const POST = async (req: NextRequest) => {
   try {
     const { body, isValidSignature } = await parseBody<{
