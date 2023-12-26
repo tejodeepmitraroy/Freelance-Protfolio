@@ -3,9 +3,9 @@ import { revalidatePath, revalidateTag } from "next/cache";
 
 export const POST = async (req: NextRequest) => {
   try {
-   const body= await req.json();
-
-    revalidateTag(body?.type);
+   
+    const body = await req.json();
+    revalidatePath('/');
     return NextResponse.json({
       status: 200,
       revalidated: true,
