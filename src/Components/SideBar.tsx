@@ -9,9 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import React, { FC, useLayoutEffect, useState } from "react";
-import db from "@/DB/db";
 import gsap from "gsap";
-import { imageUrlFor } from "@/config/imageBuilder";
 interface SideBarProps {
   infoData: getInfo;
   socialLinks: getSocialLinks;
@@ -52,7 +50,7 @@ const SideBar: FC<SideBarProps> = ({ infoData, socialLinks }) => {
     <aside className=" relative  lg:w-[25%] 2xl:w-[20%] hidden h-screen border-r lg:flex flex-col p-8 xl:p-14 items-center justify-between font-Karla antialiased overflow-auto">
       <section className="flex flex-col gap-7 items-center">
         <Image
-          src={imageUrlFor(infoData.profilePic).url()}
+          src={infoData.profilePic}
           width={110}
           height={110}
           alt="Location"

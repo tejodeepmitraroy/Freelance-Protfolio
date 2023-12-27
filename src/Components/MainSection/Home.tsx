@@ -6,7 +6,6 @@ import useIsomorphicLayoutEffect from "@/Hooks/IsomorphicEffect";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
-import { imageUrlFor } from "@/config/imageBuilder";
 
 interface HomeProps {
   infoData: getInfo;
@@ -144,7 +143,7 @@ const Home: FC<HomeProps> = ({ infoData }) => {
           </section>
           {/* right */}
           <section className="profilePic w-full mb-12 lg:w-[50%] lg:pl-11">
-            <Image src={imageUrlFor(infoData.homePic).url()} width={450} height={0} alt="" />
+            <Image src={infoData.homePic} width={450} height={0} alt="" />
           </section>
         </div>
       </div>

@@ -6,15 +6,12 @@ const ImageComponent = ({ value, isInline }:{ value:any, isInline:any }) => {
   // const { width, height } = getImageDimensions(value);
   return (
     <Image
-      src={imageUrlFor(value)
-        .width(isInline ? 100 : 800)
-        .fit("max")
-        .auto("format")
-        .url()}
+      src={value}
       width={isInline ? 100 : 800}
       height={0}
       alt={value.alt || " "}
       loading="lazy"
+      className=" object-contain"
       style={{
         // Display alongside text if image appears inside a block text span
         display: isInline ? "inline-block" : "block",
@@ -23,6 +20,7 @@ const ImageComponent = ({ value, isInline }:{ value:any, isInline:any }) => {
         // aspectRatio: width / height,
       }}
     />
+  
   );
 };
 

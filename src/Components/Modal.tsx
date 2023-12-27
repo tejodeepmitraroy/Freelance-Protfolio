@@ -53,7 +53,7 @@ const Modal: FC<ModalProps> = ({ data, isOpen, isClose }) => {
             {data.preview?.map((item, index) => (
               <SwiperSlide key={index}>
                 <Image
-                  src={imageUrlFor(item).url()}
+                  src={item}
                   width={"1080"}
                   height={"0"}
                   className="realtive w-full md:h-[300px] lg:h-[450px]   rounded mb-9"

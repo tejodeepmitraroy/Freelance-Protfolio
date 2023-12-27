@@ -94,7 +94,7 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
                           className="w-full"
                         />
                         <Image
-                          src={imageUrlFor(project.thumbnail).url()}
+                          src={project.thumbnail}
                           width={"380"}
                           height={"360"}
                           alt=""

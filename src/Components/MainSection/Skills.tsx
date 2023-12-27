@@ -69,7 +69,7 @@ const Skills: FC<SkillsProps> = ({ skills }) => {
                       >
                         <span className="w-fit h-10 mb-1">
                           <Image
-                            src={imageUrlFor(tech.logo).url()}
+                            src={tech.logo}
                             width={40}
                             height={40}
                             alt=""

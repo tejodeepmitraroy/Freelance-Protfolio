@@ -27,8 +27,9 @@ interface getSkills {
   name: string;
   technologies: {
     _key: string;
-    _type: string;
     name: string;
     logo: string;
   }[];
+  _createdAt:Data,
+  _updatedAt:Date
 }

@@ -70,7 +70,7 @@ const Navbar: FC<NavbarProps> = ({ infoData,socialLinks }) => {
         >
           <div className="flex flex-col items-end">
             <Image
-              src={imageUrlFor(infoData.profilePic).url()}
+              src={infoData.profilePic}
               width={90}
               height={90}
               alt=""
