@@ -3,7 +3,7 @@ interface projects {
   title: String;
   subtitle: String;
   date: String;
-  preview: string[];
+  
   description: any;
   live: string;
   repoLink: { name: string; link: string }[];

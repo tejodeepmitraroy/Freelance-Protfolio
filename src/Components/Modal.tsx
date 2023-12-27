@@ -13,7 +13,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { PortableText } from "@portabletext/react";
 import { PTComponents } from "./PortableText";
-import { imageUrlFor } from "@/config/imageBuilder";
 
 interface ModalProps {
   isClose: any;
@@ -51,9 +50,9 @@ const Modal: FC<ModalProps> = ({ data, isOpen, isClose }) => {
             className="mySwiper"
           >
             {data.preview?.map((item, index) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={item._key}>
                 <Image
-                  src={item}
+                  src={item.image}
                   width={"1080"}
                   height={"0"}
                   className="realtive w-full md:h-[300px] lg:h-[450px]   rounded mb-9"

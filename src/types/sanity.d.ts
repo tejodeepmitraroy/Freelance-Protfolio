@@ -19,6 +19,10 @@ interface getSocialLinks extends socialLinks {}
 interface getProjects extends projects {
   startDate:sting;
   endDate:sting;
+  preview:{
+    _key:string;
+    image:string
+  }[]
 }
 interface getServices extends services {}
 interface getTestimonial extends testimonial {}
