@@ -32,9 +32,9 @@ const MainSection: FC = async (props: Props) => {
     <main className="main  w-full lg:w-[75%] 2xl:w-[80%] h-screen text-[#1D267D] overflow-y-auto font-Karla subpixel-antialiased scroll-smooth">
       <Navbar infoData={infoData} socialLinks={socialLinks} />
       <Home infoData={infoData} />
-      <About infoData={infoData} experienceData={experience} />
-      <Skills skills={skills} />
       <Projects projects={projects} />
+      <Skills skills={skills} />
+      <About infoData={infoData} experienceData={experience} />
       {/* <Services /> */}
       {/* <Testimonials /> */}
       <ContactUs infoData={infoData} socialLinks={socialLinks} />

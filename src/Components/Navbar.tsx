@@ -98,6 +98,14 @@ const Navbar: FC<NavbarProps> = ({ infoData,socialLinks }) => {
               </li>
               <li className="rightSideBarLink">
                 <Link
+                  href="#projects"
+                  className="hover:text-[#a5a6ff] cursor-pointer"
+                >
+                  Projects
+                </Link>
+              </li>
+              <li className="rightSideBarLink">
+                <Link
                   href="#about"
                   className="hover:text-[#a5a6ff] cursor-pointer"
                 >
@@ -112,14 +120,7 @@ const Navbar: FC<NavbarProps> = ({ infoData,socialLinks }) => {
                   Skills
                 </Link>
               </li>
-              <li className="rightSideBarLink">
-                <Link
-                  href="#projects"
-                  className="hover:text-[#a5a6ff] cursor-pointer"
-                >
-                  Projects
-                </Link>
-              </li>
+
               <li className="rightSideBarLink">
                 <Link
                   href="#services"
