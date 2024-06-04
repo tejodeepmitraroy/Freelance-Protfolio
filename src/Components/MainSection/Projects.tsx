@@ -9,7 +9,6 @@ import db from "@/DB/db";
 import Modal from "@/Components/Modal";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import useIsomorphicLayoutEffect from "@/Hooks/IsomorphicEffect";
 import { imageUrlFor } from "@/config/imageBuilder";
 import { useGSAP } from "@gsap/react";
 
@@ -32,7 +31,7 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
         // trigger: skill.current,
         scroller: "main",
         start: "25% 60%",
-        markers: true,
+        // markers: true,
       },
       ease: "expo.out",
     });

@@ -52,7 +52,7 @@ const SideBar: FC<SideBarProps> = ({ infoData, socialLinks }) => {
       stagger: 0.2,
       ease: "back.out(1.7)",
     });
-  });
+  },{});
 
   return (
     <aside className=" relative  lg:w-[25%] 2xl:w-[20%] hidden h-screen border-r lg:flex flex-col p-8 xl:p-14 items-center justify-between font-Karla antialiased overflow-auto">

@@ -1,6 +1,7 @@
 "use client";
 import useIsomorphicLayoutEffect from "@/Hooks/IsomorphicEffect";
 import { imageUrlFor } from "@/config/imageBuilder";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
@@ -11,23 +12,23 @@ interface SkillsProps {
 }
 const Skills: FC<SkillsProps> = ({ skills }) => {
   const skill = useRef<HTMLDivElement>(null);
-  useIsomorphicLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const ctx = gsap.context(() => {
-      gsap.from(".skillContainer", {
-        y: 30,
-        opacity: 0,
-        stagger: 0.8,
-        scrollTrigger: {
-          trigger: skill.current,
-          scroller: "main",
-          start: "25% 60%",
-        },
-        ease: "back.out(1.7)",
-      });
+
+  gsap.registerPlugin(useGSAP);
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    gsap.from(".skillContainer", {
+      y: 30,
+      opacity: 0,
+      stagger: 0.8,
+      scrollTrigger: {
+        trigger: skill.current,
+        scroller: "main",
+        start: "25% 60%",
+      },
+      ease: "back.out(1.7)",
     });
-    return () => ctx.revert();
-  }, []);
+  }, {});
 
   return (
     <section ref={skill} className="relative w-full h-auto py-28" id="services">
