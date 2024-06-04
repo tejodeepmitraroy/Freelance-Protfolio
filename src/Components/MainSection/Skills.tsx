@@ -1,6 +1,7 @@
 "use client";
 import useIsomorphicLayoutEffect from "@/Hooks/IsomorphicEffect";
 import { imageUrlFor } from "@/config/imageBuilder";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
@@ -11,23 +12,23 @@ interface SkillsProps {
 }
 const Skills: FC<SkillsProps> = ({ skills }) => {
   const skill = useRef<HTMLDivElement>(null);
-  useIsomorphicLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const ctx = gsap.context(() => {
-      gsap.from(".skillContainer", {
-        y: 30,
-        opacity: 0,
-        stagger: 0.8,
-        scrollTrigger: {
-          trigger: skill.current,
-          scroller: "main",
-          start: "25% 60%",
-        },
-        ease: "back.out(1.7)",
-      });
+
+  gsap.registerPlugin(useGSAP);
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    gsap.from(".skillContainer", {
+      y: 30,
+      opacity: 0,
+      stagger: 0.8,
+      scrollTrigger: {
+        trigger: skill.current,
+        scroller: "main",
+        start: "25% 60%",
+      },
+      ease: "back.out(1.7)",
     });
-    return () => ctx.revert();
-  }, []);
+  }, {});
 
   return (
     <section ref={skill} className="relative w-full h-auto py-28" id="services">
@@ -36,54 +37,47 @@ const Skills: FC<SkillsProps> = ({ skills }) => {
           <span className="font-medium text-lg">- SKILLS</span>
           <section className=" flex flex-col gap-10 md:flex-row justify-between">
             <span className="font-extrabold text-4xl font-Inter">
-              My Skills
+              What Skills I know
             </span>
-            {/* <span className=" text-base md:text-xl font-medium">
-              <a
-                href=""
-                className="w-full relative font-Inter font-semibold hover:no-underline before:absolute before:h-[2px] before:bottom-0 before:bg-black before:w-full  hover:before:w-0 before:transition before:duration-700 before:ease-in"
-              >
-                {" "}
-                tejodeepmitraroy2002@gmail.com
-              </a>
-            </span> */}
           </section>
           <ul className="w-full flex flex-col md:flex-row flex-wrap md:-ml-2 lg:-ml-8 mt-7">
-            {skills.sort((a:any,b:any)=>a.id-b.id).map((items) => (
-              <li
-                key={items.id}
-                className=" w-full md:w-[400px] mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out"
-              >
-                <section className="skillContainer w-full h-full p-10  flex flex-col border border-black rounded text-lg">
-                  <span className="w-full mb-4 font-Inter font-medium text-[rgba(19,15,73,.5)]">
-                    {items.id}
-                  </span>
-                  <h3 className="w-full mb-6 text-xl font-bold font-Inter leading-5">
-                    {items.name}
-                  </h3>
-                  <section className="w-full h-full grid grid-cols-3 gap-4">
-                    {items.technologies?.map((tech, index) => (
-                      <span
-                        key={tech._key}
-                        className="flex flex-col items-center "
-                      >
-                        <span className="w-fit h-10 mb-1">
-                          <Image
-                            src={tech.logo}
-                            width={40}
-                            height={40}
-                            alt=""
-                          />
+            {skills
+              .sort((a: any, b: any) => a.id - b.id)
+              .map((items) => (
+                <li
+                  key={items.id}
+                  className=" w-full md:w-[400px] mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out"
+                >
+                  <section className="skillContainer w-full h-full p-10  flex flex-col border border-black rounded text-lg">
+                    <span className="w-full mb-4 font-Inter font-medium text-[rgba(19,15,73,.5)]">
+                      {items.id}
+                    </span>
+                    <h3 className="w-full mb-6 text-xl font-bold font-Inter leading-5">
+                      {items.name}
+                    </h3>
+                    <section className="w-full h-full grid grid-cols-3 gap-4">
+                      {items.technologies?.map((tech, index) => (
+                        <span
+                          key={tech._key}
+                          className="flex flex-col items-center "
+                        >
+                          <span className="w-fit h-10 mb-1">
+                            <Image
+                              src={tech.logo}
+                              width={40}
+                              height={40}
+                              alt=""
+                            />
+                          </span>
+                          <span>
+                            <p className="font-bold text-center">{tech.name}</p>
+                          </span>
                         </span>
-                        <span>
-                          <p className="font-bold text-center">{tech.name}</p>
-                        </span>
-                      </span>
-                    ))}
+                      ))}
+                    </section>
                   </section>
-                </section>
-              </li>
-            ))}
+                </li>
+              ))}
             {/* 
             <li className=" w-full md:w-[400px]  mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out">
               <section className="skillContainer w-full h-full p-10  flex flex-col border border-black rounded text-lg">

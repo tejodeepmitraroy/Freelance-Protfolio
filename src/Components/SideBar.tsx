@@ -10,42 +10,50 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { FC, useLayoutEffect, useState } from "react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import {
+  FolderOpenDot,
+  Home,
+  PencilRuler,
+  Phone,
+  SwatchBook,
+} from "lucide-react";
 interface SideBarProps {
   infoData: getInfo;
   socialLinks: getSocialLinks;
 }
 
 const SideBar: FC<SideBarProps> = ({ infoData, socialLinks }) => {
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      let sideBarTl = gsap.timeline({});
-      sideBarTl.from(".sideBarHeading", {
-        y: 30,
-        opacity: 0,
-        duration: 0.9,
-        delay: 0.4,
-        stagger: 0.4,
-        ease: "circ.inOut",
-      });
+  gsap.registerPlugin(useGSAP);
 
-      sideBarTl.from(".sideBarNav", {
-        x: -50,
-        opacity: 0,
-        delay: 0.4,
-        stagger: 0.2,
-        ease: "power3.inOut",
-      });
-
-      sideBarTl.from(".sideBarLink", {
-        y: 30,
-        opacity: 0,
-        delay: 0.7,
-        stagger: 0.2,
-        ease: "back.out(1.7)",
-      });
+  useGSAP(() => {
+    let sideBarTl = gsap.timeline({});
+    sideBarTl.from(".sideBarHeading", {
+      y: 30,
+      opacity: 0,
+      duration: 0.9,
+      delay: 0.4,
+      stagger: 0.4,
+      ease: "circ.inOut",
     });
-    return () => ctx.revert();
-  }, []);
+
+    sideBarTl.from(".sideBarNav", {
+      x: -50,
+      opacity: 0,
+      delay: 0.4,
+      stagger: 0.2,
+      ease: "power3.inOut",
+    });
+
+    sideBarTl.from(".sideBarLink", {
+      y: 30,
+      opacity: 0,
+      delay: 0.7,
+      stagger: 0.2,
+      ease: "back.out(1.7)",
+    });
+  },{});
+
   return (
     <aside className=" relative  lg:w-[25%] 2xl:w-[20%] hidden h-screen border-r lg:flex flex-col p-8 xl:p-14 items-center justify-between font-Karla antialiased overflow-auto">
       <section className="flex flex-col gap-7 items-center">
@@ -67,28 +75,41 @@ const SideBar: FC<SideBarProps> = ({ infoData, socialLinks }) => {
         </div>
       </section>
 
-      <nav className="">
-        <ul className="flex flex-col items-center gap-3 2xl:gap-5 text-[#534f80] text-base 2xl:text-lg cursor-pointer">
-          <li className="sideBarNav">
-            <a href="#home" className="hover:text-[#a5a6ff] cursor-pointer">
-              Home
+      <nav className=" w-full ">
+        <ul className="flex flex-col items-center gap-3 2xl:gap-4 text-[#534f80] text-base 2xl:text-lg cursor-pointer">
+          <li className="sideBarNav w-full">
+            <a href="#home" className="  cursor-pointer">
+              <div className="text-yellow-500 hover:border-black items-center justify-start hover:text-white transition-all ease-in-out duration-300 hover:bg-yellow-500 font-bold w-full rounded-2xl text-center py-2 px-3 flex gap-5 border-2 border-yellow-500">
+                <Home />
+                Home
+              </div>
             </a>
           </li>
-          <li className="sideBarNav">
-            <a href="#about" className="hover:text-[#a5a6ff] cursor-pointer">
-              About
-            </a>
-          </li>
-          <li className="sideBarNav">
-            <a href="#services" className="hover:text-[#a5a6ff] cursor-pointer">
-              Skills
-            </a>
-          </li>
-          <li className="sideBarNav">
+          <li className="sideBarNav w-full">
             <a href="#projects" className="hover:text-[#a5a6ff] cursor-pointer">
-              Projects
+              <div className="text-red-500 hover:border-black items-center justify-start hover:text-white transition-all ease-in-out duration-300 hover:bg-red-500 font-bold w-full rounded-2xl text-center py-2 px-3 flex gap-5 border-2 border-red-500">
+                <FolderOpenDot />
+                Projects
+              </div>
             </a>
           </li>
+          <li className="sideBarNav w-full">
+            <a href="#about" className="hover:text-[#a5a6ff] cursor-pointer">
+              <div className="text-green-500 hover:border-black items-center justify-start hover:text-white transition-all ease-in-out duration-300 hover:bg-green-500 font-bold w-full rounded-2xl text-center py-2 px-3 flex gap-5 border-2 border-green-500">
+                <SwatchBook />
+                About
+              </div>
+            </a>
+          </li>
+          <li className="sideBarNav w-full">
+            <a href="#services" className="hover:text-[#a5a6ff] cursor-pointer">
+              <div className="text-blue-600 hover:border-black items-center justify-start hover:text-white transition-all ease-in-out duration-300 hover:bg-blue-600 font-bold w-full rounded-2xl text-center py-2 px-3 flex gap-5 border-2 border-blue-600">
+                <PencilRuler />
+                Skills
+              </div>
+            </a>
+          </li>
+
           {/* <li>
               <a
                 href="#services"
@@ -97,9 +118,12 @@ const SideBar: FC<SideBarProps> = ({ infoData, socialLinks }) => {
                 Services
               </a>
             </li> */}
-          <li className="sideBarNav">
+          <li className="sideBarNav w-full">
             <a href="#contact" className="hover:text-[#a5a6ff] cursor-pointer">
-              Contact
+              <div className="text-yellow-500 hover:border-black items-center justify-start hover:text-white transition-all ease-in-out duration-300 hover:bg-yellow-500 font-bold w-full rounded-2xl text-center py-2 px-3 flex gap-5 border-2 border-yellow-500">
+                <Phone />
+                Contact
+              </div>
             </a>
           </li>
         </ul>

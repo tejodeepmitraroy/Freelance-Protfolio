@@ -9,8 +9,8 @@ import db from "@/DB/db";
 import Modal from "@/Components/Modal";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import useIsomorphicLayoutEffect from "@/Hooks/IsomorphicEffect";
 import { imageUrlFor } from "@/config/imageBuilder";
+import { useGSAP } from "@gsap/react";
 
 interface ProjectsProps {
   projects: getProjects[];
@@ -19,24 +19,23 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
   const [isModal, setIsModal] = useState<boolean>(false);
   const [isData, setIsData] = useState<getProjects>({} as getProjects);
 
-  useIsomorphicLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const ctx = gsap.context(() => {
-      // gsap.from(".skillContainer", {
-      //   x: 30,
-      //   opacity: 0,
-      //   stagger: 0.8,
-      //   scrollTrigger: {
-      //     // trigger: skill.current,
-      //     scroller: "main",
-      //     start: "25% 60%",
-      //     markers: true,
-      //   },
-      //   ease: "expo.out",
-      // });
+  gsap.registerPlugin(useGSAP);
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    gsap.from(".skillContainer", {
+      x: 30,
+      opacity: 0,
+      stagger: 0.8,
+      scrollTrigger: {
+        // trigger: skill.current,
+        scroller: "main",
+        start: "25% 60%",
+        // markers: true,
+      },
+      ease: "expo.out",
     });
-    return () => ctx.revert();
-  }, []);
+  }, {});
 
   return (
     <>
