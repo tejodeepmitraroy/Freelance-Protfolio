@@ -11,6 +11,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { imageUrlFor } from "@/config/imageBuilder";
 import { useGSAP } from "@gsap/react";
+import { ExternalLink, Github } from "lucide-react";
+import Link from "next/link";
 
 interface ProjectsProps {
   projects: getProjects[];
@@ -40,7 +42,7 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
   return (
     <>
       <section
-        className="relative w-full min-h-screen bg-[#f3f9ff] py-28"
+        className="relative w-full  bg-[#f3f9ff] py-28"
         id="projects"
       >
         <div className="w-full ">
@@ -49,9 +51,62 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
             <span className="font-extrabold text-4xl font-Inter">
               Recent Completed Project
             </span>
+            <section className="w-full mt-10 text-lg grid grid-cols-1 md:grid-cols-2 gap-10">
+              
+              {/* Container */}
+              {projects.map((project, index) => (
+                <section
+                  key={index}
+                  className="w-full shadow-lg border-4 border-gray-600 rounded-[3rem] p-3 cursor-pointer"
+                >
+                  <Image
+                    // src={"/default.jpg"}
+                    src={project.thumbnail ?? "/default.jpg"}
+                    width={380}
+                    height={360}
+                    alt=""
+                    className="w-full aspect-[16/9]  border border-black rounded-[2rem] "
+                    onClick={() => {
+                      setIsData(project);
+                      setIsModal(true);
+                    }}
+                  />
 
-            <section className="w-full mt-10  text-lg">
-              <Swiper
+                  <div className="z-0 w-full  flex pt-3 px-5 items-center justify-between cursor-pointer ">
+                    <div className="flex flex-col gap-1">
+                       <span className=" font-Inter font-medium text-lg">
+                        Title
+                      </span> 
+                      <h3 className=" font-Inter  font-semibold text-xl">
+                        {project.title}
+                      </h3>
+                    </div>
+
+                    <div className="w-fit flex gap-3 items-center">
+                      <Link
+                        href={project.live}
+                        target={"_blank"}
+                        title="tooltip text"
+                        className="z-10 w-8 h-8 sm:w-10 sm:h-10 bg-black rounded-full flex justify-center items-center"
+                      >
+                        <ExternalLink color="white" size={18} />
+                      </Link>
+
+                      <Link
+                        href={project.repoLink[0].link}
+                        target={"_blank"}
+                        className="z-10 w-8 h-8 sm:w-10 sm:h-10 bg-black rounded-full flex justify-center items-center"
+                      >
+                        <Github color="white" size={18} />
+                      </Link>
+                    </div>
+                  </div>
+                </section>
+              ))}
+            </section>
+
+            {/* <section className="w-full mt-10  text-lg">
+               <Swiper
                 slidesPerView={"auto"}
                 style={{ paddingBottom: "1rem" }}
                 modules={[Pagination, Navigation]}
@@ -75,9 +130,9 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
                   <SwiperSlide
                     key={index}
                     className="w-full md:w-[360px]  h-full mr-8 border-4 border-gray-600 rounded-lg p-2"
-                  >
-                    {/* <div className="w-full md:w-[360px] h-full mr-8 border-4 border-gray-600 rounded-lg p-2"> */}
-                    <span className="w-full h-full flex flex-col gap-4 cursor-pointer ">
+                  > */}
+            {/* <div className="w-full md:w-[360px] h-full mr-8 border-4 border-gray-600 rounded-lg p-2"> */}
+            {/* <span className="w-full h-full flex flex-col gap-4 cursor-pointer ">
                       <div
                         className="relative w-[360] h-[380] mb-6 flex items-center justify-center border border-black rounded overflow-hidden "
                         onClick={() => {
@@ -109,16 +164,16 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
                         setIsData(project);
                       }}
                     >
-                      {/* <span className=" font-Inter font-medium">Title</span> */}
+                      {/* <span className=" font-Inter font-medium">Title</span> 
                       <h3 className=" font-Inter  font-semibold text-xl">
                         {project.title}
                       </h3>
-                    </span>
+                    </span> 
                     {/* </div> */}
-                  </SwiperSlide>
+            {/* </SwiperSlide>
                 ))}
-              </Swiper>
-            </section>
+              </Swiper> 
+            </section> */}
           </div>
         </div>
       </section>
