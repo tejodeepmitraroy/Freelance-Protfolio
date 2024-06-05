@@ -1,15 +1,11 @@
-import {
-  type ClientConfig,
-  createClient,
-  QueryParams,
-} from "next-sanity";
+import { type ClientConfig, createClient, QueryParams } from "next-sanity";
 
 const config: ClientConfig = {
-  projectId: process.env.SANITY_PROJECT_ID,
-  dataset: process.env.SANITY_DATASET,
-  apiVersion: "2022-03-07",
-  useCdn: true,
-  token: process.env.SANITY_TOKEN,
+	projectId: process.env.SANITY_PROJECT_ID,
+	dataset: process.env.SANITY_DATASET,
+	apiVersion: "2022-03-07",
+	useCdn: true,
+	token: process.env.SANITY_TOKEN,
 };
 
 export const client = createClient(config);

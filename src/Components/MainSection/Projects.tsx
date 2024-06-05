@@ -15,103 +15,103 @@ import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 
 interface ProjectsProps {
-  projects: getProjects[];
+	projects: getProjects[];
 }
 const Projects: FC<ProjectsProps> = ({ projects }) => {
-  const [isModal, setIsModal] = useState<boolean>(false);
-  const [isData, setIsData] = useState<getProjects>({} as getProjects);
-  const project = useRef<HTMLDivElement>(null);
+	const [isModal, setIsModal] = useState<boolean>(false);
+	const [isData, setIsData] = useState<getProjects>({} as getProjects);
+	const project = useRef<HTMLDivElement>(null);
 
-  gsap.registerPlugin(useGSAP);
-  gsap.registerPlugin(ScrollTrigger);
+	gsap.registerPlugin(useGSAP);
+	gsap.registerPlugin(ScrollTrigger);
 
-  useGSAP(() => {
-    gsap.from(".ProjectContainer", {
-      y: 60,
-      opacity: 0,
-      duration: 1,
-      stagger: 1,
-      scrollTrigger: {
-        trigger: project.current,
-        scroller: "main",
-        start: "50% 60%",
-        // markers: true,
-      },
-      ease: "back.inOut",
-    });
-  }, {});
+	useGSAP(() => {
+		gsap.from(".ProjectContainer", {
+			y: 60,
+			opacity: 0,
+			duration: 1,
+			stagger: 1,
+			scrollTrigger: {
+				trigger: project.current,
+				scroller: "main",
+				start: "50% 60%",
+				// markers: true,
+			},
+			ease: "back.inOut",
+		});
+	}, {});
 
-  return (
-    <>
-      <section
-        ref={project}
-        className="relative w-full  bg-[#f3f9ff] py-28"
-        id="projects"
-      >
-        <div className="w-full ">
-          <div className="w-full max-w-7xl px-5 lg:px-10 mx-auto  flex flex-col gap-5">
-            <span className="font-medium text-lg">- PROJECTS</span>
-            <span className="font-extrabold text-4xl font-Inter">
-              Recent Completed Project
-            </span>
-            <section className="w-full sm:px-10 mt-10 text-lg grid grid-cols-1 md:grid-cols-2 gap-10">
-              {/* Container */}
-              {projects.map((project, index) => (
-                <section
-                  key={index}
-                  className="ProjectContainer w-full shadow-lg border-4 border-gray-600 rounded-[3rem] p-3 cursor-pointer"
-                >
-                  <Image
-                    src={project.thumbnail ?? "/default.jpg"}
-                    width={380}
-                    height={360}
-                    alt=""
-                    className="w-full aspect-[16/9]  border border-black rounded-[2rem] "
-                    onClick={() => {
-                      setIsData(project);
-                      setIsModal(true);
-                    }}
-                  />
+	return (
+		<>
+			<section
+				ref={project}
+				className="relative w-full bg-[#f3f9ff] py-28"
+				id="projects"
+			>
+				<div className="w-full">
+					<div className="mx-auto flex w-full max-w-7xl flex-col gap-5 px-5 lg:px-10">
+						<span className="text-lg font-medium">- PROJECTS</span>
+						<span className="font-Inter text-4xl font-extrabold">
+							Recent Completed Project
+						</span>
+						<section className="mt-10 grid w-full grid-cols-1 gap-10 text-lg sm:px-10 md:grid-cols-2">
+							{/* Container */}
+							{projects.map((project, index) => (
+								<section
+									key={index}
+									className="ProjectContainer w-full cursor-pointer rounded-[3rem] border-4 border-gray-600 p-3 shadow-lg"
+								>
+									<Image
+										src={project.thumbnail ?? "/default.jpg"}
+										width={380}
+										height={360}
+										alt=""
+										className="aspect-[16/9] w-full rounded-[2rem] border border-black"
+										onClick={() => {
+											setIsData(project);
+											setIsModal(true);
+										}}
+									/>
 
-                  <div className="z-0 w-full  flex pt-3 px-5 items-center justify-between cursor-pointer ">
-                    <div className="flex flex-col gap-1">
-                      <span className=" font-Inter font-medium text-lg">
-                        Title
-                      </span>
-                      <h3 className=" font-Inter  font-semibold text-xl">
-                        {project.title}
-                      </h3>
-                    </div>
+									<div className="z-0 flex w-full cursor-pointer items-center justify-between px-5 pt-3">
+										<div className="flex flex-col gap-1">
+											<span className="font-Inter text-lg font-medium">
+												Title
+											</span>
+											<h3 className="font-Inter text-xl font-semibold">
+												{project.title}
+											</h3>
+										</div>
 
-                    <div className="w-fit flex gap-3 items-center">
-                      <Link
-                        href={project.live}
-                        target={"_blank"}
-                        title="tooltip text"
-                        className="z-10 w-8 h-8 sm:w-10 sm:h-10 bg-black rounded-full flex justify-center items-center"
-                      >
-                        <ExternalLink color="white" size={18} />
-                      </Link>
+										<div className="flex w-fit items-center gap-3">
+											<Link
+												href={project.live}
+												target={"_blank"}
+												title="tooltip text"
+												className="z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black sm:h-10 sm:w-10"
+											>
+												<ExternalLink color="white" size={18} />
+											</Link>
 
-                      <Link
-                        href={project.repoLink[0].link}
-                        target={"_blank"}
-                        className="z-10 w-8 h-8 sm:w-10 sm:h-10 bg-black rounded-full flex justify-center items-center"
-                      >
-                        <Github color="white" size={18} />
-                      </Link>
-                    </div>
-                  </div>
-                </section>
-              ))}
-            </section>
-          </div>
-        </div>
-      </section>
-      {/* Modal */}
-      <Modal data={isData} isOpen={isModal} isClose={() => setIsModal(false)} />
-    </>
-  );
+											<Link
+												href={project.repoLink[0].link}
+												target={"_blank"}
+												className="z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black sm:h-10 sm:w-10"
+											>
+												<Github color="white" size={18} />
+											</Link>
+										</div>
+									</div>
+								</section>
+							))}
+						</section>
+					</div>
+				</div>
+			</section>
+			{/* Modal */}
+			<Modal data={isData} isOpen={isModal} isClose={() => setIsModal(false)} />
+		</>
+	);
 };
 
 export default Projects;

@@ -1,8 +1,8 @@
 import { client } from "@/config/sanityClient";
 
-const getTestimonial = async ():Promise<getTestimonial> => {
-  return await client.fetch(
-    `*[_type=="testimonial"]{
+const getTestimonial = async (): Promise<getTestimonial> => {
+	return await client.fetch(
+		`*[_type=="testimonial"]{
       id,
       name,
       subtitle,
@@ -11,9 +11,8 @@ const getTestimonial = async ():Promise<getTestimonial> => {
       _createdAt,
       _updatedAt,
     }`,
-    {},
-    { cache: "force-cache", next: { tags: ['testimonial'] } }
-  );
-  };
-  export default getTestimonial;
-  
+		{},
+		{ cache: "force-cache", next: { tags: ["testimonial"] } }
+	);
+};
+export default getTestimonial;

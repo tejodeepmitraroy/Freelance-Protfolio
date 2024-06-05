@@ -18,26 +18,26 @@ import getSkills from "@/lib/getSkills";
 interface Props {}
 
 const MainSection: FC = async (props: Props) => {
-  const infoData = await getInfo();
-  const experience = await getExperience();
-  const socialLinks = await getSocialLinks();
-  const projects = await getProjects();
-  const services = await getServices();
-  const testimonial = await getTestimonial();
-  const skills = await getSkills();
+	const infoData = await getInfo();
+	const experience = await getExperience();
+	const socialLinks = await getSocialLinks();
+	const projects = await getProjects();
+	const services = await getServices();
+	const testimonial = await getTestimonial();
+	const skills = await getSkills();
 
-  return (
-    <main className="main w-full lg:w-[75%] 2xl:w-[80%] h-screen text-[#1D267D] overflow-y-auto font-Karla subpixel-antialiased scroll-smooth">
-      <Navbar infoData={infoData} socialLinks={socialLinks} />
-      <Home infoData={infoData} />
-      <Projects projects={projects} />
-      <Skills skills={skills} />
-      <About infoData={infoData} experienceData={experience} />
-      {/* <Services /> */}
-      {/* <Testimonials /> */}
-      <ContactUs infoData={infoData} socialLinks={socialLinks} />
-    </main>
-  );
+	return (
+		<main className="main h-screen w-full overflow-y-auto scroll-smooth font-Karla text-[#1D267D] subpixel-antialiased lg:w-[75%] 2xl:w-[80%]">
+			<Navbar infoData={infoData} socialLinks={socialLinks} />
+			<Home infoData={infoData} />
+			<Projects projects={projects} />
+			<Skills skills={skills} />
+			<About infoData={infoData} experienceData={experience} />
+			{/* <Services /> */}
+			{/* <Testimonials /> */}
+			<ContactUs infoData={infoData} socialLinks={socialLinks} />
+		</main>
+	);
 };
 
 export default MainSection;

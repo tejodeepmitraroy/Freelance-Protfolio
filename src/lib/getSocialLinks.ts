@@ -1,8 +1,8 @@
 import { client } from "@/config/sanityClient";
 
-const getSocialLinks = async ():Promise<getSocialLinks> => {
-  return await client.fetch(
-    `*[_type=="socialLinks"][0]{
+const getSocialLinks = async (): Promise<getSocialLinks> => {
+	return await client.fetch(
+		`*[_type=="socialLinks"][0]{
       _id,
       facebook,
       github,
@@ -10,9 +10,8 @@ const getSocialLinks = async ():Promise<getSocialLinks> => {
       twitter,
       _updatedAt,
     }`,
-    {},
-    { cache: "force-cache", next: { tags: ['socialLinks'] } }
-  );
-  };
-  export default getSocialLinks;
-  
+		{},
+		{ cache: "force-cache", next: { tags: ["socialLinks"] } }
+	);
+};
+export default getSocialLinks;
