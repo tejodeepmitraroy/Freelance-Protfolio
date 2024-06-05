@@ -172,6 +172,7 @@ const About: FC<AboutProps> = ({ infoData, experienceData }) => {
             </div> */}
           </section>
         </section>
+
         {/* Experiecnce */}
         <section
           ref={experience}
@@ -188,7 +189,7 @@ const About: FC<AboutProps> = ({ infoData, experienceData }) => {
                   key={index}
                   className=" w-full md:w-1/2 mb-10 md:pl-8 hover:-translate-y-4 transition duration-300 ease-in-out"
                 >
-                  <div className=" expBox w-full relative p-9 lg:px-20 lg:py-11 flex flex-col gap-6 rounded shadow-lg text-lg  font-normal leading-8 bg-white border-1 border-[#f9fafc]">
+                  <div className=" expBox w-full relative rounded-[3rem] p-9 lg:px-20 lg:py-11 flex flex-col gap-6 shadow-lg text-lg  font-normal leading-8 bg-white border-1 border-[#f9fafc]">
                     {/* heading */}
                     <div className="w-full flex justify-between text-lg ">
                       <div className="flex flex-col gap-1">
