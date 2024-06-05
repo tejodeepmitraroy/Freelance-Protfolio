@@ -2,10 +2,10 @@
 import Image from "next/image";
 import React, { FC, useLayoutEffect, useRef } from "react";
 import db from "@/DB/db";
-import useIsomorphicLayoutEffect from "@/Hooks/IsomorphicEffect";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
+import { useGSAP } from "@gsap/react";
 
 interface HomeProps {
   infoData: getInfo;
@@ -13,65 +13,63 @@ interface HomeProps {
 
 const Home: FC<HomeProps> = ({ infoData }) => {
   const home = useRef<HTMLDivElement>(null);
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(useGSAP);
 
-  useIsomorphicLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const ctx = gsap.context(() => {
-      let homeTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: home.current,
-          scroller: ".main",
-          start: "40% 70%",
-          end: "40% 20%",
-        },
-      });
-
-      homeTl.from(
-        ".mainHeading",
-        {
-          y: 30,
-          opacity: 0,
-          skewX: "-10deg",
-          duration: 0.7,
-          delay: 0.4,
-          stagger: 0.4,
-          ease: "circ.inOut",
-        },
-        "a"
-      );
-      homeTl.to(".hand", {
-        fontSize: "2.3rem",
-        duration: 2,
-        ease: "bounce",
-      });
-
-      homeTl.from(".homeButtons", {
-        y: -30,
-        opacity: 0,
-        delay: 0.3,
-        stagger: 0.5,
-        ease: "back.inOut",
-      });
-
-      gsap.from(".profilePic", {
-        x: 30,
-        opacity: 0,
-        duration: 1.5,
-        delay: 0.8,
-        stagger: 0.4,
-        ease: "power3.inOut",
-      });
-      gsap.from(".contactLink", {
-        x: 30,
-        opacity: 0,
-        duration: 1,
-        delay: 0.8,
-        stagger: 0.4,
-        ease: "power3.inOut",
-      });
+  useGSAP(() => {
+    let homeTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: home.current,
+        scroller: ".main",
+        start: "40% 70%",
+        end: "40% 20%",
+      },
     });
-    return () => ctx.revert();
-  }, []);
+
+    homeTl.from(
+      ".mainHeading",
+      {
+        y: 30,
+        opacity: 0,
+        skewX: "-10deg",
+        duration: 0.7,
+        delay: 0.4,
+        stagger: 0.4,
+        ease: "circ.inOut",
+      },
+      "a"
+    );
+    homeTl.to(".hand", {
+      fontSize: "2.3rem",
+      duration: 2,
+      ease: "bounce",
+    });
+
+    homeTl.from(".homeButtons", {
+      y: -30,
+      opacity: 0,
+      delay: 0.3,
+      stagger: 0.5,
+      ease: "back.inOut",
+    });
+
+    gsap.from(".profilePic", {
+      x: 30,
+      opacity: 0,
+      duration: 1.5,
+      delay: 0.8,
+      stagger: 0.4,
+      ease: "power3.inOut",
+    });
+    gsap.from(".contactLink", {
+      x: 30,
+      opacity: 0,
+      duration: 1,
+      delay: 0.8,
+      stagger: 0.4,
+      ease: "power3.inOut",
+    });
+  });
 
   return (
     <section

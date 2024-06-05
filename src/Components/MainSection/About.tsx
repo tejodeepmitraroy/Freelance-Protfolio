@@ -3,77 +3,76 @@ import React, { FC, useLayoutEffect, useRef } from "react";
 import db from "@/DB/db";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Link from "next/link";
-import useIsomorphicLayoutEffect from "@/Hooks/IsomorphicEffect";
+import { useGSAP } from "@gsap/react";
 
 interface AboutProps {
-  infoData: getInfo
-  experienceData:getExperience[]
+  infoData: getInfo;
+  experienceData: getExperience[];
 }
 
-const About: FC<AboutProps> = ({ infoData,experienceData }) => {
+const About: FC<AboutProps> = ({ infoData, experienceData }) => {
   const about = useRef<HTMLDivElement>(null);
   const experience = useRef<HTMLDivElement>(null);
-  useIsomorphicLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const ctx = gsap.context(() => {
-      gsap.from(".aboutGotProject", {
-        x: -30,
-        opacity: 0,
-        duration: 1,
-        delay: 0.3,
-        stagger: 0.5,
-        scrollTrigger: {
-          trigger: about.current,
-          scroller: "main",
-          start: "5% 70%",
-        },
-        ease: "expo.inOut",
-      });
 
-      gsap.from(".info", {
-        x: 30,
-        opacity: 0,
-        duration: 1,
-        delay: 0.4,
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: about.current,
-          scroller: "main",
-          start: "25% 60%",
-        },
-        ease: "power3.inOut",
-      });
+  gsap.registerPlugin(useGSAP);
+  gsap.registerPlugin(ScrollTrigger);
 
-      gsap.from(".counter", {
-        y: 20,
-        duration: 1,
-        opacity: 0,
-        stagger: 1,
-        scrollTrigger: {
-          trigger: about.current,
-          scroller: "main",
-          start: "50% 60%",
-        },
-        ease: "back.inOut(1.7)",
-      });
-
-      gsap.from(".expBox", {
-        y: 40,
-        skewX: 2,
-        opacity: 0,
-        stagger: 0.9,
-        delay: 0.3,
-        scrollTrigger: {
-          trigger: experience.current,
-          scroller: "main",
-          start: "30% 60%",
-        },
-        ease: "expo.out",
-      });
+  useGSAP(() => {
+    gsap.from(".aboutGotProject", {
+      x: -30,
+      opacity: 0,
+      duration: 1,
+      delay: 0.3,
+      stagger: 0.5,
+      scrollTrigger: {
+        trigger: about.current,
+        scroller: "main",
+        start: "5% 70%",
+      },
+      ease: "expo.inOut",
     });
-    return () => ctx.revert();
-  }, []);
+
+    gsap.from(".info", {
+      x: 30,
+      opacity: 0,
+      duration: 1,
+      delay: 0.4,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: about.current,
+        scroller: "main",
+        start: "25% 60%",
+      },
+      ease: "power3.inOut",
+    });
+
+    gsap.from(".counter", {
+      y: 20,
+      duration: 1,
+      opacity: 0,
+      stagger: 1,
+      scrollTrigger: {
+        trigger: about.current,
+        scroller: "main",
+        start: "50% 60%",
+      },
+      ease: "back.inOut(1.7)",
+    });
+
+    gsap.from(".expBox", {
+      y: 40,
+      skewX: 2,
+      opacity: 0,
+      stagger: 0.9,
+      delay: 0.3,
+      scrollTrigger: {
+        trigger: experience.current,
+        scroller: "main",
+        start: "30% 60%",
+      },
+      ease: "expo.out",
+    });
+  });
 
   return (
     <section className="about w-full h-auto border bg-white" id="about">
@@ -114,16 +113,16 @@ const About: FC<AboutProps> = ({ infoData,experienceData }) => {
                     {bio}
                   </p>
                 ))} */}
-                {
-                  infoData.bio
-                }
+                {infoData.bio}
               </span>
 
               <div className="w-full ">
                 <ul className="w-full flex  flex-wrap ">
                   <li className="info flex flex-col mr-6 mb-3">
                     <span className="underline">AGE</span>
-                    <span className="font-extrabold text-lg">{infoData.age}</span>
+                    <span className="font-extrabold text-lg">
+                      {infoData.age}
+                    </span>
                   </li>
                   <li className="info flex flex-col mr-6 mb-3">
                     <span className="underline">BORN</span>
