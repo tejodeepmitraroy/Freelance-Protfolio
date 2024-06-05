@@ -94,18 +94,18 @@ const SideBar: FC<SideBarProps> = ({ infoData, socialLinks }) => {
 						</a>
 					</li>
 					<li className="sideBarNav w-full">
-						<a href="#about" className="cursor-pointer ">
-							<div className="flex w-full items-center justify-start gap-5 rounded-[3rem] border-2 border-[#a5a6ff] px-3 py-2 text-center font-bold text-green-500 transition-all duration-300 ease-in-out hover:bg-green-500 hover:text-white">
-								<SwatchBook />
-								About
+						<a href="#services" className="cursor-pointer">
+							<div className="flex w-full items-center justify-start gap-5 rounded-[3rem] border-2 border-[#a5a6ff] px-3 py-2 text-center font-bold text-green-600 transition-all duration-300 ease-in-out hover:bg-green-600 hover:text-white">
+								<PencilRuler />
+								Skills
 							</div>
 						</a>
 					</li>
 					<li className="sideBarNav w-full">
-						<a href="#services" className="cursor-pointer ">
-							<div className="flex w-full items-center justify-start gap-5 rounded-[3rem] border-2 border-[#a5a6ff] px-3 py-2 text-center font-bold text-blue-600 transition-all duration-300 ease-in-out hover:bg-blue-600 hover:text-white">
-								<PencilRuler />
-								Skills
+						<a href="#about" className="cursor-pointer">
+							<div className="flex w-full items-center justify-start gap-5 rounded-[3rem] border-2 border-[#a5a6ff] px-3 py-2 text-center font-bold text-blue-500 transition-all duration-300 ease-in-out hover:bg-blue-500 hover:text-white">
+								<SwatchBook />
+								About
 							</div>
 						</a>
 					</li>
@@ -119,7 +119,7 @@ const SideBar: FC<SideBarProps> = ({ infoData, socialLinks }) => {
               </a>
             </li> */}
 					<li className="sideBarNav w-full">
-						<a href="#contact" className="cursor-pointer ">
+						<a href="#contact" className="cursor-pointer">
 							<div className="flex w-full items-center justify-start gap-5 rounded-[3rem] border-2 border-[#a5a6ff] px-3 py-2 text-center font-bold text-rose-500 transition-all duration-300 ease-in-out hover:bg-rose-500 hover:text-white">
 								<Phone />
 								Contact
@@ -135,7 +135,7 @@ const SideBar: FC<SideBarProps> = ({ infoData, socialLinks }) => {
 						<Link
 							href={socialLinks.facebook ? socialLinks.facebook : ""}
 							target="_blank"
-							className="duration-900 flex h-9 w-9 items-center justify-center rounded-full bg-gray-200 text-[#130f49] transition ease-in-out hover:h-10 hover:w-10 hover:bg-[#130f49] hover:text-gray-200"
+							className="duration-900 flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 text-[#130f49] transition ease-in-out hover:h-10 hover:w-10 hover:bg-[#130f49] hover:text-gray-200"
 						>
 							<FontAwesomeIcon icon={faFacebookF} className="w-2" />
 						</Link>
@@ -144,7 +144,7 @@ const SideBar: FC<SideBarProps> = ({ infoData, socialLinks }) => {
 						<Link
 							href={socialLinks.twitter ? socialLinks.twitter : ""}
 							target="_blank"
-							className="duration-900 flex h-9 w-9 items-center justify-center rounded-full bg-gray-200 text-[#130f49] transition ease-in-out hover:h-10 hover:w-10 hover:bg-[#130f49] hover:text-gray-200"
+							className="duration-900 flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 text-[#130f49] transition ease-in-out hover:h-10 hover:w-10 hover:bg-[#130f49] hover:text-gray-200"
 						>
 							<FontAwesomeIcon icon={faXTwitter} className="w-4" />
 						</Link>

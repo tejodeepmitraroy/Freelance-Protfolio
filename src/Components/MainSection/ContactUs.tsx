@@ -27,24 +27,24 @@ const ContactUs: FC<ContactUsProps> = ({ infoData, socialLinks }) => {
 	const [message, setMessage] = useState<string>("");
 	const [loading, setLoading] = useState<boolean>();
 	const contact = useRef<HTMLDivElement>(null);
-	
+
 	gsap.registerPlugin(ScrollTrigger);
 	gsap.registerPlugin(useGSAP);
 
-	useGSAP(()=>{
+	useGSAP(() => {
 		gsap.from(".contactSocialLinks", {
-				y: 30,
-				opacity: 0,
-				delay: 0.7,
-				stagger: 0.2,
-				ease: "back.out(1.7)",
-				scrollTrigger: {
-					trigger: contact.current,
-					scroller: "main",
-					start: "20% 60%",
-				},
-			});
-	})
+			y: 30,
+			opacity: 0,
+			delay: 0.7,
+			stagger: 0.2,
+			ease: "back.out(1.7)",
+			scrollTrigger: {
+				trigger: contact.current,
+				scroller: "main",
+				start: "20% 60%",
+			},
+		});
+	});
 
 	const sendEmail = async (e: any) => {
 		e.preventDefault();
@@ -150,40 +150,48 @@ const ContactUs: FC<ContactUsProps> = ({ infoData, socialLinks }) => {
 							<section className="mt-4 h-16 w-fit">
 								<ul className="flex h-full w-full items-center gap-2">
 									<li className="contactSocialLinks">
-										<Link
-											href={socialLinks.facebook ? socialLinks.facebook : ""}
-											target="_blank"
-											className="duration-900 flex h-12 w-12 items-center justify-center rounded-full bg-gray-200 text-[#130f49] transition ease-in-out hover:h-14 hover:w-14 hover:bg-[#4267B2] hover:text-gray-200"
-										>
-											<FontAwesomeIcon icon={faFacebookF} size={"lg"} />
-										</Link>
+										<div className="flex h-14 w-14 items-center justify-center">
+											<Link
+												href={socialLinks.facebook ? socialLinks.facebook : ""}
+												target="_blank"
+												className="duration-900 flex h-12 w-12 items-center justify-center rounded-full bg-gray-200 text-[#130f49] transition ease-in-out hover:h-14 hover:w-14 hover:bg-[#4267B2] hover:text-gray-200"
+											>
+												<FontAwesomeIcon icon={faFacebookF} size={"lg"} />
+											</Link>
+										</div>
 									</li>
 									<li className="contactSocialLinks">
-										<Link
-											href={socialLinks.twitter ? socialLinks.twitter : ""}
-											target="_blank"
-											className="duration-900 flex h-12 w-12 items-center justify-center rounded-full bg-gray-200 text-[#130f49] transition ease-in-out hover:h-14 hover:w-14 hover:bg-[#130f49] hover:text-gray-200"
-										>
-											<FontAwesomeIcon icon={faXTwitter} size={"lg"} />
-										</Link>
+										<div className="flex h-14 w-14 items-center justify-center">
+											<Link
+												href={socialLinks.twitter ? socialLinks.twitter : ""}
+												target="_blank"
+												className="duration-900 flex h-12 w-12 items-center justify-center rounded-full bg-gray-200 text-[#130f49] transition ease-in-out hover:h-14 hover:w-14 hover:bg-[#130f49] hover:text-gray-200"
+											>
+												<FontAwesomeIcon icon={faXTwitter} size={"lg"} />
+											</Link>
+										</div>
 									</li>
 									<li className="contactSocialLinks">
-										<Link
-											href={socialLinks.linkedIn ? socialLinks.linkedIn : ""}
-											target="_blank"
-											className="duration-900 flex h-12 w-12 items-center justify-center rounded-full bg-gray-200 text-[#130f49] transition ease-in-out hover:h-14 hover:w-14 hover:bg-[#0072b1] hover:text-gray-200"
-										>
-											<FontAwesomeIcon icon={faLinkedinIn} size={"lg"} />
-										</Link>
+										<div className="flex h-14 w-14 items-center justify-center">
+											<Link
+												href={socialLinks.linkedIn ? socialLinks.linkedIn : ""}
+												target="_blank"
+												className="duration-900 flex h-12 w-12 items-center justify-center rounded-full bg-gray-200 text-[#130f49] transition ease-in-out hover:h-14 hover:w-14 hover:bg-[#0072b1] hover:text-gray-200"
+											>
+												<FontAwesomeIcon icon={faLinkedinIn} size={"lg"} />
+											</Link>
+										</div>
 									</li>
 									<li className="contactSocialLinks">
-										<Link
-											href={socialLinks.github ? socialLinks.github : ""}
-											target="_blank"
-											className="duration-900 flex h-12 w-12 items-center justify-center rounded-full bg-gray-200 text-[#130f49] transition ease-in-out hover:h-14 hover:w-14 hover:bg-[#130f49] hover:text-gray-200"
-										>
-											<FontAwesomeIcon icon={faGithub} size={"lg"} />
-										</Link>
+										<div className="flex h-14 w-14 items-center justify-center">
+											<Link
+												href={socialLinks.github ? socialLinks.github : ""}
+												target="_blank"
+												className="duration-900 flex h-12 w-12 items-center justify-center rounded-full bg-gray-200 text-[#130f49] transition ease-in-out hover:h-14 hover:w-14 hover:bg-[#130f49] hover:text-gray-200"
+											>
+												<FontAwesomeIcon icon={faGithub} size={"lg"} />
+											</Link>
+										</div>
 									</li>
 								</ul>
 							</section>
@@ -212,7 +220,7 @@ const ContactUs: FC<ContactUsProps> = ({ infoData, socialLinks }) => {
 							<textarea
 								onChange={(e) => setMessage(e.target.value)}
 								value={message}
-								className="h-32 w-full rounded-[3rem] resize-none bg-white p-5 text-lg leading-[1.6]"
+								className="h-32 w-full resize-none rounded-[3rem] bg-white p-5 text-lg leading-[1.6]"
 								placeholder="Write Something"
 								autoComplete="off"
 							/>
@@ -240,7 +248,7 @@ const ContactUs: FC<ContactUsProps> = ({ infoData, socialLinks }) => {
 									<button
 										type="submit"
 										onClick={sendEmail}
-										className=" rounded-[3rem] border-[1.5px] border-[#130f49] bg-[#130f49] px-10 py-2 text-lg leading-8 text-white transition duration-300 ease-in-out"
+										className="rounded-[3rem] border-[1.5px] border-[#130f49] bg-[#130f49] px-10 py-2 text-lg leading-8 text-white transition duration-300 ease-in-out"
 									>
 										Submit
 									</button>

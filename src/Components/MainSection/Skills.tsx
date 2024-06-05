@@ -44,7 +44,7 @@ const Skills: FC<SkillsProps> = ({ skills }) => {
 							.map((items) => (
 								<li
 									key={items.id}
-									className="w-full transition duration-300 ease-in-out hover:-translate-y-4"
+									className="w-full transition-all duration-300 ease-in-out hover:-translate-y-4"
 								>
 									<section className="skillContainer flex h-full w-full flex-col rounded-[3rem] border-2 border-black p-5 text-lg shadow-xl sm:p-8">
 										<span className="mb-4 w-full font-Inter font-medium text-[rgba(19,15,73,.5)]">
@@ -57,14 +57,14 @@ const Skills: FC<SkillsProps> = ({ skills }) => {
 											{items.technologies?.map((tech, index) => (
 												<div
 													key={tech._key}
-													className="flex h-fit items-center gap-2 rounded-3xl border-2 border-black p-2 px-3"
-												>											
+													className="flex h-fit items-center justify-center gap-2 rounded-3xl border-2 border-black p-2 px-3"
+												>
 													<Image
 														src={tech.logo}
 														width={25}
 														height={25}
 														alt={tech.name}
-														className="rounded-full"
+														className="flex items-center justify-center rounded-full"
 													/>
 													<span>
 														<p className="text-center font-bold">{tech.name}</p>

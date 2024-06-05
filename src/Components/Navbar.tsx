@@ -70,7 +70,7 @@ const Navbar: FC<NavbarProps> = ({ infoData, socialLinks }) => {
 				></button>
 				<section
 					ref={navBarInner}
-					className="fixed right-0 top-12 flex h-full w-52 flex-col gap-6 bg-white px-5 pb-5 pt-12 text-right font-Karla antialiased"
+					className="fixed right-0 top-12 flex h-full w-60 flex-col gap-6 bg-white px-5 pb-5 pt-12 text-right font-Karla antialiased"
 				>
 					<div className="flex flex-col items-end">
 						<Image
