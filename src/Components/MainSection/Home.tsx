@@ -101,7 +101,7 @@ const Home: FC<HomeProps> = ({ infoData }) => {
                   <li className="homeButtons w-fit h-fit ">
                     <a
                       href={"#about"}
-                      className="w-fit h-fit px-7 mb-7 md:px-10 py-3 rounded-lg bg-[#0C134F] hover:bg-transparent text-white  hover:text-[#0C134F] border border-[#0C134F] transition duration-300 ease-in-out"
+                      className="w-fit h-fit px-7 mb-7 rounded-[3rem] md:px-10 py-3 bg-[#0C134F] hover:bg-transparent text-white  hover:text-[#0C134F] border border-[#0C134F] transition duration-300 ease-in-out"
                     >
                       know about me
                     </a>
@@ -109,7 +109,7 @@ const Home: FC<HomeProps> = ({ infoData }) => {
                   <li className="homeButtons w-fit h-fit ">
                     <Link
                       href={"#contact"}
-                      className="w-fit h-fit px-10 py-3 rounded-lg hover:bg-[#0C134F] bg-transparent  hover:text-white  text-[#0C134F] border border-[#0C134F] transition-all duration-300 ease-in-out"
+                      className="w-fit h-fit px-10 py-3 rounded-[3rem] hover:bg-[#0C134F] bg-transparent  hover:text-white  text-[#0C134F] border border-[#0C134F] transition-all duration-300 ease-in-out"
                     >
                       Lets talk
                     </Link>
