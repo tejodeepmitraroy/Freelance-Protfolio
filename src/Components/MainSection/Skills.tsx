@@ -58,8 +58,7 @@ const Skills: FC<SkillsProps> = ({ skills }) => {
 												<div
 													key={tech._key}
 													className="flex h-fit items-center gap-2 rounded-3xl border-2 border-black p-2 px-3"
-												>
-													{/* <span className="w-fit h-10 mb-1"> */}
+												>											
 													<Image
 														src={tech.logo}
 														width={25}
@@ -67,7 +66,6 @@ const Skills: FC<SkillsProps> = ({ skills }) => {
 														alt={tech.name}
 														className="rounded-full"
 													/>
-													{/* </span> */}
 													<span>
 														<p className="text-center font-bold">{tech.name}</p>
 													</span>

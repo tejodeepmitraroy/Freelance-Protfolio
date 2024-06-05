@@ -196,7 +196,7 @@ const ContactUs: FC<ContactUsProps> = ({ infoData, socialLinks }) => {
 								onChange={(e) => setName(e.target.value)}
 								value={name}
 								required
-								className="h-14 w-full bg-white p-5 text-lg leading-[1.6]"
+								className="h-14 w-full rounded-[3rem] bg-white p-5 text-lg leading-[1.6]"
 								placeholder="Enter your name"
 								autoComplete="off"
 							/>
@@ -205,14 +205,14 @@ const ContactUs: FC<ContactUsProps> = ({ infoData, socialLinks }) => {
 								onChange={(e) => setEmail(e.target.value)}
 								value={email}
 								required
-								className="h-14 w-full bg-white p-5 text-lg leading-[1.6]"
+								className="h-14 w-full rounded-[3rem] bg-white p-5 text-lg leading-[1.6]"
 								placeholder="Your email"
 								autoComplete="off"
 							/>
 							<textarea
 								onChange={(e) => setMessage(e.target.value)}
 								value={message}
-								className="h-32 w-full resize-none bg-white p-5 text-lg leading-[1.6]"
+								className="h-32 w-full rounded-[3rem] resize-none bg-white p-5 text-lg leading-[1.6]"
 								placeholder="Write Something"
 								autoComplete="off"
 							/>
@@ -240,7 +240,7 @@ const ContactUs: FC<ContactUsProps> = ({ infoData, socialLinks }) => {
 									<button
 										type="submit"
 										onClick={sendEmail}
-										className="rounded-md border-[1.5px] border-[#130f49] bg-[#130f49] px-10 py-2 text-lg leading-8 text-white transition duration-300 ease-in-out"
+										className=" rounded-[3rem] border-[1.5px] border-[#130f49] bg-[#130f49] px-10 py-2 text-lg leading-8 text-white transition duration-300 ease-in-out"
 									>
 										Submit
 									</button>
@@ -255,6 +255,7 @@ const ContactUs: FC<ContactUsProps> = ({ infoData, socialLinks }) => {
 							width="100%"
 							height="100%"
 							title="map"
+							className="rounded-[3rem]"
 						></iframe>
 					</section>
 					<section className="mt-10 flex w-full justify-center text-center text-4xl font-bold">
