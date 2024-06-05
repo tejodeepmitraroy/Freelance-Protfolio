@@ -5,16 +5,16 @@ import getInfo from "@/lib/getInfo";
 import getSocialLinks from "@/lib/getSocialLinks";
 import "react-toastify/dist/ReactToastify.css";
 
-const  Home = async () =>{
-  const infoData = await getInfo();
-  const socialLinks = await getSocialLinks();
-  return (
-    // <Cursor>
-    <div data-scroll className="relative w-full h-screen lg:flex">
-      <SideBar infoData={infoData}  socialLinks={socialLinks}/>
-      <MainSection />
-    </div>
-    // </Cursor>
-  );
-}
-export default Home; 
+const Home = async () => {
+	const infoData = await getInfo();
+	const socialLinks = await getSocialLinks();
+	return (
+		// <Cursor>
+		<div data-scroll className="relative h-screen w-full lg:flex">
+			<SideBar infoData={infoData} socialLinks={socialLinks} />
+			<MainSection />
+		</div>
+		// </Cursor>
+	);
+};
+export default Home;

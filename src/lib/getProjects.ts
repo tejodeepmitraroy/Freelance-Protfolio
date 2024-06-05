@@ -1,8 +1,8 @@
 import { client } from "@/config/sanityClient";
 
 export const getProjects = async (): Promise<getProjects[]> => {
-  return await client.fetch(
-    `*[_type=="projects"]{
+	return await client.fetch(
+		`*[_type=="projects"]{
       _id,
       title,
       subtitle,
@@ -23,8 +23,8 @@ export const getProjects = async (): Promise<getProjects[]> => {
       _createdAt,
       _updatedAt,
     }`,
-    {},
-    {cache: "force-cache", next: { tags: ['projects'] } }
-  );
+		{},
+		{ cache: "force-cache", next: { tags: ["projects"] } }
+	);
 };
 export default getProjects;

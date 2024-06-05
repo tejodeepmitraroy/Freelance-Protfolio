@@ -1,8 +1,8 @@
 import { client } from "@/config/sanityClient";
 
 const getInfo = async (): Promise<getInfo> => {
-  return await client.fetch(
-    `*[_type=="basicInfo"][0]{
+	return await client.fetch(
+		`*[_type=="basicInfo"][0]{
       _id,
       name,
       age,
@@ -19,8 +19,8 @@ const getInfo = async (): Promise<getInfo> => {
       bio,
       experienceYears,
     }`,
-    {},
-    {cache: "force-cache", next: { tags: ['basicInfo'] } }
-  );
+		{},
+		{ cache: "force-cache", next: { tags: ["basicInfo"] } }
+	);
 };
 export default getInfo;
