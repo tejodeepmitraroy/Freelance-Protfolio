@@ -79,31 +79,31 @@ const SideBar: FC<SideBarProps> = ({ infoData, socialLinks }) => {
 				<ul className="flex cursor-pointer flex-col items-center gap-3 text-base text-[#534f80] 2xl:gap-4 2xl:text-lg">
 					<li className="sideBarNav w-full">
 						<a href="#home" className="cursor-pointer">
-							<div className="flex w-full items-center justify-start gap-5 rounded-2xl border-2 border-yellow-500 px-3 py-2 text-center font-bold text-yellow-500 transition-all duration-300 ease-in-out hover:border-black hover:bg-yellow-500 hover:text-white">
+							<div className="flex w-full items-center justify-start gap-5 rounded-[3rem] border-2 border-[#a5a6ff] px-3 py-2 text-center font-bold text-yellow-500 transition-all duration-300 ease-in-out hover:bg-yellow-500 hover:text-white">
 								<Home />
 								Home
 							</div>
 						</a>
 					</li>
 					<li className="sideBarNav w-full">
-						<a href="#projects" className="cursor-pointer hover:text-[#a5a6ff]">
-							<div className="flex w-full items-center justify-start gap-5 rounded-2xl border-2 border-red-500 px-3 py-2 text-center font-bold text-red-500 transition-all duration-300 ease-in-out hover:border-black hover:bg-red-500 hover:text-white">
+						<a href="#projects" className="cursor-pointer">
+							<div className="flex w-full items-center justify-start gap-5 rounded-[3rem] border-2 border-[#a5a6ff] px-3 py-2 text-center font-bold text-red-500 transition-all duration-300 ease-in-out hover:bg-red-500 hover:text-white">
 								<FolderOpenDot />
 								Projects
 							</div>
 						</a>
 					</li>
 					<li className="sideBarNav w-full">
-						<a href="#about" className="cursor-pointer hover:text-[#a5a6ff]">
-							<div className="flex w-full items-center justify-start gap-5 rounded-2xl border-2 border-green-500 px-3 py-2 text-center font-bold text-green-500 transition-all duration-300 ease-in-out hover:border-black hover:bg-green-500 hover:text-white">
+						<a href="#about" className="cursor-pointer ">
+							<div className="flex w-full items-center justify-start gap-5 rounded-[3rem] border-2 border-[#a5a6ff] px-3 py-2 text-center font-bold text-green-500 transition-all duration-300 ease-in-out hover:bg-green-500 hover:text-white">
 								<SwatchBook />
 								About
 							</div>
 						</a>
 					</li>
 					<li className="sideBarNav w-full">
-						<a href="#services" className="cursor-pointer hover:text-[#a5a6ff]">
-							<div className="flex w-full items-center justify-start gap-5 rounded-2xl border-2 border-blue-600 px-3 py-2 text-center font-bold text-blue-600 transition-all duration-300 ease-in-out hover:border-black hover:bg-blue-600 hover:text-white">
+						<a href="#services" className="cursor-pointer ">
+							<div className="flex w-full items-center justify-start gap-5 rounded-[3rem] border-2 border-[#a5a6ff] px-3 py-2 text-center font-bold text-blue-600 transition-all duration-300 ease-in-out hover:bg-blue-600 hover:text-white">
 								<PencilRuler />
 								Skills
 							</div>
@@ -119,8 +119,8 @@ const SideBar: FC<SideBarProps> = ({ infoData, socialLinks }) => {
               </a>
             </li> */}
 					<li className="sideBarNav w-full">
-						<a href="#contact" className="cursor-pointer hover:text-[#a5a6ff]">
-							<div className="flex w-full items-center justify-start gap-5 rounded-2xl border-2 border-yellow-500 px-3 py-2 text-center font-bold text-yellow-500 transition-all duration-300 ease-in-out hover:border-black hover:bg-yellow-500 hover:text-white">
+						<a href="#contact" className="cursor-pointer ">
+							<div className="flex w-full items-center justify-start gap-5 rounded-[3rem] border-2 border-[#a5a6ff] px-3 py-2 text-center font-bold text-rose-500 transition-all duration-300 ease-in-out hover:bg-rose-500 hover:text-white">
 								<Phone />
 								Contact
 							</div>

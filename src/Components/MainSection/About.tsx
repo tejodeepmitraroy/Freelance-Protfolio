@@ -86,7 +86,7 @@ const About: FC<AboutProps> = ({ infoData, experienceData }) => {
 					<div className="flex flex-col lg:flex-row">
 						{/* left */}
 						<section className="mb-16 flex w-full flex-col gap-5 lg:w-[40%]">
-							<span className="text-lg font-medium">-NICE TO MEET YOU!</span>
+							<span className="text-lg font-medium">- NICE TO MEET YOU!</span>
 							<div className="flex flex-col gap-2">
 								<span className="font-Inter text-4xl font-extrabold">
 									<h3>{db.name}</h3>
@@ -179,7 +179,7 @@ const About: FC<AboutProps> = ({ infoData, experienceData }) => {
 					className="h-auto w-full bg-[#f3f9ff] pb-16 pt-28"
 				>
 					<div className="mx-auto flex h-auto max-w-7xl flex-col gap-5 px-5 lg:px-10">
-						<span className="text-lg font-medium">-EXPERIENCE</span>
+						<span className="text-lg font-medium">- EXPERIENCE</span>
 						<span className="font-Inter text-4xl font-extrabold">
 							Everything about me!
 						</span>

@@ -15,6 +15,7 @@ import {
 import useIsomorphicLayoutEffect from "@/Hooks/IsomorphicEffect";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 interface ContactUsProps {
 	infoData: getInfo;
@@ -26,11 +27,12 @@ const ContactUs: FC<ContactUsProps> = ({ infoData, socialLinks }) => {
 	const [message, setMessage] = useState<string>("");
 	const [loading, setLoading] = useState<boolean>();
 	const contact = useRef<HTMLDivElement>(null);
+	
+	gsap.registerPlugin(ScrollTrigger);
+	gsap.registerPlugin(useGSAP);
 
-	useIsomorphicLayoutEffect(() => {
-		gsap.registerPlugin(ScrollTrigger);
-		const ctx = gsap.context(() => {
-			gsap.from(".contactSocialLinks", {
+	useGSAP(()=>{
+		gsap.from(".contactSocialLinks", {
 				y: 30,
 				opacity: 0,
 				delay: 0.7,
@@ -42,9 +44,7 @@ const ContactUs: FC<ContactUsProps> = ({ infoData, socialLinks }) => {
 					start: "20% 60%",
 				},
 			});
-		});
-		return () => ctx.revert();
-	}, []);
+	})
 
 	const sendEmail = async (e: any) => {
 		e.preventDefault();
@@ -110,7 +110,7 @@ const ContactUs: FC<ContactUsProps> = ({ infoData, socialLinks }) => {
 						<section className="flex w-full flex-col gap-5 md:w-1/2 md:pr-12">
 							<div className="flex flex-col gap-5">
 								<span className="text-lg font-medium">
-									<p>LET&lsquo;S CONNECT </p>
+									<p>- LET&lsquo;S CONNECT </p>
 								</span>
 								<Link
 									href={"#skills"}
