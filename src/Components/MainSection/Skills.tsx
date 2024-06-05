@@ -1,6 +1,4 @@
 "use client";
-import useIsomorphicLayoutEffect from "@/Hooks/IsomorphicEffect";
-import { imageUrlFor } from "@/config/imageBuilder";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

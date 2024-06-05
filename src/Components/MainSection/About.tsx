@@ -95,10 +95,10 @@ const About: FC<AboutProps> = ({ infoData, experienceData }) => {
                   <p>{db.subtitle}</p>
                 </span>
               </div>
-              <span className="aboutGotProject w-fit h-fit mt-4">
+              <span className="aboutGotProject w-fit h-fit mt-4 ">
                 <a
                   href={"#projects"}
-                  className="w-fit h-fit px-10 py-3 mt-6 rounded-lg bg-[#0C134F] hover:bg-transparent text-white text-lg hover:text-[#0C134F] border border-[#0C134F] transition duration-300 ease-in-out"
+                  className="w-fit rounded-[3rem] h-fit px-10 py-3 mt-6 bg-[#0C134F] hover:bg-transparent text-white text-lg hover:text-[#0C134F] border border-[#0C134F] transition duration-300 ease-in-out"
                 >
                   Got a project?
                 </a>
@@ -154,13 +154,13 @@ const About: FC<AboutProps> = ({ infoData, experienceData }) => {
           </div>
           {/* counter */}
           <section className="w-full flex flex-col md:flex-row  gap-10 mb-28 ">
-            <div className=" counter w-full md:w-[50%] lg:w-[30%] h-48 bg-[#F6F7C1] rounded-md flex flex-col gap-4 items-center justify-center ">
+            <div className=" counter w-full md:w-[50%] lg:w-[30%] rounded-[3rem] h-48 bg-[#F6F7C1]  flex flex-col gap-4 items-center justify-center ">
               <span className="font-extrabold text-4xl font-Inter">
                 {infoData.experienceYears}
               </span>
               <span className="font-semibold text-lg">YEARS OF EXPERIENCE</span>
             </div>
-            <div className=" counter  w-full md:w-[50%]  lg:w-[30%] h-48 bg-[#BEF0CB] rounded-md flex flex-col gap-4 items-center justify-center">
+            <div className=" counter  w-full md:w-[50%]  lg:w-[30%] h-48 bg-[#BEF0CB] rounded-[3rem] flex flex-col gap-4 items-center justify-center">
               <span className="font-extrabold text-4xl font-Inter">
                 {infoData.projectDone}
               </span>
