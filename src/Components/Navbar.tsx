@@ -67,7 +67,7 @@ const Navbar: FC<NavbarProps> = ({ infoData, socialLinks }) => {
 			<nav
 				ref={navbarSide}
 				className={`fixed ${
-					navReveal ? "translate-x-0" : " -translate-x-60 invisible"
+					navReveal ? "translate-x-0" : "invisible -translate-x-60"
 				} left-0 top-0 z-50 h-screen w-full transition-all ease-in-out sm:hidden`}
 			>
 				<button
@@ -173,28 +173,28 @@ const Navbar: FC<NavbarProps> = ({ infoData, socialLinks }) => {
 							<Link
 								href={socialLinks.facebook ? socialLinks.facebook : ""}
 								target="_blank"
-								className="flex h-7 w-7 items-center justify-center rounded-full bg-gray-100"
+								className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-gray-200 bg-gray-100 hover:bg-[#4267B2] hover:text-gray-200"
 							>
 								<FontAwesomeIcon icon={faFacebookF} className="w-3" />
 							</Link>
 							<Link
 								href={socialLinks.twitter ? socialLinks.twitter : ""}
 								target="_blank"
-								className="flex h-7 w-7 items-center justify-center rounded-full bg-gray-100"
+								className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-gray-200 bg-gray-100 hover:bg-black hover:text-gray-200"
 							>
 								<FontAwesomeIcon icon={faXTwitter} className="w-3" />
 							</Link>
 							<Link
 								href={socialLinks.linkedIn ? socialLinks.linkedIn : ""}
 								target="_blank"
-								className="flex h-7 w-7 items-center justify-center rounded-full bg-gray-100"
+								className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-gray-200 bg-gray-100 hover:bg-[#0072b1] hover:text-gray-200"
 							>
 								<FontAwesomeIcon icon={faLinkedinIn} className="w-3" />
 							</Link>
 							<Link
 								href={socialLinks.github ? socialLinks.github : ""}
 								target="_blank"
-								className="flex h-7 w-7 items-center justify-center rounded-full bg-gray-100"
+								className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-gray-200 bg-gray-100 hover:bg-[#130f49] hover:text-gray-200"
 							>
 								<FontAwesomeIcon icon={faGithub} className="w-4" />
 							</Link>

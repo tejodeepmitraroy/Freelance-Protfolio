@@ -67,7 +67,7 @@ const SideBar: FC<SideBarProps> = ({ infoData, socialLinks }) => {
 					className="sideBarHeading w-25 h-25 rounded-full border-2 border-[#a5a6ff] bg-white"
 				/>
 				<div className="flex flex-col items-center justify-center text-[#EEF7FF] antialiased">
-					<h2 className="sideBarHeading z-10 mt-3 w-full font-Inter text-xl font-semibold  tracking-wide 2xl:text-2xl">
+					<h2 className="sideBarHeading z-10 mt-3 w-full font-Inter text-xl font-semibold tracking-wide 2xl:text-2xl">
 						{infoData.name}
 					</h2>
 					<h2 className="sideBarHeading text absolute z-0 font-Pacifico text-3xl opacity-20 2xl:text-4xl">
@@ -136,7 +136,7 @@ const SideBar: FC<SideBarProps> = ({ infoData, socialLinks }) => {
 						<Link
 							href={socialLinks.facebook ? socialLinks.facebook : ""}
 							target="_blank"
-							className="duration-900 flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 text-[#130f49] transition ease-in-out hover:h-10 hover:w-10 hover:bg-[#130f49] hover:text-gray-200"
+							className="duration-900 flex h-10 w-10 items-center justify-center rounded-full border-2 border-gray-200 bg-gray-200 text-[#130f49] transition ease-in-out hover:h-10 hover:w-10 hover:bg-[#4267B2] hover:text-gray-200"
 						>
 							<FontAwesomeIcon icon={faFacebookF} className="w-2" />
 						</Link>
@@ -145,7 +145,7 @@ const SideBar: FC<SideBarProps> = ({ infoData, socialLinks }) => {
 						<Link
 							href={socialLinks.twitter ? socialLinks.twitter : ""}
 							target="_blank"
-							className="duration-900 flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 text-[#130f49] transition ease-in-out hover:h-10 hover:w-10 hover:bg-[#130f49] hover:text-gray-200"
+							className="duration-900 flex h-10 w-10 items-center justify-center rounded-full border-2 border-gray-200 bg-gray-200 text-[#130f49] transition ease-in-out hover:h-10 hover:w-10 hover:bg-black hover:text-gray-200"
 						>
 							<FontAwesomeIcon icon={faXTwitter} className="w-4" />
 						</Link>
@@ -154,7 +154,7 @@ const SideBar: FC<SideBarProps> = ({ infoData, socialLinks }) => {
 						<Link
 							href={socialLinks.linkedIn ? socialLinks.linkedIn : ""}
 							target="_blank"
-							className="duration-900 flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 text-[#130f49] transition ease-in-out hover:h-10 hover:w-10 hover:bg-[#130f49] hover:text-gray-200"
+							className="duration-900 flex h-10 w-10 items-center justify-center rounded-full border-2 border-gray-200 bg-gray-200 text-[#130f49] transition ease-in-out hover:h-10 hover:w-10 hover:bg-[#0072b1] hover:text-gray-200"
 						>
 							<FontAwesomeIcon icon={faLinkedinIn} className="w-4" />
 						</Link>
@@ -163,7 +163,7 @@ const SideBar: FC<SideBarProps> = ({ infoData, socialLinks }) => {
 						<Link
 							href={socialLinks.github ? socialLinks.github : ""}
 							target="_blank"
-							className="duration-900 flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 text-[#130f49] transition ease-in-out hover:h-10 hover:w-10 hover:bg-[#130f49] hover:text-gray-200"
+							className="duration-900 flex h-10 w-10 items-center justify-center rounded-full border-2 border-gray-200 bg-gray-200 text-[#130f49] transition ease-in-out hover:h-10 hover:w-10 hover:bg-[#130f49] hover:text-gray-200"
 						>
 							<FontAwesomeIcon icon={faGithub} className="w-6" />
 						</Link>
