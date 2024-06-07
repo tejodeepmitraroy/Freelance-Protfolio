@@ -8,7 +8,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
-import React, { FC, useLayoutEffect, useState } from "react";
+import React, { FC  } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import {
@@ -18,6 +18,7 @@ import {
 	Phone,
 	SwatchBook,
 } from "lucide-react";
+
 interface SideBarProps {
 	infoData: getInfo;
 	socialLinks: getSocialLinks;
@@ -55,7 +56,7 @@ const SideBar: FC<SideBarProps> = ({ infoData, socialLinks }) => {
 	}, {});
 
 	return (
-		<aside className="relative hidden h-screen flex-col items-center justify-between overflow-auto border-r p-8 font-Karla antialiased lg:flex lg:w-[25%] xl:p-14 2xl:w-[20%]">
+		<aside className="relative hidden h-screen flex-col items-center justify-between overflow-auto border-r bg-[#0C134F] p-8 font-Karla antialiased lg:flex lg:w-[25%] xl:p-14 2xl:w-[20%]">
 			<section className="flex flex-col items-center gap-7">
 				<Image
 					src={infoData.profilePic}
@@ -63,13 +64,13 @@ const SideBar: FC<SideBarProps> = ({ infoData, socialLinks }) => {
 					height={110}
 					alt="Location"
 					priority
-					className="sideBarHeading w-25 h-25 rounded-full border-2 border-[#a5a6ff]"
+					className="sideBarHeading w-25 h-25 rounded-full border-2 border-[#a5a6ff] bg-white"
 				/>
-				<div className="flex flex-col items-center justify-center">
-					<h2 className="sideBarHeading z-10 mt-3 w-full font-Inter text-xl font-bold 2xl:text-2xl">
+				<div className="flex flex-col items-center justify-center text-[#EEF7FF] antialiased">
+					<h2 className="sideBarHeading z-10 mt-3 w-full font-Inter text-xl font-semibold  tracking-wide 2xl:text-2xl">
 						{infoData.name}
 					</h2>
-					<h2 className="sideBarHeading text absolute z-0 font-Pacifico text-3xl opacity-10 2xl:text-4xl">
+					<h2 className="sideBarHeading text absolute z-0 font-Pacifico text-3xl opacity-20 2xl:text-4xl">
 						{infoData.name}
 					</h2>
 				</div>
@@ -169,7 +170,7 @@ const SideBar: FC<SideBarProps> = ({ infoData, socialLinks }) => {
 					</li>
 				</ul>
 
-				<div className="w-full text-center">
+				<div className="w-full text-center text-[#EEF7FF]">
 					<p>All Copyrights 2023, Tejodeep Mitra Roy. All rights reserved.</p>
 				</div>
 			</section>

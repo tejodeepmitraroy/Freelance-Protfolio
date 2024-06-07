@@ -7,6 +7,13 @@ import {
 	faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+	FolderOpenDot,
+	Home,
+	PencilRuler,
+	Phone,
+	SwatchBook,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { FC, useRef, useState } from "react";
@@ -60,19 +67,21 @@ const Navbar: FC<NavbarProps> = ({ infoData, socialLinks }) => {
 			<nav
 				ref={navbarSide}
 				className={`fixed ${
-					navReveal ? "" : "hidden"
-				} right-0 top-12 z-50 h-screen w-full`}
+					navReveal ? "translate-x-0" : " -translate-x-60 invisible"
+				} left-0 top-0 z-50 h-screen w-full transition-all ease-in-out sm:hidden`}
 			>
 				<button
-					className="absolute h-full w-full bg-black opacity-0"
+					className={`absolute ${
+						navReveal ? "" : "hidden"
+					} h-full w-full bg-black opacity-0`}
 					title="Menu Closing button"
-					onClick={() => setNavReveal(!navReveal)}
+					onClick={() => setNavReveal(false)}
 				></button>
 				<section
 					ref={navBarInner}
-					className="fixed right-0 top-12 flex h-full w-60 flex-col gap-6 bg-white px-5 pb-5 pt-12 text-right font-Karla antialiased"
+					className="fixed left-0 top-12 flex h-full w-60 flex-col gap-6 bg-[#0C134F] px-5 pb-5 pt-12 text-right font-Karla antialiased"
 				>
-					<div className="flex flex-col items-end">
+					<div className="flex flex-col items-center">
 						<Image
 							src={infoData.profilePic}
 							width={90}
@@ -80,8 +89,8 @@ const Navbar: FC<NavbarProps> = ({ infoData, socialLinks }) => {
 							alt=""
 							className="rounded-full border-2 border-[#a5a6ff]"
 						/>
-						<div className="flex flex-col items-center justify-center">
-							<span className="z-10 mt-7 font-Inter text-base font-bold">
+						<div className="flex flex-col items-center justify-center text-[#EEF7FF]">
+							<span className="z-10 mt-7 font-Inter text-lg font-bold tracking-wide">
 								{infoData.name}
 							</span>
 							<span className="fixed z-0 font-Pacifico text-xl opacity-10">
@@ -90,69 +99,77 @@ const Navbar: FC<NavbarProps> = ({ infoData, socialLinks }) => {
 						</div>
 					</div>
 
-					<nav className="">
-						<ul className="flex cursor-pointer flex-col items-end gap-3 text-base text-[#534f80] 2xl:gap-5 2xl:text-lg">
-							<li className="rightSideBarLink">
-								<Link
-									href="#home"
-									className="cursor-pointer hover:text-[#a5a6ff]"
-								>
-									Home
-								</Link>
+					<nav className="w-full">
+						<ul className="flex cursor-pointer flex-col items-end text-base text-[#534f80] 2xl:gap-5 2xl:text-lg">
+							<li
+								className="rightSideBarLink w-full"
+								onClick={() => setNavReveal(false)}
+							>
+								<a href="#home" className="cursor-pointer">
+									<div className="flex w-full items-center justify-start gap-5 px-3 py-2 text-center font-bold text-yellow-500 transition-all duration-300 ease-in-out hover:rounded-full hover:bg-yellow-500 hover:text-white">
+										<Home />
+										Home
+									</div>
+								</a>
 							</li>
-							<li className="rightSideBarLink">
-								<Link
-									href="#projects"
-									className="cursor-pointer hover:text-[#a5a6ff]"
-								>
-									Projects
-								</Link>
+							<li
+								className="rightSideBarLink w-full"
+								onClick={() => setNavReveal(false)}
+							>
+								<a href="#projects" className="cursor-pointer">
+									<div className="flex w-full items-center justify-start gap-5 px-3 py-2 text-center font-bold text-red-500 transition-all duration-300 ease-in-out hover:rounded-full hover:bg-red-500 hover:text-white">
+										<FolderOpenDot />
+										Projects
+									</div>
+								</a>
 							</li>
-							<li className="rightSideBarLink">
-								<Link
-									href="#about"
-									className="cursor-pointer hover:text-[#a5a6ff]"
-								>
-									About
-								</Link>
+							<li
+								className="rightSideBarLink w-full"
+								onClick={() => setNavReveal(false)}
+							>
+								<a href="#services" className="cursor-pointer">
+									<div className="flex w-full items-center justify-start gap-5 px-3 py-2 text-center font-bold text-green-600 transition-all duration-300 ease-in-out hover:rounded-full hover:bg-green-600 hover:text-white">
+										<PencilRuler />
+										Skills
+									</div>
+								</a>
 							</li>
-							<li className="rightSideBarLink">
-								<Link
-									href="#services"
-									className="cursor-pointer hover:text-[#a5a6ff]"
-								>
-									Skills
-								</Link>
+							<li
+								className="rightSideBarLink w-full"
+								onClick={() => setNavReveal(false)}
+							>
+								<a href="#about" className="cursor-pointer">
+									<div className="flex w-full items-center justify-start gap-5 px-3 py-2 text-center font-bold text-blue-500 transition-all duration-300 ease-in-out hover:rounded-full hover:bg-blue-500 hover:text-white">
+										<SwatchBook />
+										About
+									</div>
+								</a>
 							</li>
 
-							<li className="rightSideBarLink">
-								<Link
-									href="#services"
-									className="cursor-pointer hover:text-[#a5a6ff]"
-								>
-									Services
-								</Link>
-							</li>
-							<li className="rightSideBarLink">
-								<Link
-									href="#contact"
-									className="cursor-pointer hover:text-[#a5a6ff]"
-								>
-									Contact
-								</Link>
+							{/* <li className="rightSideBarLink w-full">
+								<a href="#services" className="cursor-pointer">
+									<div className="flex w-full items-center justify-start gap-5 rounded-full px-3 py-2 text-center font-bold text-rose-500 transition-all duration-300 ease-in-out hover:bg-rose-500 hover:text-white">
+										<Phone />
+										Services
+									</div>
+								</a>
+							</li> */}
+							<li
+								className="rightSideBarLink w-full"
+								onClick={() => setNavReveal(false)}
+							>
+								<a href="#contact" className="cursor-pointer">
+									<div className="flex w-full items-center justify-start gap-5 rounded-full px-3 py-2 text-center font-bold text-rose-500 transition-all duration-300 ease-in-out hover:bg-rose-500 hover:text-white">
+										<Phone />
+										Contact
+									</div>
+								</a>
 							</li>
 						</ul>
 					</nav>
 
-					<section className="flex flex-col items-end gap-6 font-medium text-[#534f80]">
+					<section className="flex flex-col items-center gap-6 font-medium text-[#534f80]">
 						<span className="flex gap-2">
-							{/* <span className="w-9 h-9 bg-gray-100 flex justify-center items-center  rounded-full">
-              <FontAwesomeIcon icon={faFacebookF} className="w-2" />
-            </span>
-            <span className="w-9 h-9 bg-gray-100 flex justify-center items-center  rounded-full">
-              {" "}
-              <FontAwesomeIcon icon={faXTwitter} className="w-4" />
-            </span> */}
 							<Link
 								href={socialLinks.facebook ? socialLinks.facebook : ""}
 								target="_blank"
@@ -183,7 +200,7 @@ const Navbar: FC<NavbarProps> = ({ infoData, socialLinks }) => {
 							</Link>
 						</span>
 
-						<section className="text-sm">
+						<section className="text-sm text-[#EEF7FF]">
 							<p>
 								All Copyrights 2023 Tejodeep Mitra Roy. All rights reserved.
 							</p>

@@ -83,35 +83,35 @@ const Home: FC<HomeProps> = ({ infoData }) => {
 					<section className="flex w-full flex-col gap-40 lg:w-[50%]">
 						<section className="flex flex-col gap-10">
 							<div className="flex flex-col text-4xl md:text-6xl">
-								<h3 className="mainHeading">
+								<h3 className="mainHeading ">
 									Hi, I&apos;m <span className="text-[#C1AEFC]">Tejodeep!</span>
 								</h3>
-								<h3 className="mainHeading">A Full Stack Web</h3>
-								<h3 className="mainHeading">Developer</h3>
+								<h3 className="mainHeading ">A Full Stack Web</h3>
+								<h3 className="mainHeading ">Developer</h3>
 								{/* <h3>your online businesses </h3> */}
 							</div>
 							<span className="mainHeading w-full max-w-[80%] text-xl md:text-2xl">
-								<p>
+								<p className="">
 									<span className="hand">👋</span>I&apos;m a India based Full
-									Stack Web developer to improve your business needs.
+									Stack Web App developer to improve your business needs.
 								</p>
 							</span>
 							<section>
 								<ul className="flex flex-wrap gap-8 md:text-lg">
 									<li className="homeButtons h-fit w-fit">
 										<a
-											href={"#about"}
+											href={"#projects"}
 											className="mb-7 h-fit w-fit rounded-[3rem] border border-[#0C134F] bg-[#0C134F] px-7 py-3 text-white transition duration-300 ease-in-out hover:bg-transparent hover:text-[#0C134F] md:px-10"
 										>
-											know about me
+											Show my Projects
 										</a>
 									</li>
 									<li className="homeButtons h-fit w-fit">
 										<Link
 											href={"#contact"}
-											className="h-fit w-fit rounded-[3rem] border border-[#0C134F] bg-transparent px-10 py-3 text-[#0C134F] transition-all duration-300 ease-in-out hover:bg-[#0C134F] hover:text-white"
+											className="h-fit w-fit rounded-[3rem] border border-[#0C134F]  bg-transparent px-10 py-3 text-[#0C134F] transition-all duration-300 ease-in-out hover:bg-[#0C134F] hover:text-white"
 										>
-											Lets talk
+											Contact Me
 										</Link>
 									</li>
 								</ul>

@@ -29,8 +29,8 @@ const Skills: FC<SkillsProps> = ({ skills }) => {
 	});
 
 	return (
-		<section ref={skill} className="relative h-auto w-full py-28" id="services">
-			<div className="w-full">
+		<section ref={skill} className="relative h-auto w-full py-28 " id="services">
+			<div className="w-full ">
 				<section className="mx-auto flex w-full max-w-7xl flex-col gap-5 px-5 lg:px-10">
 					<span className="text-lg font-medium">- SKILLS</span>
 					<section className="flex flex-col justify-between gap-10 md:flex-row">
