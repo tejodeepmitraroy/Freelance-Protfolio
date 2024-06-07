@@ -14,6 +14,7 @@ import getProjects from "@/lib/getProjects";
 import getServices from "@/lib/getServices";
 import getTestimonial from "@/lib/getTestimonial";
 import getSkills from "@/lib/getSkills";
+import Experience from "./MainSection/Experience";
 
 interface Props {}
 
@@ -32,7 +33,8 @@ const MainSection: FC = async (props: Props) => {
 			<Home infoData={infoData} />
 			<Projects projects={projects} />
 			<Skills skills={skills} />
-			<About infoData={infoData} experienceData={experience} />
+			<About infoData={infoData} />
+			<Experience experienceData={experience} />
 			{/* <Services /> */}
 			{/* <Testimonials /> */}
 			<ContactUs infoData={infoData} socialLinks={socialLinks} />
