@@ -75,9 +75,9 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
 
 									<div className="z-0 flex w-full cursor-pointer items-center justify-between px-5 pt-3">
 										<div className="flex flex-col gap-1">
-											<span className="font-Inter text-lg font-medium">
+											{/* <span className="font-Inter text-lg font-medium">
 												Title
-											</span>
+											</span> */}
 											<h3 className="font-Inter text-xl font-semibold">
 												{project.title}
 											</h3>
