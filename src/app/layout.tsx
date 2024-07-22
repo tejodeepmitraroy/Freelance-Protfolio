@@ -1,6 +1,7 @@
 import { ToastContainer } from "react-toastify";
 import "./globals.css";
 import type { Metadata } from "next";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://ttezo.in/"),
@@ -25,6 +26,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
+			<GoogleTagManager gtmId={process.env.GOOGLE_TAG_MANAGER!} />
 			<body>
 				{children}
 				<ToastContainer
