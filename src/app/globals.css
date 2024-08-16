@@ -16,6 +16,9 @@
 		--background-end-rgb: 0, 0, 0;
 	}
 }
+.grid-rows-masonry {
+	grid-template-rows: masonry;
+}
 
 ::-webkit-scrollbar {
 	width: 0.44rem;

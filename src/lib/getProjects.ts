@@ -18,6 +18,7 @@ export const getProjects = async (): Promise<getProjects[]> => {
         name,
         _key
       },
+      technologies,
       startDate,
       endDate,
       _createdAt,

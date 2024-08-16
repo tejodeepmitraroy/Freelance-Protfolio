@@ -28,7 +28,6 @@ export default function RootLayout({
 		<html lang="en">
 			<GoogleTagManager gtmId={process.env.GOOGLE_TAG_MANAGER!} />
 			<body>
-				{children}
 				<ToastContainer
 					position="top-center"
 					autoClose={5000}
@@ -40,7 +39,8 @@ export default function RootLayout({
 					draggable
 					pauseOnHover
 					theme="light"
-				/>
+					/>
+					{children}
 			</body>
 		</html>
 	);
