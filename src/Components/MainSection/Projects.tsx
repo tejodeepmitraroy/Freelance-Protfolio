@@ -1,7 +1,5 @@
 "use client";
 import React, { FC, useLayoutEffect, useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import Image from "next/image";
@@ -24,6 +22,8 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
 
 	gsap.registerPlugin(useGSAP);
 	gsap.registerPlugin(ScrollTrigger);
+
+	console.log(projects);
 
 	useGSAP(() => {
 		gsap.from(".ProjectContainer", {
@@ -54,17 +54,17 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
 						<span className="font-Inter text-4xl font-extrabold">
 							Recent Completed Project
 						</span>
-						<section className="mt-10 grid w-full grid-cols-1 gap-10 text-lg sm:px-10 md:grid-cols-2">
+						<section className="grid-rows-masonry mt-10 grid w-full grid-cols-1 gap-10 text-lg sm:px-10 md:grid-cols-2">
 							{/* Container */}
 							{projects.map((project, index) => (
 								<section
 									key={index}
-									className="ProjectContainer w-full cursor-pointer rounded-[3rem] border-4 border-gray-600 p-3 shadow-lg"
+									className="ProjectContainer w-full rounded-[3rem] border-4 border-gray-600 p-3 shadow-lg"
 								>
 									<Image
 										src={project.thumbnail ?? "/default.jpg"}
-										width={380}
-										height={360}
+										width={400}
+										height={400}
 										alt=""
 										className="aspect-[16/9] w-full rounded-[2rem] border border-black"
 										onClick={() => {
@@ -75,9 +75,7 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
 
 									<div className="z-0 flex w-full cursor-pointer items-center justify-between px-5 pt-3">
 										<div className="flex flex-col gap-1">
-											{/* <span className="font-Inter text-lg font-medium">
-												Title
-											</span> */}
+											
 											<h3 className="font-Inter text-xl font-semibold">
 												{project.title}
 											</h3>
@@ -102,6 +100,20 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
 											</Link>
 										</div>
 									</div>
+									<div className="z-0 flex w-full flex-wrap gap-3 px-5 pb-3 pt-6">
+										<p>{project.description}</p>
+									</div>
+
+									<div className="z-0 flex w-full flex-wrap gap-3 px-5 pb-3 pt-6">
+										{project.technologies.map((tech, index) => (
+											<div
+												key={index}
+												className="text-primary cursor-pointer rounded-lg border-2 border-purple-400 px-2 font-medium transition-all duration-200 ease-in-out hover:bg-purple-400 hover:text-white"
+											>
+												{tech}
+											</div>
+										))}
+									</div>
 								</section>
 							))}
 						</section>
@@ -109,7 +121,7 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
 				</div>
 			</section>
 			{/* Modal */}
-			<Modal data={isData} isOpen={isModal} isClose={() => setIsModal(false)} />
+			{/* <Modal data={isData} isOpen={isModal} isClose={() => setIsModal(false)} /> */}
 		</>
 	);
 };
