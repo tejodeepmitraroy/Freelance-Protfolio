@@ -8,5 +8,7 @@
   },
   "cSpell.words": [
     "Cloudinary’s"
-  ]
+  ],
+  "pieces.cloudCapabilities": "Blended",
+  "pieces.telemetry": true
 }
