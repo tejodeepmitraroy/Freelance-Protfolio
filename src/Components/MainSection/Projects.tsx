@@ -75,29 +75,32 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
 
 									<div className="z-0 flex w-full cursor-pointer items-center justify-between px-5 pt-3">
 										<div className="flex flex-col gap-1">
-											
 											<h3 className="font-Inter text-xl font-semibold">
 												{project.title}
 											</h3>
 										</div>
 
 										<div className="flex w-fit items-center gap-3">
-											<Link
-												href={project.live}
-												target={"_blank"}
-												title="tooltip text"
-												className="z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black sm:h-10 sm:w-10"
-											>
-												<ExternalLink color="white" size={18} />
-											</Link>
+											{project.live && (
+												<Link
+													href={project.live}
+													target={"_blank"}
+													title="tooltip text"
+													className="z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black sm:h-10 sm:w-10"
+												>
+													<ExternalLink color="white" size={18} />
+												</Link>
+											)}
 
-											<Link
-												href={project.repoLink[0].link}
-												target={"_blank"}
-												className="z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black sm:h-10 sm:w-10"
-											>
-												<Github color="white" size={18} />
-											</Link>
+											{project.repoLink && (
+												<Link
+													href={project.repoLink[0].link || ""}
+													target={"_blank"}
+													className="z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black sm:h-10 sm:w-10"
+												>
+													<Github color="white" size={18} />
+												</Link>
+											)}
 										</div>
 									</div>
 									<div className="z-0 flex w-full flex-wrap gap-3 px-5 pb-3 pt-6">

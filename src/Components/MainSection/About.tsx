@@ -59,12 +59,12 @@ const About: FC<AboutProps> = ({ infoData }) => {
 	});
 
 	return (
-		<section className="about h-auto w-full  border bg-[#f3f9ff]" id="about">
+		<section className="about h-auto w-full border bg-[#f3f9ff]" id="about">
 			<div className="mt-28 h-full w-full">
 				{/* About */}
 				<section
 					ref={about}
-					className="mx-auto flex h-auto w-full max-w-7xl flex-col gap-16  px-5 lg:px-10"
+					className="mx-auto flex h-auto w-full max-w-7xl flex-col gap-16 px-5 lg:px-10"
 				>
 					{/* biography */}
 					<div className="flex flex-col lg:flex-row">
@@ -92,11 +92,7 @@ const About: FC<AboutProps> = ({ infoData }) => {
 
 						<section className="flex w-full flex-col gap-10 text-lg lg:w-[60%]">
 							<span>
-								{/* {db.bio.map((bio, index) => (
-                  <p key={index} className="mb-7">
-                    {bio}
-                  </p>
-                ))} */}
+								
 								{infoData.bio}
 							</span>
 

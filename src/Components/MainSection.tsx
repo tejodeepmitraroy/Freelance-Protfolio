@@ -27,6 +27,8 @@ const MainSection: FC = async (props: Props) => {
 	const testimonial = await getTestimonial();
 	const skills = await getSkills();
 
+	console.log(	projects)
+
 	return (
 		<main className="main h-screen w-full overflow-y-auto scroll-smooth font-Karla text-[#1D267D] subpixel-antialiased lg:w-[75%] 2xl:w-[80%]">
 			<Navbar infoData={infoData} socialLinks={socialLinks} />
